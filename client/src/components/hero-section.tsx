@@ -1,5 +1,6 @@
 import { Play, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import wairimarHeroImage from "@assets/w3_1758152454450.jpg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -14,7 +15,7 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 parallax-bg"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&h=1380')"
+          backgroundImage: `url('${wairimarHeroImage}')`
         }}
       >
         <div className="absolute inset-0 hero-gradient"></div>
