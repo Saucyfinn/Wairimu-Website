@@ -184,7 +184,7 @@ export default function ContactSection() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="full-purchase">Full Property Purchase</SelectItem>
-                      <SelectItem value="ets-income">ETS Income Investment</SelectItem>
+                      <SelectItem value="ets-income">Carbon Credit Investment</SelectItem>
                       <SelectItem value="partnership">Partnership Opportunity</SelectItem>
                       <SelectItem value="tourism-development">Tourism Development</SelectItem>
                       <SelectItem value="information-only">Information Only</SelectItem>

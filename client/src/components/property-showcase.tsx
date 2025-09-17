@@ -62,8 +62,8 @@ export default function PropertyShowcase() {
               <Card>
                 <CardContent className="p-6">
                   <TrendingUp className="text-accent text-2xl mb-3" />
-                  <h4 className="font-semibold text-foreground mb-2">ETS Registered</h4>
-                  <p className="text-muted-foreground">3,000 credits generating annual income</p>
+                  <h4 className="font-semibold text-foreground mb-2">Carbon Credit Registered</h4>
+                  <p className="text-muted-foreground">215 hectares generating annual income</p>
                 </CardContent>
               </Card>
             </div>

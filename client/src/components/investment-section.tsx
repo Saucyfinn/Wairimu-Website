@@ -12,7 +12,7 @@ export default function InvestmentSection() {
     { label: "Total Area", value: `${property?.area?.toLocaleString() || "640"} hectares` },
     { label: "Number of Titles", value: property?.titles?.toString() || "5" },
     { label: "Forest Type", value: property?.forestType || "Native New Zealand" },
-    { label: "ETS Registration", value: `${property?.etsCredits?.toLocaleString() || "215"} hectares registered` },
+    { label: "Carbon Credit Registration", value: `${property?.etsCredits?.toLocaleString() || "215"} hectares registered` },
     { label: "Established", value: property?.yearEstablished?.toString() || "1887" },
     { label: "Location", value: property?.location || "Kaikoura, Canterbury" },
     { label: "Access", value: "All-weather road access" },
