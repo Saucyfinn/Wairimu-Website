@@ -39,7 +39,7 @@ export default function Footer() {
               <span className="font-serif text-xl font-semibold">Wairimu Station</span>
             </div>
             <p className="text-background/80 text-sm leading-relaxed">
-              Premium forest property investment opportunity in the heart of Kaikoura, New Zealand.
+              Wairimu Station ad Outstanding investment with proven income. The perfect place for your slice of heaven. Hunting, recreationand tourisim options or simply the perfect bolthole for your home or lodge.
             </p>
           </div>
           

@@ -57,6 +57,14 @@ export default function Navigation() {
               </button>
             ))}
             <Button
+              onClick={() => scrollToSection("property")}
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              data-testid="nav-virtual-tour"
+            >
+              Virtual Tour
+            </Button>
+            <Button
               onClick={() => scrollToSection("contact")}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               data-testid="nav-contact"
@@ -84,6 +92,14 @@ export default function Navigation() {
                     {item.label}
                   </button>
                 ))}
+                <Button
+                  onClick={() => scrollToSection("property")}
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full"
+                  data-testid="mobile-nav-virtual-tour"
+                >
+                  Virtual Tour
+                </Button>
                 <Button
                   onClick={() => scrollToSection("contact")}
                   className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
