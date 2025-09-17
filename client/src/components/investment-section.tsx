@@ -58,8 +58,22 @@ export default function InvestmentSection() {
   ];
 
   const handleDownload = (documentType: string) => {
-    // In a real application, this would trigger a document download
-    alert(`Downloading ${documentType}. This would initiate a PDF download in a real application.`);
+    const documentMap: Record<string, string> = {
+      "Property Prospectus": "/documents/property-prospectus.txt",
+      "ETS Documentation": "/documents/ets-documentation.txt",
+      "Survey & Maps": "/documents/survey-maps.txt",
+      "Legal Documents": "/documents/legal-documents.txt"
+    };
+    
+    const filePath = documentMap[documentType];
+    if (filePath) {
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = `${documentType.toLowerCase().replace(/\s+/g, '-')}.txt`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (

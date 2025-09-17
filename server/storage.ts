@@ -1,5 +1,6 @@
-import { type User, type InsertUser, type Inquiry, type InsertInquiry } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { users, inquiries, type User, type InsertUser, type Inquiry, type InsertInquiry } from "@shared/schema";
+import { db } from "./db";
+import { eq, desc } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -9,51 +10,44 @@ export interface IStorage {
   getInquiries(): Promise<Inquiry[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private inquiries: Map<string, Inquiry>;
-
-  constructor() {
-    this.users = new Map();
-    this.inquiries = new Map();
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createInquiry(insertInquiry: InsertInquiry): Promise<Inquiry> {
-    const id = randomUUID();
-    const inquiry: Inquiry = { 
-      ...insertInquiry,
-      phone: insertInquiry.phone || null,
-      investmentType: insertInquiry.investmentType || null,
-      message: insertInquiry.message || null,
-      id, 
-      createdAt: new Date() 
-    };
-    this.inquiries.set(id, inquiry);
+    const [inquiry] = await db
+      .insert(inquiries)
+      .values({
+        ...insertInquiry,
+        phone: insertInquiry.phone || null,
+        investmentType: insertInquiry.investmentType || null,
+        message: insertInquiry.message || null,
+      })
+      .returning();
     return inquiry;
   }
 
   async getInquiries(): Promise<Inquiry[]> {
-    return Array.from(this.inquiries.values()).sort(
-      (a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0)
-    );
+    return await db
+      .select()
+      .from(inquiries)
+      .orderBy(desc(inquiries.createdAt));
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
