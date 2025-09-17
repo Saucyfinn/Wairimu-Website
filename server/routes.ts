@@ -37,8 +37,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all inquiries (for admin purposes)
+  // Get all inquiries (for admin purposes - development only)
   app.get("/api/inquiries", async (req, res) => {
+    // Only allow in development environment to protect PII
+    if (process.env.NODE_ENV !== "development") {
+      return res.status(403).json({ 
+        success: false, 
+        message: "Access denied" 
+      });
+    }
+    
     try {
       const inquiries = await storage.getInquiries();
       res.json(inquiries);
