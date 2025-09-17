@@ -38,10 +38,6 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Mountain className="text-primary text-2xl" />
-            <span className="font-serif text-xl font-semibold text-foreground">
-              Wairimu Station
-            </span>
           </div>
 
           {/* Desktop Navigation */}
