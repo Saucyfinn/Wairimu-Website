@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(45, 20%, 97%);
+  --foreground: hsl(210, 15%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 15%, 15%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 15%, 15%);
+  --primary: hsl(142, 70%, 25%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(35, 45%, 85%);
+  --secondary-foreground: hsl(210, 15%, 15%);
+  --muted: hsl(35, 20%, 92%);
+  --muted-foreground: hsl(210, 10%, 45%);
+  --accent: hsl(200, 85%, 45%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 70%, 50%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(35, 25%, 88%);
+  --input: hsl(35, 25%, 88%);
+  --ring: hsl(142, 70%, 25%);
+  --radius: 8px;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Crimson Pro", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+.dark {
+  --background: hsl(210, 20%, 8%);
+  --foreground: hsl(210, 10%, 92%);
+  --card: hsl(210, 20%, 12%);
+  --card-foreground: hsl(210, 10%, 92%);
+  --popover: hsl(210, 20%, 12%);
+  --popover-foreground: hsl(210, 10%, 92%);
+  --primary: hsl(142, 70%, 35%);
+  --primary-foreground: hsl(210, 20%, 8%);
+  --secondary: hsl(35, 15%, 20%);
+  --secondary-foreground: hsl(210, 10%, 92%);
+  --muted: hsl(210, 15%, 18%);
+  --muted-foreground: hsl(210, 10%, 65%);
+  --accent: hsl(200, 75%, 55%);
+  --accent-foreground: hsl(210, 20%, 8%);
+  --destructive: hsl(0, 65%, 55%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(210, 15%, 25%);
+  --input: hsl(210, 15%, 25%);
+  --ring: hsl(142, 70%, 35%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--accent) / 0.8) 100%);
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
+.animate-counter {
+  animation: countUp 2s ease-out;
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: hsl(var(--card) / 0.8);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
