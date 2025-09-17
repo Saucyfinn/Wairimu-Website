@@ -56,4 +56,6 @@ export type Property = {
   currentNzuPrice: number;
   landValuation: number;
   totalInvestmentValue: number;
+  titles: number;
+  zoning: string;
 };

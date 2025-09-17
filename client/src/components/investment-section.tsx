@@ -9,14 +9,15 @@ export default function InvestmentSection() {
   });
 
   const specifications = [
-    { label: "Total Area", value: `${property?.area?.toLocaleString() || "2,400"} hectares` },
+    { label: "Total Area", value: `${property?.area?.toLocaleString() || "640"} hectares` },
+    { label: "Number of Titles", value: property?.titles?.toString() || "5" },
     { label: "Forest Type", value: property?.forestType || "Native New Zealand" },
-    { label: "ETS Registration", value: `Active - ${property?.etsCredits?.toLocaleString() || "3,000"} credits` },
+    { label: "ETS Registration", value: `${property?.etsCredits?.toLocaleString() || "215"} hectares registered` },
     { label: "Established", value: property?.yearEstablished?.toString() || "1887" },
     { label: "Location", value: property?.location || "Kaikoura, Canterbury" },
     { label: "Access", value: "All-weather road access" },
     { label: "Utilities", value: "Power, water, telecommunications" },
-    { label: "Zoning", value: "Rural conservation" }
+    { label: "Zoning", value: property?.zoning || "Rural" }
   ];
 
   const documents = [
@@ -51,10 +52,10 @@ export default function InvestmentSection() {
   ];
 
   const highlights = [
-    "Established ETS income stream with 3,000 registered credits",
+    "Established ETS income stream with 215 hectares registered in NZ Carbon Credit Scheme",
     "Prime Kaikoura location with tourism development potential",
-    "Sustainable investment aligned with climate goals",
-    "Potential for eco-tourism and recreational development"
+    "640 hectares across 5 titles with rural zoning",
+    "Sustainable investment aligned with climate goals"
   ];
 
   const handleDownload = (documentType: string) => {
@@ -160,38 +161,6 @@ export default function InvestmentSection() {
               </div>
             </div>
 
-            {/* Financial Summary */}
-            <Card className="bg-primary/5 border-primary/20">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-4">Financial Summary</h4>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Current ETS Value</span>
-                    <span className="font-semibold text-foreground" data-testid="financial-ets-value">
-                      ${((property?.etsCredits || 3000) * (property?.currentNzuPrice || 62)).toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Annual Income Potential</span>
-                    <span className="font-semibold text-foreground" data-testid="financial-annual-income">
-                      ${property?.annualIncome?.toLocaleString() || "185,000"}+
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Land Valuation</span>
-                    <span className="font-semibold text-foreground" data-testid="financial-land-value">
-                      ${property?.landValuation ? (property.landValuation / 1000000).toFixed(1) + 'M' : "2.4M"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between pt-3 border-t border-border">
-                    <span className="text-foreground font-medium">Total Investment Value</span>
-                    <span className="font-bold text-primary text-lg" data-testid="financial-total-value">
-                      ${property?.totalInvestmentValue ? (property.totalInvestmentValue / 1000000).toFixed(2) + 'M' : "2.59M"}
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

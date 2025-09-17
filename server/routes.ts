@@ -63,15 +63,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/property", async (req, res) => {
     res.json({
       name: "Wairimu Station",
-      area: 2400,
-      etsCredits: 3000,
+      area: 640,
+      etsCredits: 215,
       yearEstablished: 1887,
       annualIncome: 185000,
       location: "Kaikoura, Canterbury, New Zealand",
       forestType: "Native New Zealand",
       currentNzuPrice: 62,
       landValuation: 2400000,
-      totalInvestmentValue: 2590000
+      totalInvestmentValue: 2590000,
+      titles: 5,
+      zoning: "Rural"
     });
   });
 
