@@ -97,24 +97,18 @@ export default function PropertyShowcase() {
         </div>
 
         {/* Property Statistics */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 bg-muted p-6 sm:p-8 rounded-xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 bg-muted p-6 sm:p-8 rounded-xl">
           <div className="text-center py-2">
             <div className="text-3xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2 animate-counter" data-testid="stat-area">
-              {property?.area?.toLocaleString() || "640"}
+              {property?.area?.toLocaleString() || "604"}
             </div>
-            <div className="text-muted-foreground text-sm sm:text-base">Hectares</div>
+            <div className="text-muted-foreground text-sm sm:text-base">Property size</div>
           </div>
           <div className="text-center py-2">
             <div className="text-3xl sm:text-4xl font-bold text-accent mb-1 sm:mb-2 animate-counter" data-testid="stat-credits">
-              {property?.etsCredits?.toLocaleString() || "215.5"}
+              {property?.etsCredits?.toLocaleString() || "215"}
             </div>
-            <div className="text-muted-foreground text-sm sm:text-base">ETS Credits</div>
-          </div>
-          <div className="text-center py-2">
-            <div className="text-3xl sm:text-4xl font-bold text-accent mb-1 sm:mb-2 animate-counter" data-testid="stat-income">
-              ${property?.annualIncome ? (property.annualIncome / 1000).toFixed(0) + 'K' : "185K"}
-            </div>
-            <div className="text-muted-foreground text-sm sm:text-base">Annual Carbon Credits</div>
+            <div className="text-muted-foreground text-sm sm:text-base">Carbon credit area</div>
           </div>
         </div>
         
