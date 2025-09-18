@@ -218,7 +218,7 @@ export default function Tourism() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
         <div 
           className="absolute inset-0 parallax-bg"
           style={{
@@ -332,7 +332,7 @@ export default function Tourism() {
       </section>
 
       {/* Kaikoura Activities Section */}
-      <section id="kaikoura" className="py-20 bg-background">
+      <section id="kaikoura" className="py-20 bg-background scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -416,7 +416,7 @@ export default function Tourism() {
       </section>
 
       {/* Marlborough Region Section */}
-      <section id="marlborough" className="py-20 bg-card">
+      <section id="marlborough" className="py-20 bg-card scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
