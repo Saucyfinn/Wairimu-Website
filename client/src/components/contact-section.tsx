@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import andyNurseImage from "@assets/image_1758160596463.png";
 
 interface ContactFormData {
   firstName: string;
@@ -114,7 +115,7 @@ export default function ContactSection() {
             Ready to Enquire
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            For more information, property documents, and visits to the property, contact Andy Nurse from Nurse Property
+            For more information, property documents, and visits to the property, contact Andy Nurse from NURSE Property
           </p>
         </div>
 
@@ -235,8 +236,8 @@ export default function ContactSection() {
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
-                    alt="Andy Nurse - Property Agent" 
+                    src={andyNurseImage}
+                    alt="Andy Nurse - Licensed Sales Consultant, NURSE Property" 
                     className="w-24 h-24 rounded-full object-cover"
                     data-testid="agent-photo"
                   />
@@ -245,20 +246,35 @@ export default function ContactSection() {
                       Andy Nurse
                     </h4>
                     <p className="text-accent font-medium mb-4">
-                      Senior Property Consultant - Nurse Property
+                      Licensed Sales Consultant - Rural & Lifestyle
+                    </p>
+                    <p className="text-sm text-primary font-semibold mb-4">
+                      NURSE Property
                     </p>
                     <p className="text-muted-foreground mb-4">
-                      With over 15 years of experience in New Zealand property investment, Andy specializes in rural and forestry properties with sustainable income streams.
+                      Licensed sales consultant specializing in rural and lifestyle properties. Andy brings expertise in sustainable property investments, rural land development, and lifestyle property opportunities throughout New Zealand.
                     </p>
                     
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
                         <Phone className="text-primary h-4 w-4" />
-                        <span className="text-foreground" data-testid="agent-phone">+64 3 319 5555</span>
+                        <a 
+                          href="tel:+6433195555" 
+                          className="text-foreground hover:text-primary transition-colors"
+                          data-testid="agent-phone"
+                        >
+                          +64 3 319 5555
+                        </a>
                       </div>
                       <div className="flex items-center space-x-3">
                         <Mail className="text-primary h-4 w-4" />
-                        <span className="text-foreground" data-testid="agent-email">andy@nurseproperty.co.nz</span>
+                        <a 
+                          href="mailto:andy@nurseproperty.co.nz" 
+                          className="text-foreground hover:text-primary transition-colors"
+                          data-testid="agent-email"
+                        >
+                          andy@nurseproperty.co.nz
+                        </a>
                       </div>
                       <div className="flex items-center space-x-3">
                         <MapPin className="text-primary h-4 w-4" />
@@ -289,22 +305,6 @@ export default function ContactSection() {
               })}
             </div>
 
-            {/* Office Information */}
-            <Card className="bg-muted">
-              <CardContent className="p-6">
-                <h5 className="font-semibold text-foreground mb-3">Nurse Property Office</h5>
-                <p className="text-sm text-muted-foreground mb-3">
-                  123 Beach Road, Kaikoura 7300<br />
-                  New Zealand
-                </p>
-                <div className="text-sm text-muted-foreground">
-                  <strong>Office Hours:</strong><br />
-                  Monday - Friday: 9:00 AM - 5:00 PM<br />
-                  Saturday: 10:00 AM - 3:00 PM<br />
-                  Sunday: By appointment
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
