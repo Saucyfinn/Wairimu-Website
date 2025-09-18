@@ -32,9 +32,6 @@ export default function PropertyShowcase() {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <div className="space-y-6">
-            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">
-              Premium Forest Investment
-            </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Wairimu Station spans across pristine native forest, offering not just breathtaking natural beauty but a sustainable investment opportunity through New Zealand's Emissions Trading Scheme.
             </p>
