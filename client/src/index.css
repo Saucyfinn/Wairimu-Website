@@ -78,6 +78,13 @@
   }
 }
 
+/* Disable parallax for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
 .animate-counter {
   animation: countUp 2s ease-out;
 }
@@ -104,5 +111,48 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile optimization utilities */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Mobile typography improvements */
+@media (max-width: 768px) {
+  /* Ensure minimum 16px base font size for mobile readability */
+  body { font-size: 16px; }
+  
+  /* Mobile typography scale with proper line heights */
+  .mobile-text-sm { font-size: 0.875rem; line-height: 1.5; }
+  .mobile-text-base { font-size: 1rem; line-height: 1.6; }
+  .mobile-text-lg { font-size: 1.125rem; line-height: 1.6; }
+  .mobile-text-xl { font-size: 1.25rem; line-height: 1.5; }
+  .mobile-text-2xl { font-size: 1.5rem; line-height: 1.4; }
+  .mobile-text-3xl { font-size: 1.875rem; line-height: 1.3; }
+  .mobile-text-4xl { font-size: 2.25rem; line-height: 1.2; }
+  
+  /* Mobile-specific spacing improvements */
+  .mobile-spacing-tight { letter-spacing: -0.01em; }
+  .mobile-spacing-normal { letter-spacing: 0; }
+  .mobile-spacing-wide { letter-spacing: 0.01em; }
+  
+  /* Enhanced mobile readability */
+  p, li, span { line-height: 1.6; }
+  h1, h2, h3 { line-height: 1.2; }
+  h4, h5, h6 { line-height: 1.3; }
+  
+  /* Mobile button minimum sizes */
+  button, .btn, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile form element improvements */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
   }
 }

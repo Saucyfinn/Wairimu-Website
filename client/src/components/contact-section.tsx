@@ -107,79 +107,83 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-card scroll-mt-20">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-card scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
             Ready to Enquire
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             For more information, property documents, and visits to the property, contact Andy Nurse from NURSE Property
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Contact Form */}
           <Card className="bg-background">
-            <CardContent className="p-8">
-              <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
+              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">
                 Send an Enquiry
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <Label htmlFor="firstName">First Name</Label>
+                    <Label htmlFor="firstName" className="text-sm sm:text-base">First Name</Label>
                     <Input
                       id="firstName"
                       required
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
+                      className="min-h-[44px] text-base"
                       data-testid="input-first-name"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="lastName">Last Name</Label>
+                    <Label htmlFor="lastName" className="text-sm sm:text-base">Last Name</Label>
                     <Input
                       id="lastName"
                       required
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
+                      className="min-h-[44px] text-base"
                       data-testid="input-last-name"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <Label htmlFor="email">Email Address</Label>
+                  <Label htmlFor="email" className="text-sm sm:text-base">Email Address</Label>
                   <Input
                     id="email"
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="min-h-[44px] text-base"
                     data-testid="input-email"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="phone">Phone Number</Label>
+                  <Label htmlFor="phone" className="text-sm sm:text-base">Phone Number</Label>
                   <Input
                     id="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
+                    className="min-h-[44px] text-base"
                     data-testid="input-phone"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="investmentType">Investment Interest</Label>
+                  <Label htmlFor="investmentType" className="text-sm sm:text-base">Investment Interest</Label>
                   <Select 
                     value={formData.investmentType} 
                     onValueChange={(value) => handleInputChange("investmentType", value)}
                   >
-                    <SelectTrigger data-testid="select-investment-type">
+                    <SelectTrigger className="min-h-[44px] text-base" data-testid="select-investment-type">
                       <SelectValue placeholder="Select your interest" />
                     </SelectTrigger>
                     <SelectContent>
@@ -193,36 +197,38 @@ export default function ContactSection() {
                 </div>
                 
                 <div>
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message" className="text-sm sm:text-base">Message</Label>
                   <Textarea
                     id="message"
-                    rows={5}
+                    rows={4}
                     placeholder="Tell us about your investment goals and any specific questions..."
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
+                    className="min-h-[100px] text-base resize-none"
                     data-testid="textarea-message"
                   />
                 </div>
                 
-                <div className="flex items-center space-x-2">
+                <div className="flex items-start space-x-3 py-2">
                   <Checkbox
                     id="consent"
                     checked={formData.consent}
                     onCheckedChange={(checked) => handleInputChange("consent", checked as boolean)}
+                    className="mt-1 min-h-[20px] min-w-[20px]"
                     data-testid="checkbox-consent"
                   />
-                  <Label htmlFor="consent" className="text-sm text-muted-foreground">
+                  <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
                     I consent to being contacted about this property investment opportunity
                   </Label>
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full" 
+                  className="w-full min-h-[48px] text-base touch-target" 
                   disabled={submitInquiry.isPending}
                   data-testid="submit-enquiry"
                 >
-                  <Send className="mr-2 h-4 w-4" />
+                  <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   {submitInquiry.isPending ? "Sending..." : "Send Enquiry"}
                 </Button>
               </form>
@@ -230,48 +236,44 @@ export default function ContactSection() {
           </Card>
 
           {/* Agent Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 order-first lg:order-last">
             <Card className="bg-background">
-              <CardContent className="p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div>
                   <div>
-                    <h4 className="font-serif text-2xl font-semibold text-foreground mb-2">
+                    <h4 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-2">
                       Andy Nurse
                     </h4>
-                    <p className="text-accent font-medium mb-4">
+                    <p className="text-accent font-medium mb-3 sm:mb-4 text-sm sm:text-base">
                       Licensed Sales Consultant - Rural & Lifestyle
                     </p>
-                    <p className="text-sm text-primary font-semibold mb-4">
+                    <p className="text-sm text-primary font-semibold mb-3 sm:mb-4">
                       NURSE Property
                     </p>
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
                       Licensed sales consultant specializing in rural and lifestyle properties. Andy brings expertise in sustainable property investments, rural land development, and lifestyle property opportunities throughout New Zealand.
                     </p>
                     
                     <div className="space-y-3">
-                      <div className="flex items-center space-x-3">
-                        <Phone className="text-primary h-4 w-4" />
-                        <a 
-                          href="tel:+6433195555" 
-                          className="text-foreground hover:text-primary transition-colors"
-                          data-testid="agent-phone"
-                        >
-                          +64 3 319 5555
-                        </a>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Mail className="text-primary h-4 w-4" />
-                        <a 
-                          href="mailto:andy@nurseproperty.co.nz" 
-                          className="text-foreground hover:text-primary transition-colors"
-                          data-testid="agent-email"
-                        >
-                          andy@nurseproperty.co.nz
-                        </a>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <MapPin className="text-primary h-4 w-4" />
-                        <span className="text-foreground" data-testid="agent-location">Kaikoura, Canterbury</span>
+                      <a 
+                        href="tel:+6433195555" 
+                        className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors min-h-[44px] touch-target"
+                        data-testid="agent-phone"
+                      >
+                        <Phone className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
+                        <span className="text-sm sm:text-base">+64 3 319 5555</span>
+                      </a>
+                      <a 
+                        href="mailto:andy@nurseproperty.co.nz" 
+                        className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors min-h-[44px] touch-target"
+                        data-testid="agent-email"
+                      >
+                        <Mail className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
+                        <span className="text-sm sm:text-base break-all">andy@nurseproperty.co.nz</span>
+                      </a>
+                      <div className="flex items-center space-x-3 min-h-[44px]">
+                        <MapPin className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
+                        <span className="text-foreground text-sm sm:text-base" data-testid="agent-location">Kaikoura, Canterbury</span>
                       </div>
                     </div>
                   </div>
@@ -280,18 +282,18 @@ export default function ContactSection() {
             </Card>
 
             {/* Quick Contact Options */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {quickActions.map((action, index) => {
                 const IconComponent = action.icon;
                 return (
                   <Button
                     key={action.label}
                     variant={action.variant}
-                    className={`w-full p-4 ${action.bgColor === "bg-card" ? "bg-card text-foreground border border-border hover:bg-muted" : action.bgColor === "bg-accent" ? "bg-accent text-accent-foreground hover:bg-accent/90" : "bg-primary text-primary-foreground hover:bg-primary/90"}`}
+                    className={`w-full min-h-[48px] p-4 text-sm sm:text-base touch-target ${action.bgColor === "bg-card" ? "bg-card text-foreground border border-border hover:bg-muted" : action.bgColor === "bg-accent" ? "bg-accent text-accent-foreground hover:bg-accent/90" : "bg-primary text-primary-foreground hover:bg-primary/90"}`}
                     onClick={action.action}
                     data-testid={action.testId}
                   >
-                    <IconComponent className="mr-2 h-4 w-4" />
+                    <IconComponent className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     {action.label}
                   </Button>
                 );

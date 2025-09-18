@@ -40,50 +40,50 @@ export default function PropertyShowcase() {
   return (
     <section id="property" className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-2">
             Wairimu Where Regenerating Native Bush Shelters Both Birdsong And Big Game
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
             Experience the pristine beauty of native New Zealand forest, where ancient trees meet modern investment opportunity in perfect harmony
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <div className="space-y-6">
-            <h3 className="font-serif text-3xl font-semibold text-foreground">
+            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">
               Premium Forest Investment
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Wairimu Station spans across pristine native forest, offering not just breathtaking natural beauty but a sustainable investment opportunity through New Zealand's Emissions Trading Scheme.
             </p>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <Card>
-                <CardContent className="p-6">
-                  <Network className="text-primary text-2xl mb-3" />
-                  <h4 className="font-semibold text-foreground mb-2">Native Forest</h4>
-                  <p className="text-muted-foreground">Native bush and wildlife thrive, and sustainable hunting goes hand in hand with nature's renewal</p>
+                <CardContent className="p-4 sm:p-6">
+                  <Network className="text-primary text-xl sm:text-2xl mb-2 sm:mb-3" />
+                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Native Forest</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">Native bush and wildlife thrive, and sustainable hunting goes hand in hand with nature's renewal</p>
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="p-6">
-                  <TrendingUp className="text-accent text-2xl mb-3" />
-                  <h4 className="font-semibold text-foreground mb-2">Carbon Credit Registered</h4>
-                  <p className="text-muted-foreground">Registered forest generating annual income</p>
+                <CardContent className="p-4 sm:p-6">
+                  <TrendingUp className="text-accent text-xl sm:text-2xl mb-2 sm:mb-3" />
+                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Carbon Credit Registered</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">Registered forest generating annual income</p>
                 </CardContent>
               </Card>
             </div>
             <Button 
               onClick={openPropertyVideo}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 min-h-[44px] w-full sm:w-auto touch-target"
               data-testid="launch-virtual-tour"
             >
-              <Play className="mr-2 h-5 w-5" />
+              <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Watch Property Video
             </Button>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 order-first lg:order-last">
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
               <img 
                 src={images[selectedImage].src}
@@ -92,39 +92,43 @@ export default function PropertyShowcase() {
                 data-testid="main-property-image"
               />
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
               {images.slice(1).map((image, index) => (
-                <img 
+                <button
                   key={index + 1}
-                  src={image.src}
-                  alt={image.alt}
-                  className="aspect-video rounded-lg object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" 
                   onClick={() => setSelectedImage(index + 1)}
+                  className="aspect-video rounded-lg overflow-hidden hover:scale-105 transition-transform duration-500 touch-target min-h-[44px]"
                   data-testid={`gallery-image-${index + 1}`}
-                />
+                >
+                  <img 
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
               ))}
             </div>
           </div>
         </div>
 
         {/* Video Section */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="font-serif text-3xl font-semibold text-foreground mb-4">
+        <div className="mb-12 sm:mb-16">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground mb-3 sm:mb-4">
               Property Overview
             </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
               Take a closer look at this exceptional forest investment opportunity
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl bg-muted">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/DAd1staY8wQ?modestbranding=1&rel=0"
+                src="https://www.youtube-nocookie.com/embed/DAd1staY8wQ?modestbranding=1&rel=0&autoplay=0&playsinline=1"
                 title="Wairimu Station Property Overview"
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                 allowFullScreen
                 className="w-full h-full border-0"
                 data-testid="property-overview-video"
@@ -134,24 +138,24 @@ export default function PropertyShowcase() {
         </div>
 
         {/* Property Statistics */}
-        <div className="grid md:grid-cols-3 gap-8 bg-muted p-8 rounded-xl">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2 animate-counter" data-testid="stat-area">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 bg-muted p-6 sm:p-8 rounded-xl">
+          <div className="text-center py-2">
+            <div className="text-3xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2 animate-counter" data-testid="stat-area">
               {property?.area?.toLocaleString() || "640"}
             </div>
-            <div className="text-muted-foreground">Hectares</div>
+            <div className="text-muted-foreground text-sm sm:text-base">Hectares</div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-accent mb-2 animate-counter" data-testid="stat-credits">
+          <div className="text-center py-2">
+            <div className="text-3xl sm:text-4xl font-bold text-accent mb-1 sm:mb-2 animate-counter" data-testid="stat-credits">
               {property?.etsCredits?.toLocaleString() || "215.5"}
             </div>
-            <div className="text-muted-foreground">ETS Credits</div>
+            <div className="text-muted-foreground text-sm sm:text-base">ETS Credits</div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-accent mb-2 animate-counter" data-testid="stat-income">
+          <div className="text-center py-2">
+            <div className="text-3xl sm:text-4xl font-bold text-accent mb-1 sm:mb-2 animate-counter" data-testid="stat-income">
               ${property?.annualIncome ? (property.annualIncome / 1000).toFixed(0) + 'K' : "185K"}
             </div>
-            <div className="text-muted-foreground">Annual Carbon Credits</div>
+            <div className="text-muted-foreground text-sm sm:text-base">Annual Carbon Credits</div>
           </div>
         </div>
         

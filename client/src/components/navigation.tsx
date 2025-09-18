@@ -58,40 +58,40 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => navigateToSection(item.id)}
-                className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm"
+                className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm touch-target"
                 data-testid={`nav-${item.id}`}
               >
                 {item.label}
               </button>
             ))}
-            <Link href="/tourism" className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1" data-testid="nav-tourism">
+            <Link href="/tourism" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-tourism">
               <MapPin className="h-4 w-4" />
               <span>Tourism</span>
             </Link>
-            <Link href="/visa" className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1" data-testid="nav-visa">
+            <Link href="/visa" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-visa">
               <FileText className="h-4 w-4" />
               <span>NZ Investor Visa</span>
             </Link>
-            <Link href="/honey" className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1" data-testid="nav-honey">
+            <Link href="/honey" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-honey">
               <Flower2 className="h-4 w-4" />
               <span>Manuka Honey</span>
             </Link>
             <Button
               onClick={openPropertyVideo}
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="min-h-[44px] border-primary text-primary hover:bg-primary hover:text-primary-foreground touch-target"
               data-testid="nav-virtual-tour"
             >
               Watch Property Video
             </Button>
             <Button
               onClick={() => navigateToSection("contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="min-h-[44px] bg-primary text-primary-foreground hover:bg-primary/90 touch-target"
               data-testid="nav-contact"
             >
               Contact
@@ -101,45 +101,46 @@ export default function Navigation() {
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" data-testid="mobile-menu-trigger">
+              <Button variant="ghost" size="icon" className="md:hidden min-h-[44px] min-w-[44px] touch-target" data-testid="mobile-menu-trigger">
                 <Menu className="h-6 w-6" />
+                <span className="sr-only">Open navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] px-4">
+              <div className="flex flex-col space-y-2 mt-8">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => navigateToSection(item.id)}
-                    className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm"
+                    className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm touch-target"
                     data-testid={`mobile-nav-${item.id}`}
                   >
                     {item.label}
                   </button>
                 ))}
-                <Link href="/tourism" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
+                <Link href="/tourism" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
                   <MapPin className="h-5 w-5" />
                   <span>Tourism</span>
                 </Link>
-                <Link href="/visa" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
+                <Link href="/visa" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
                   <FileText className="h-5 w-5" />
                   <span>NZ Investor Visa</span>
                 </Link>
-                <Link href="/honey" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full" data-testid="mobile-nav-honey" onClick={() => setIsOpen(false)}>
+                <Link href="/honey" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-honey" onClick={() => setIsOpen(false)}>
                   <Flower2 className="h-5 w-5" />
                   <span>Manuka Honey</span>
                 </Link>
                 <Button
                   onClick={openPropertyVideo}
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full min-h-[44px] mt-4 touch-target"
                   data-testid="mobile-nav-virtual-tour"
                 >
                   Watch Property Video
                 </Button>
                 <Button
                   onClick={() => navigateToSection("contact")}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 w-full min-h-[44px] touch-target"
                   data-testid="mobile-nav-contact"
                 >
                   Contact
