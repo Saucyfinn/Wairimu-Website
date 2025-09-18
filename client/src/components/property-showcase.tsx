@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { Network, TrendingUp, CircuitBoard } from "lucide-react";
+import { Network, TrendingUp, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import type { Property } from "@shared/schema";
-import { GOOGLE_EARTH_CONFIG } from "@shared/config";
+import YouTubeModal from "./youtube-modal";
 
 export default function PropertyShowcase() {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
-  const openGoogleEarth = () => {
-    const googleEarthUrl = GOOGLE_EARTH_CONFIG.generateUrl();
-    window.open(googleEarthUrl, '_blank', 'noopener,noreferrer');
+  const openPropertyVideo = () => {
+    setIsVideoModalOpen(true);
   };
 
   const { data: property } = useQuery<Property>({
@@ -74,12 +74,12 @@ export default function PropertyShowcase() {
               </Card>
             </div>
             <Button 
-              onClick={openGoogleEarth}
+              onClick={openPropertyVideo}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               data-testid="launch-virtual-tour"
             >
-              <CircuitBoard className="mr-2 h-5 w-5" />
-              Launch Virtual Tour
+              <Play className="mr-2 h-5 w-5" />
+              Watch Property Video
             </Button>
           </div>
           
@@ -160,6 +160,14 @@ export default function PropertyShowcase() {
             <div className="text-muted-foreground">Annual ETS Income</div>
           </div>
         </div>
+        
+        {/* YouTube Modal */}
+        <YouTubeModal 
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          videoId="b7ypIkAsYLY"
+          title="Wairimu Station Property Overview"
+        />
       </div>
     </section>
   );

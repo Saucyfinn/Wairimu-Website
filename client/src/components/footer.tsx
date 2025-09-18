@@ -1,7 +1,10 @@
 import { Mountain } from "lucide-react";
-import { GOOGLE_EARTH_CONFIG } from "@shared/config";
+import { useState } from "react";
+import YouTubeModal from "./youtube-modal";
 
 export default function Footer() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -9,9 +12,8 @@ export default function Footer() {
     }
   };
 
-  const openGoogleEarth = () => {
-    const googleEarthUrl = GOOGLE_EARTH_CONFIG.generateUrl();
-    window.open(googleEarthUrl, '_blank', 'noopener,noreferrer');
+  const openPropertyVideo = () => {
+    setIsVideoModalOpen(true);
   };
 
   const footerSections = {
@@ -56,7 +58,7 @@ export default function Footer() {
               {footerSections.property.map((item) => (
                 <li key={item.id}>
                   <button 
-                    onClick={() => item.id === 'property' ? openGoogleEarth() : scrollToSection(item.id)}
+                    onClick={() => item.id === 'property' ? openPropertyVideo() : scrollToSection(item.id)}
                     className="hover:text-background transition-colors text-left"
                     data-testid={`footer-${item.id}`}
                   >
@@ -117,6 +119,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      
+      {/* YouTube Modal */}
+      <YouTubeModal 
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoId="b7ypIkAsYLY"
+        title="Wairimu Station Property Overview"
+      />
     </footer>
   );
 }

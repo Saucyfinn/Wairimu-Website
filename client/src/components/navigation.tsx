@@ -3,11 +3,12 @@ import { Mountain, Menu, X, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "wouter";
-import { GOOGLE_EARTH_CONFIG } from "@shared/config";
+import YouTubeModal from "./youtube-modal";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -35,9 +36,8 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
-  const openGoogleEarth = () => {
-    const googleEarthUrl = GOOGLE_EARTH_CONFIG.generateUrl();
-    window.open(googleEarthUrl, '_blank', 'noopener,noreferrer');
+  const openPropertyVideo = () => {
+    setIsVideoModalOpen(true);
     setIsOpen(false);
   };
 
@@ -62,7 +62,7 @@ export default function Navigation() {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => item.id === 'property' ? openGoogleEarth() : navigateToSection(item.id)}
+                onClick={() => navigateToSection(item.id)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid={`nav-${item.id}`}
               >
@@ -74,12 +74,12 @@ export default function Navigation() {
               <span>Tourism</span>
             </Link>
             <Button
-              onClick={openGoogleEarth}
+              onClick={openPropertyVideo}
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               data-testid="nav-virtual-tour"
             >
-              Virtual Tour
+              Watch Property Video
             </Button>
             <Button
               onClick={() => navigateToSection("contact")}
@@ -102,7 +102,7 @@ export default function Navigation() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => item.id === 'property' ? openGoogleEarth() : navigateToSection(item.id)}
+                    onClick={() => navigateToSection(item.id)}
                     className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
                     data-testid={`mobile-nav-${item.id}`}
                   >
@@ -114,12 +114,12 @@ export default function Navigation() {
                   <span>Tourism</span>
                 </Link>
                 <Button
-                  onClick={openGoogleEarth}
+                  onClick={openPropertyVideo}
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full"
                   data-testid="mobile-nav-virtual-tour"
                 >
-                  Virtual Tour
+                  Watch Property Video
                 </Button>
                 <Button
                   onClick={() => navigateToSection("contact")}
@@ -133,6 +133,14 @@ export default function Navigation() {
           </Sheet>
         </div>
       </div>
+      
+      {/* YouTube Modal */}
+      <YouTubeModal 
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoId="b7ypIkAsYLY"
+        title="Wairimu Station Property Overview"
+      />
     </nav>
   );
 }
