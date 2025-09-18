@@ -64,7 +64,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({
       name: "Wairimu Station",
       area: 640,
-      etsCredits: 215,
+      etsCredits: 215.5,
       yearEstablished: 1887,
       annualIncome: 185000,
       location: "Kaikoura, Canterbury, New Zealand",

@@ -137,13 +137,13 @@ export default function PropertyShowcase() {
         <div className="grid md:grid-cols-3 gap-8 bg-muted p-8 rounded-xl">
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2 animate-counter" data-testid="stat-area">
-              {property?.area?.toLocaleString() || "2,400"}
+              {property?.area?.toLocaleString() || "640"}
             </div>
             <div className="text-muted-foreground">Hectares</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-accent mb-2 animate-counter" data-testid="stat-credits">
-              {property?.etsCredits?.toLocaleString() || "3,000"}
+              {property?.etsCredits?.toLocaleString() || "215.5"}
             </div>
             <div className="text-muted-foreground">ETS Credits</div>
           </div>

@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function InvestmentHighlights() {
   const highlights = [
-    "485 hectares of Pinus radiata plantation forest area",
-    "155 hectares of native forest reserve (protected)",
+    "15.5 hectares of Pinus radiata planted forest",
+    "200 hectares of indigenous bush (included in Carbon Credit scheme)",
     "Established Carbon credit income from Post-1989 forest carbon sequestration",
     "Established forestry infrastructure with all-weather access",
     "Strategic Canterbury location near established forestry operations",
