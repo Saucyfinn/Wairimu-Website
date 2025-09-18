@@ -81,11 +81,15 @@ export default function LocationSection() {
 
           <div className="space-y-6">
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=675"
-                alt="Kaikoura coastline with mountains and ocean" 
-                className="w-full h-full object-cover"
-                data-testid="kaikoura-main-image"
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/b7ypIkAsYLY?modestbranding=1&rel=0&origin=${window.location.origin}`}
+                title="Kaikoura - New Zealand's Premier Destination"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                data-testid="kaikoura-youtube-video"
               />
             </div>
             
