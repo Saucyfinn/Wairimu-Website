@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import manukaFlowersImage1 from "@assets/stock_images/manuka_flowers_honey_859306ad.jpg";
-import manukaFlowersImage2 from "@assets/stock_images/manuka_flowers_honey_57a5a89b.jpg";
 import beehivesImage1 from "@assets/stock_images/beehives_honey_bee_f_e4c67446.jpg";
 import beehivesImage2 from "@assets/stock_images/beehives_honey_bee_f_a6c82ccb.jpg";
 import honeyJarsImage1 from "@assets/stock_images/honey_jars_productio_2f10a520.jpg";
@@ -245,7 +244,7 @@ export default function Honey() {
             })}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               <h3 className="font-serif text-3xl font-semibold text-foreground">
                 What Makes Manuka Honey Special?
@@ -272,15 +271,6 @@ export default function Honey() {
                   </Badge>
                 </div>
               </div>
-            </div>
-
-            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src={manukaFlowersImage2}
-                alt="Native Manuka flowers in bloom showing the source of premium New Zealand honey with therapeutic properties" 
-                className="w-full h-full object-cover"
-                data-testid="honey-overview-manuka-image"
-              />
             </div>
           </div>
         </div>
