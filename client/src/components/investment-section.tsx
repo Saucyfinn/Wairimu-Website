@@ -1,4 +1,4 @@
-import { FileText, Leaf, Map, Gavel, Download, CheckCircle, Flag } from "lucide-react";
+import { FileText, Leaf, Map, Gavel, Download, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import type { Property } from "@shared/schema";
@@ -10,67 +10,70 @@ export default function InvestmentSection() {
 
   const specifications = [
     { label: "Total Area", value: `${property?.area?.toLocaleString() || "640"} hectares` },
-    { label: "Number of Titles", value: property?.titles?.toString() || "5" },
-    { label: "Forest Type", value: property?.forestType || "Native New Zealand" },
-    { label: "Carbon Credit Registration", value: `${property?.etsCredits?.toLocaleString() || "215"} hectares registered` },
-    { label: "Established", value: property?.yearEstablished?.toString() || "1887" },
+    { label: "Planted Forest Area", value: "485 hectares (Pinus radiata)" },
+    { label: "Native Forest Reserve", value: "155 hectares (protected)" },
+    { label: "ETS Registration", value: `${property?.etsCredits?.toLocaleString() || "485"} hectares (Post-1989 forest)` },
     { label: "Location", value: property?.location || "Kaikoura, Canterbury" },
-    { label: "Access", value: "All-weather road access" },
-    { label: "Utilities", value: "Power, water, telecommunications" },
-    { label: "Zoning", value: property?.zoning || "Rural" }
+    { label: "Access", value: "All-weather forestry roads" },
+    { label: "Zoning", value: property?.zoning || "Rural (Forestry permitted)" },
+    { label: "Data Source", value: "Forest X Valuation Report, April 2021" }
   ];
 
   const documents = [
     {
       icon: FileText,
-      title: "Property Prospectus",
-      description: "Detailed investment overview and financials",
+      title: "Forest X Valuation Report",
+      description: "Independent forest valuation and investment analysis (April 2021)",
       color: "bg-primary/10",
       iconColor: "text-primary"
     },
     {
       icon: Leaf,
-      title: "ETS Documentation", 
-      description: "Carbon credits registration and history",
+      title: "ETS & Carbon Documentation", 
+      description: "Carbon stock assessment, ETS registration, and sequestration projections",
       color: "bg-accent/10",
       iconColor: "text-accent"
     },
     {
       icon: Map,
-      title: "Survey & Maps",
-      description: "Topographical surveys and boundary maps",
+      title: "Forest Management Plan",
+      description: "Silvicultural prescriptions, harvest scheduling, and operational maps",
       color: "bg-primary/10",
       iconColor: "text-primary"
     },
     {
       icon: Gavel,
-      title: "Legal Documents",
-      description: "Title deeds, certificates, and compliance",
+      title: "Legal & Compliance",
+      description: "Title deeds, Resource Management Act compliance, and forestry permits",
       color: "bg-accent/10",
       iconColor: "text-accent"
     }
   ];
 
   const highlights = [
-    "Established ETS income stream with 215 hectares registered in NZ Carbon Credit Scheme",
-    "Prime Kaikoura location with tourism development potential",
-    "640 hectares across 5 titles with rural zoning",
-    "Sustainable investment aligned with climate goals"
+    "485 hectares of Pinus radiata plantation forest area",
+    "155 hectares of native forest reserve (protected)",
+    "ETS registration for Post-1989 forest carbon sequestration",
+    "Established forestry infrastructure with all-weather access",
+    "Strategic Canterbury location near established forestry operations",
+    "Professional forest management and operational planning"
   ];
 
   const handleDownload = (documentType: string) => {
     const documentMap: Record<string, string> = {
-      "Property Prospectus": "/documents/property-prospectus.txt",
-      "ETS Documentation": "/documents/ets-documentation.txt",
-      "Survey & Maps": "/documents/survey-maps.txt",
-      "Legal Documents": "/documents/legal-documents.txt"
+      "Forest X Valuation Report": "/documents/forest-x-valuation-report.pdf",
+      "ETS & Carbon Documentation": "/documents/ets-documentation.txt",
+      "Forest Management Plan": "/documents/survey-maps.txt",
+      "Legal & Compliance": "/documents/legal-documents.txt"
     };
     
     const filePath = documentMap[documentType];
     if (filePath) {
       const link = document.createElement('a');
       link.href = filePath;
-      link.download = `${documentType.toLowerCase().replace(/\s+/g, '-')}.txt`;
+      link.download = documentType === "Forest X Valuation Report" 
+        ? "forest-x-valuation-report.pdf" 
+        : `${documentType.toLowerCase().replace(/\s+/g, '-')}.txt`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -85,7 +88,7 @@ export default function InvestmentSection() {
             Investment Opportunity
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive property specifications and investment documentation
+            Professional forest investment opportunity. All financial data requires verification from the complete Forest X Valuation Report (April 2021).
           </p>
         </div>
 
@@ -117,10 +120,39 @@ export default function InvestmentSection() {
                   {highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="text-primary mt-1 h-5 w-5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{highlight}</span>
+                      <span className="text-muted-foreground text-sm leading-relaxed">{highlight}</span>
                     </li>
                   ))}
                 </ul>
+              </CardContent>
+            </Card>
+
+            {/* Investment Analysis Disclaimer */}
+            <Card className="bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800/30">
+              <CardContent className="p-6">
+                <h4 className="font-semibold text-foreground mb-4">Investment Analysis</h4>
+                <div className="space-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    <strong>Source:</strong> Forest X Valuation Report, April 2021<br/>
+                    <strong>Data Limitations:</strong> Financial projections and valuations require verification from the complete report. 
+                    Market conditions, regulatory changes, and operational factors may significantly impact actual returns.
+                  </p>
+                  <div className="bg-background/50 p-4 rounded-lg">
+                    <h5 className="font-medium text-foreground mb-2">Key Investment Considerations:</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Forest valuations subject to market volatility</li>
+                      <li>• ETS carbon credit prices fluctuate with regulatory changes</li>
+                      <li>• Harvest timing and yields dependent on growth conditions</li>
+                      <li>• Long-term investment (20+ year rotation cycle)</li>
+                      <li>• Professional forestry advice required for due diligence</li>
+                    </ul>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Disclaimer:</strong> This information is for preliminary assessment only. 
+                    Professional financial and forestry advice should be obtained before making investment decisions.
+                    All financial data must be verified from the complete Forest X Valuation Report.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -161,31 +193,6 @@ export default function InvestmentSection() {
               </div>
             </div>
 
-            {/* Golden Visa Information */}
-            <Card className="bg-accent/5 border-accent/20">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <Flag className="text-accent mr-3 h-6 w-6" />
-                  <h4 className="font-semibold text-foreground">New Zealand Active Investor Plus Visa</h4>
-                </div>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  New Zealand's golden visa program offers investment-based residency through the Active Investor Plus Visa. Two pathways available:
-                </p>
-                <div className="space-y-3 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-foreground font-medium">Growth Category:</span>
-                    <span className="text-muted-foreground">NZD $5M minimum (3 years)</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-foreground font-medium">Balanced Category:</span>
-                    <span className="text-muted-foreground">NZD $10M minimum (5 years)</span>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  Property investments like Wairimu Station may qualify under approved investment categories. Includes family members and provides path to permanent residency.
-                </p>
-              </CardContent>
-            </Card>
 
           </div>
         </div>
