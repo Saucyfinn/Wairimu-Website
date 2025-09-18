@@ -44,7 +44,7 @@ export default function Navigation() {
   const navItems = [
     { label: "Property", id: "property" },
     { label: "Location", id: "location" },
-    { label: "ETS Income", id: "ets" },
+    { label: "Carbon Credits", id: "ets" },
     { label: "Investment", id: "investment" },
   ];
 

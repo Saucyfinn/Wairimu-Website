@@ -20,7 +20,7 @@ export default function Footer() {
     property: [
       { label: "Property Showcase", id: "property" },
       { label: "Kaikoura Location", id: "location" },
-      { label: "ETS Income", id: "ets" },
+      { label: "Carbon Credits", id: "ets" },
       { label: "Investment Details", id: "investment" }
     ],
     legal: [

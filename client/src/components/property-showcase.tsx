@@ -151,7 +151,7 @@ export default function PropertyShowcase() {
             <div className="text-4xl font-bold text-accent mb-2 animate-counter" data-testid="stat-income">
               ${property?.annualIncome ? (property.annualIncome / 1000).toFixed(0) + 'K' : "185K"}
             </div>
-            <div className="text-muted-foreground">Annual ETS Income</div>
+            <div className="text-muted-foreground">Annual Carbon Credits</div>
           </div>
         </div>
         
