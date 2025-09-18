@@ -10,7 +10,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import andyNurseImage from "@assets/image_1758160596463.png";
 
 interface ContactFormData {
   firstName: string;
@@ -234,13 +233,7 @@ export default function ContactSection() {
           <div className="space-y-8">
             <Card className="bg-background">
               <CardContent className="p-8">
-                <div className="flex items-start space-x-6">
-                  <img 
-                    src={andyNurseImage}
-                    alt="Andy Nurse - Licensed Sales Consultant, NURSE Property" 
-                    className="w-24 h-24 rounded-full object-cover"
-                    data-testid="agent-photo"
-                  />
+                <div>
                   <div>
                     <h4 className="font-serif text-2xl font-semibold text-foreground mb-2">
                       Andy Nurse

@@ -10,25 +10,19 @@ import Visa from "@/pages/visa";
 import Honey from "@/pages/honey";
 import NotFound from "@/pages/not-found";
 
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/tourism" component={Tourism} />
-      <Route path="/visa" component={Visa} />
-      <Route path="/honey" component={Honey} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
-
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Navigation />
-        <Router />
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/tourism" component={Tourism} />
+          <Route path="/visa" component={Visa} />
+          <Route path="/honey" component={Honey} />
+          <Route component={NotFound} />
+        </Switch>
       </TooltipProvider>
     </QueryClientProvider>
   );
