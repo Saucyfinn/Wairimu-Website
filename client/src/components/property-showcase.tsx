@@ -51,14 +51,6 @@ export default function PropertyShowcase() {
                 </CardContent>
               </Card>
             </div>
-            <Button 
-              onClick={openPropertyVideo}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 min-h-[44px] w-full sm:w-auto touch-target"
-              data-testid="launch-virtual-tour"
-            >
-              <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Watch Property Video
-            </Button>
           </div>
           
           <div className="order-first lg:order-last">
