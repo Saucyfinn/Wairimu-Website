@@ -3,6 +3,9 @@ import { Waves, Wine, MapPin, Camera, Utensils, Mountain, Calendar, Users, Ancho
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import breachingWhaleImage from "@assets/stock_images/breaching_whale_jump_2e8f3358.jpg";
+import freshCrayfishImage from "@assets/stock_images/fresh_crayfish_lobst_aec8e3c2.jpg";
+import blueCodFishImage from "@assets/stock_images/blue_cod_fish_underw_d00d5332.jpg";
 
 export default function Tourism() {
   useEffect(() => {
@@ -321,10 +324,10 @@ export default function Tourism() {
 
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Kaikoura whale watching experience" 
+                src={breachingWhaleImage}
+                alt="Spectacular breaching whale jumping from the ocean waters near Kaikoura, showcasing world-class marine wildlife tourism" 
                 className="w-full h-full object-cover"
-                data-testid="tourism-overview-image"
+                data-testid="tourism-overview-whale-image"
               />
             </div>
           </div>
@@ -397,18 +400,18 @@ export default function Tourism() {
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="aspect-video rounded-xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Fur seals on Kaikoura rocky coastline" 
+                src={freshCrayfishImage}
+                alt="Fresh Kaikoura crayfish - world-renowned culinary delicacy and premier food tourism attraction" 
                 className="w-full h-full object-cover"
-                data-testid="kaikoura-seals-image"
+                data-testid="kaikoura-crayfish-image"
               />
             </div>
             <div className="aspect-video rounded-xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Dolphin swimming in clear blue water" 
+                src={blueCodFishImage}
+                alt="Blue cod fish swimming in Kaikoura's pristine underwater marine environment, highlighting fishing and marine tourism opportunities" 
                 className="w-full h-full object-cover"
-                data-testid="kaikoura-dolphin-image"
+                data-testid="kaikoura-bluecod-image"
               />
             </div>
           </div>
