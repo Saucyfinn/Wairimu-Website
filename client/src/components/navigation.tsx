@@ -57,6 +57,11 @@ export default function Navigation() {
     { label: "Grazing", href: "/income/grazing", icon: Wheat, testId: "link-investment-grazing" },
   ];
 
+  const tourismItems = [
+    { label: "Tourism Overview", href: "/tourism", icon: MapPin, testId: "link-tourism-overview" },
+    { label: "Recreational Activities", href: "/recreational-activities", icon: TreePine, testId: "link-tourism-recreational" },
+  ];
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? "glass-effect border-b border-border/20" : "bg-transparent"
@@ -128,14 +133,29 @@ export default function Navigation() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/recreational-activities" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-recreational-activities">
-              <TreePine className="h-4 w-4" />
-              <span>Recreational Activities</span>
-            </Link>
-            <Link href="/tourism" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-tourism">
-              <MapPin className="h-4 w-4" />
-              <span>Tourism</span>
-            </Link>
+            {/* Tourism Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-tourism">
+                  <MapPin className="h-4 w-4" />
+                  <span>Tourism</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" data-testid="dropdown-tourism-content">
+                {tourismItems.map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link href={item.href} className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid={item.testId}>
+                        <IconComponent className="h-4 w-4" />
+                        <span>{item.label}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button
               onClick={openPropertyVideo}
               variant="outline"
@@ -233,14 +253,33 @@ export default function Navigation() {
                   </CollapsibleContent>
                 </Collapsible>
 
-                <Link href="/recreational-activities" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-recreational-activities" onClick={() => setIsOpen(false)}>
-                  <TreePine className="h-5 w-5" />
-                  <span>Recreational Activities</span>
-                </Link>
-                <Link href="/tourism" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
-                  <MapPin className="h-5 w-5" />
-                  <span>Tourism</span>
-                </Link>
+                {/* Tourism Collapsible */}
+                <Collapsible>
+                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-tourism-trigger">
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="h-5 w-5" />
+                      <span>Tourism</span>
+                    </div>
+                    <ChevronDown className="h-4 w-4" />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="space-y-1 ml-4">
+                    {tourismItems.map((item, index) => {
+                      const IconComponent = item.icon;
+                      return (
+                        <Link 
+                          key={item.href} 
+                          href={item.href} 
+                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          data-testid={item.testId}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <IconComponent className="h-4 w-4" />
+                          <span>{item.label}</span>
+                        </Link>
+                      );
+                    })}
+                  </CollapsibleContent>
+                </Collapsible>
                 <Button
                   onClick={openPropertyVideo}
                   className="floating-green-btn w-full min-h-[44px] mt-4 touch-target"
