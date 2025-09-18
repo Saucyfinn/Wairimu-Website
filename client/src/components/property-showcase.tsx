@@ -42,7 +42,7 @@ export default function PropertyShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            A Forest Untouched
+            Wairimu Where Regenerating Native Bush Shelters Both Birdsong And Big Game
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Experience the pristine beauty of native New Zealand forest, where ancient trees meet modern investment opportunity in perfect harmony
