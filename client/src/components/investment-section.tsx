@@ -23,7 +23,7 @@ export default function InvestmentSection() {
   const highlights = [
     "485 hectares of Pinus radiata plantation forest area",
     "155 hectares of native forest reserve (protected)",
-    "ETS registration for Post-1989 forest carbon sequestration",
+    "Established Carbon credit income from Post-1989 forest carbon sequestration",
     "Established forestry infrastructure with all-weather access",
     "Strategic Canterbury location near established forestry operations",
     "Professional forest management and operational planning"
