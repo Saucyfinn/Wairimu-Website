@@ -75,7 +75,7 @@ export default function Navigation() {
             </Link>
             <Link href="/visa" className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1" data-testid="nav-visa">
               <FileText className="h-4 w-4" />
-              <span>Golden Visa</span>
+              <span>NZ Investor Visa</span>
             </Link>
             <Button
               onClick={openPropertyVideo}
@@ -119,7 +119,7 @@ export default function Navigation() {
                 </Link>
                 <Link href="/visa" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
                   <FileText className="h-5 w-5" />
-                  <span>Golden Visa</span>
+                  <span>NZ Investor Visa</span>
                 </Link>
                 <Button
                   onClick={openPropertyVideo}

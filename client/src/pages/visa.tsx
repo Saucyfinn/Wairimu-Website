@@ -8,7 +8,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 export default function Visa() {
   useEffect(() => {
     // Set unique page title and meta description for SEO
-    document.title = "New Zealand Golden Visa - Active Investor Plus Visa | Wairimu Station Investment";
+    document.title = "New Zealand Active Investor Plus Visa | Official Guide & Requirements | Wairimu Station";
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
@@ -203,7 +203,7 @@ export default function Visa() {
         
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6" data-testid="visa-hero-title">
-            New Zealand Golden Visa
+            New Zealand Active Investor Plus Visa
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" data-testid="visa-hero-description">
             Active Investor Plus Visa Program - Your pathway to New Zealand permanent residency through strategic investment
