@@ -62,7 +62,7 @@ export default function PropertyShowcase() {
                 <CardContent className="p-6">
                   <Network className="text-primary text-2xl mb-3" />
                   <h4 className="font-semibold text-foreground mb-2">Native Forest</h4>
-                  <p className="text-muted-foreground">Untouched wilderness with centuries-old native species</p>
+                  <p className="text-muted-foreground">Native bush and wildlife thrive, and sustainable hunting goes hand in hand with nature's renewal</p>
                 </CardContent>
               </Card>
               <Card>
