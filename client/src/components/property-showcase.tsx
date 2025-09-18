@@ -69,7 +69,7 @@ export default function PropertyShowcase() {
                 <CardContent className="p-6">
                   <TrendingUp className="text-accent text-2xl mb-3" />
                   <h4 className="font-semibold text-foreground mb-2">Carbon Credit Registered</h4>
-                  <p className="text-muted-foreground">215 hectares generating annual income</p>
+                  <p className="text-muted-foreground">Registered forest generating annual income</p>
                 </CardContent>
               </Card>
             </div>
@@ -134,7 +134,7 @@ export default function PropertyShowcase() {
         </div>
 
         {/* Property Statistics */}
-        <div className="grid md:grid-cols-4 gap-8 bg-muted p-8 rounded-xl">
+        <div className="grid md:grid-cols-3 gap-8 bg-muted p-8 rounded-xl">
           <div className="text-center">
             <div className="text-4xl font-bold text-primary mb-2 animate-counter" data-testid="stat-area">
               {property?.area?.toLocaleString() || "2,400"}
@@ -146,12 +146,6 @@ export default function PropertyShowcase() {
               {property?.etsCredits?.toLocaleString() || "3,000"}
             </div>
             <div className="text-muted-foreground">ETS Credits</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2 animate-counter" data-testid="stat-established">
-              {property?.yearEstablished || "1887"}
-            </div>
-            <div className="text-muted-foreground">Established</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-accent mb-2 animate-counter" data-testid="stat-income">

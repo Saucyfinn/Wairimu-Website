@@ -26,7 +26,7 @@ export default function ETSSection() {
     {
       icon: Coins,
       title: "Registered Forest",
-      description: "Wairimu Station has 215 hectares registered under New Zealand's Carbon Credit Scheme. The significant forest generates yearly income based on carbon credit payouts, providing a stable, environmentally-positive revenue stream.",
+      description: "Wairimu Station has registered forest under New Zealand's Carbon Credit Scheme. The significant forest generates yearly income based on carbon credit payouts, providing a stable, environmentally-positive revenue stream.",
       bgColor: "bg-primary/5",
       iconColor: "text-primary",
       isHighlight: true
