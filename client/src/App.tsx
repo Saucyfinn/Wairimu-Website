@@ -11,6 +11,7 @@ import Honey from "@/pages/honey";
 import CarbonCredits from "@/pages/carbon-credits";
 import EcoLodge from "@/pages/eco-lodge";
 import Grazing from "@/pages/grazing";
+import Forestry from "@/pages/forestry";
 import RecreationalActivities from "@/pages/recreational-activities";
 import NotFound from "@/pages/not-found";
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/recreational-activities" component={RecreationalActivities} />
           <Route path="/honey" component={Honey} />
           <Route path="/income/carbon-credits" component={CarbonCredits} />
+          <Route path="/forestry" component={Forestry} />
           <Route path="/income/eco-lodge" component={EcoLodge} />
           <Route path="/income/grazing" component={Grazing} />
           <Route component={NotFound} />

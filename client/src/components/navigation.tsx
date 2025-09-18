@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Mountain, Menu, X, MapPin, FileText, Flower2, ChevronDown, Home, DollarSign, Building, Wheat, TrendingUp, TreePine } from "lucide-react";
+import { Mountain, Menu, X, MapPin, FileText, Flower2, ChevronDown, Home, DollarSign, Building, Wheat, TrendingUp, TreePine, Trees } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -47,6 +47,7 @@ export default function Navigation() {
     { label: "NZ Investor", href: "/investment/nz-investor", icon: FileText, testId: "link-investment-nz-investor" },
     { label: "Manuka Honey", href: "/honey", icon: Flower2, testId: "link-investment-honey" },
     { label: "Carbon Credits", href: "/income/carbon-credits", icon: DollarSign, testId: "link-investment-carbon" },
+    { label: "Forestry", href: "/forestry", icon: Trees, testId: "link-investment-forestry" },
     { label: "Eco Lodge Concept", href: "/income/eco-lodge", icon: Building, testId: "link-investment-eco-lodge" },
     { label: "Grazing", href: "/income/grazing", icon: Wheat, testId: "link-investment-grazing" },
   ];
