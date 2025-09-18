@@ -107,6 +107,32 @@ export default function PropertyShowcase() {
           </div>
         </div>
 
+        {/* Video Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="font-serif text-3xl font-semibold text-foreground mb-4">
+              Property Overview
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Take a closer look at this exceptional forest investment opportunity
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl bg-muted">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/b7ypIkAsYLY?modestbranding=1&rel=0"
+                title="Wairimu Station Property Overview"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+                data-testid="property-overview-video"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
         {/* Property Statistics */}
         <div className="grid md:grid-cols-4 gap-8 bg-muted p-8 rounded-xl">
           <div className="text-center">
