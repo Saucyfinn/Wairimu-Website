@@ -210,15 +210,6 @@ export default function Visa() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
-              onClick={() => navigateToSection("categories")}
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-              data-testid="hero-categories-button"
-            >
-              <DollarSign className="mr-2 h-5 w-5" />
-              Investment Categories
-            </Button>
-            <Button 
               onClick={() => navigateToSection("benefits")}
               size="lg"
               variant="outline"
