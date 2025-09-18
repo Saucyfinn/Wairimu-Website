@@ -5,12 +5,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Link, useLocation } from "wouter";
-import YouTubeModal from "./youtube-modal";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -34,10 +32,6 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
-  const openPropertyVideo = () => {
-    setIsVideoModalOpen(true);
-    setIsOpen(false);
-  };
 
   const homeNavItems = [
     // Property and Location moved to propertyItems dropdown
@@ -157,14 +151,6 @@ export default function Navigation() {
               </DropdownMenuContent>
             </DropdownMenu>
             <Button
-              onClick={openPropertyVideo}
-              variant="outline"
-              className="min-h-[44px] floating-green-btn touch-target"
-              data-testid="nav-virtual-tour"
-            >
-              Watch Property Video
-            </Button>
-            <Button
               onClick={() => navigateToSection("contact")}
               className="min-h-[44px] floating-green-btn touch-target"
               data-testid="nav-contact"
@@ -281,13 +267,6 @@ export default function Navigation() {
                   </CollapsibleContent>
                 </Collapsible>
                 <Button
-                  onClick={openPropertyVideo}
-                  className="floating-green-btn w-full min-h-[44px] mt-4 touch-target"
-                  data-testid="mobile-nav-virtual-tour"
-                >
-                  Watch Property Video
-                </Button>
-                <Button
                   onClick={() => navigateToSection("contact")}
                   className="floating-green-btn w-full min-h-[44px] touch-target"
                   data-testid="mobile-nav-contact"
@@ -299,14 +278,6 @@ export default function Navigation() {
           </Sheet>
         </div>
       </div>
-      
-      {/* YouTube Modal */}
-      <YouTubeModal 
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        videoId="b7ypIkAsYLY"
-        title="Wairimu Station Property Overview"
-      />
     </nav>
   );
 }
