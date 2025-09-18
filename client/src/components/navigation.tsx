@@ -68,7 +68,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-home">
+            <Link href="/" className="px-4 py-3 min-h-[44px] nav-floating-btn font-semibold rounded-md flex items-center space-x-1 touch-target" data-testid="nav-home">
               <Home className="h-4 w-4" />
               <span>Home</span>
             </Link>
@@ -76,7 +76,7 @@ export default function Navigation() {
             {/* Property Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-property">
+                <Button variant="ghost" className="px-4 py-3 min-h-[44px] nav-floating-btn font-semibold rounded-md flex items-center space-x-1 touch-target" data-testid="dropdown-property">
                   <Home className="h-4 w-4" />
                   <span>Property</span>
                   <ChevronDown className="h-4 w-4" />
@@ -100,7 +100,7 @@ export default function Navigation() {
             {/* Investment Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-investment">
+                <Button variant="ghost" className="px-4 py-3 min-h-[44px] nav-floating-btn font-semibold rounded-md flex items-center space-x-1 touch-target" data-testid="dropdown-investment">
                   <TrendingUp className="h-4 w-4" />
                   <span>Investment</span>
                   <ChevronDown className="h-4 w-4" />
@@ -131,7 +131,7 @@ export default function Navigation() {
             {/* Tourism Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-tourism">
+                <Button variant="ghost" className="px-4 py-3 min-h-[44px] nav-floating-btn font-semibold rounded-md flex items-center space-x-1 touch-target" data-testid="dropdown-tourism">
                   <MapPin className="h-4 w-4" />
                   <span>Tourism</span>
                   <ChevronDown className="h-4 w-4" />
@@ -170,14 +170,14 @@ export default function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] px-4">
               <div className="flex flex-col space-y-2 mt-8">
-                <Link href="/" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-home" onClick={() => setIsOpen(false)}>
+                <Link href="/" className="text-left text-lg nav-floating-btn font-semibold rounded-md px-4 py-4 min-h-[44px] flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-home" onClick={() => setIsOpen(false)}>
                   <Home className="h-5 w-5" />
                   <span>Home</span>
                 </Link>
                 
                 {/* Property Collapsible */}
                 <Collapsible>
-                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-property-trigger">
+                  <CollapsibleTrigger className="text-left text-lg nav-floating-btn font-semibold rounded-md px-4 py-4 min-h-[44px] flex items-center justify-between w-full touch-target" data-testid="mobile-nav-property-trigger">
                     <div className="flex items-center space-x-2">
                       <Home className="h-5 w-5" />
                       <span>Property</span>
@@ -191,7 +191,7 @@ export default function Navigation() {
                         <button 
                           key={`action-${index}`}
                           onClick={item.action}
-                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          className="text-left text-base nav-floating-btn font-medium rounded-md px-4 py-3 min-h-[44px] flex items-center space-x-2 w-full touch-target" 
                           data-testid={item.testId}
                         >
                           <IconComponent className="h-4 w-4" />
@@ -204,7 +204,7 @@ export default function Navigation() {
                 
                 {/* Investment Collapsible */}
                 <Collapsible>
-                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-investment-trigger">
+                  <CollapsibleTrigger className="text-left text-lg nav-floating-btn font-semibold rounded-md px-4 py-4 min-h-[44px] flex items-center justify-between w-full touch-target" data-testid="mobile-nav-investment-trigger">
                     <div className="flex items-center space-x-2">
                       <TrendingUp className="h-5 w-5" />
                       <span>Investment</span>
@@ -218,7 +218,7 @@ export default function Navigation() {
                         <button 
                           key={`action-${index}`}
                           onClick={item.action}
-                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          className="text-left text-base nav-floating-btn font-medium rounded-md px-4 py-3 min-h-[44px] flex items-center space-x-2 w-full touch-target" 
                           data-testid={item.testId}
                         >
                           <IconComponent className="h-4 w-4" />
@@ -228,7 +228,7 @@ export default function Navigation() {
                         <Link 
                           key={item.href} 
                           href={item.href!} 
-                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          className="text-left text-base nav-floating-btn font-medium rounded-md px-4 py-3 min-h-[44px] flex items-center space-x-2 w-full touch-target" 
                           data-testid={item.testId}
                           onClick={() => setIsOpen(false)}
                         >
@@ -242,7 +242,7 @@ export default function Navigation() {
 
                 {/* Tourism Collapsible */}
                 <Collapsible>
-                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-tourism-trigger">
+                  <CollapsibleTrigger className="text-left text-lg nav-floating-btn font-semibold rounded-md px-4 py-4 min-h-[44px] flex items-center justify-between w-full touch-target" data-testid="mobile-nav-tourism-trigger">
                     <div className="flex items-center space-x-2">
                       <MapPin className="h-5 w-5" />
                       <span>Tourism</span>
@@ -256,7 +256,7 @@ export default function Navigation() {
                         <Link 
                           key={item.href} 
                           href={item.href} 
-                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          className="text-left text-base nav-floating-btn font-medium rounded-md px-4 py-3 min-h-[44px] flex items-center space-x-2 w-full touch-target" 
                           data-testid={item.testId}
                           onClick={() => setIsOpen(false)}
                         >
