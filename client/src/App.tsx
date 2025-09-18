@@ -7,6 +7,7 @@ import Navigation from "@/components/navigation";
 import Home from "@/pages/home";
 import Tourism from "@/pages/tourism";
 import Visa from "@/pages/visa";
+import Honey from "@/pages/honey";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path="/">{() => <Home />}</Route>
       <Route path="/tourism">{() => <Tourism />}</Route>
       <Route path="/visa">{() => <Visa />}</Route>
+      <Route path="/honey">{() => <Honey />}</Route>
       <Route>{() => <NotFound />}</Route>
     </Switch>
   );
