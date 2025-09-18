@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import breachingWhaleImage from "@assets/stock_images/breaching_whale_jump_2e8f3358.jpg";
 import freshCrayfishImage from "@assets/stock_images/fresh_crayfish_lobst_aec8e3c2.jpg";
-import blueCodFishImage from "@assets/stock_images/blue_cod_fish_underw_d00d5332.jpg";
+import blueCodFishImage from "@assets/stock_images/blue_cod_fish_new_ze_1a2bd358.jpg";
 
 export default function Tourism() {
   useEffect(() => {
@@ -409,7 +409,7 @@ export default function Tourism() {
             <div className="aspect-video rounded-xl overflow-hidden">
               <img 
                 src={blueCodFishImage}
-                alt="Blue cod fish swimming in Kaikoura's pristine underwater marine environment, highlighting fishing and marine tourism opportunities" 
+                alt="Blue cod fish showcasing Kaikoura's premier marine fishing and underwater wildlife tourism opportunities" 
                 className="w-full h-full object-cover"
                 data-testid="kaikoura-bluecod-image"
               />
