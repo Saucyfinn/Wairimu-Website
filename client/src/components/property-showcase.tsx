@@ -4,9 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import type { Property } from "@shared/schema";
+import { GOOGLE_EARTH_CONFIG } from "@shared/config";
 
 export default function PropertyShowcase() {
   const [selectedImage, setSelectedImage] = useState(0);
+
+  const openGoogleEarth = () => {
+    const googleEarthUrl = GOOGLE_EARTH_CONFIG.generateUrl();
+    window.open(googleEarthUrl, '_blank', 'noopener,noreferrer');
+  };
 
   const { data: property } = useQuery<Property>({
     queryKey: ["/api/property"],
@@ -68,6 +74,7 @@ export default function PropertyShowcase() {
               </Card>
             </div>
             <Button 
+              onClick={openGoogleEarth}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               data-testid="launch-virtual-tour"
             >

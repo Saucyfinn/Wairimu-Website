@@ -1,4 +1,5 @@
 import { Mountain } from "lucide-react";
+import { GOOGLE_EARTH_CONFIG } from "@shared/config";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -6,6 +7,11 @@ export default function Footer() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const openGoogleEarth = () => {
+    const googleEarthUrl = GOOGLE_EARTH_CONFIG.generateUrl();
+    window.open(googleEarthUrl, '_blank', 'noopener,noreferrer');
   };
 
   const footerSections = {
@@ -50,7 +56,7 @@ export default function Footer() {
               {footerSections.property.map((item) => (
                 <li key={item.id}>
                   <button 
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => item.id === 'property' ? openGoogleEarth() : scrollToSection(item.id)}
                     className="hover:text-background transition-colors text-left"
                     data-testid={`footer-${item.id}`}
                   >

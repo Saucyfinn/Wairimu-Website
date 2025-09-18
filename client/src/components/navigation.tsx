@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Mountain, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { GOOGLE_EARTH_CONFIG } from "@shared/config";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,6 +22,12 @@ export default function Navigation() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsOpen(false);
+  };
+
+  const openGoogleEarth = () => {
+    const googleEarthUrl = GOOGLE_EARTH_CONFIG.generateUrl();
+    window.open(googleEarthUrl, '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
 
@@ -45,7 +52,7 @@ export default function Navigation() {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => item.id === 'property' ? openGoogleEarth() : scrollToSection(item.id)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid={`nav-${item.id}`}
               >
@@ -53,7 +60,7 @@ export default function Navigation() {
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection("property")}
+              onClick={openGoogleEarth}
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               data-testid="nav-virtual-tour"
@@ -81,7 +88,7 @@ export default function Navigation() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => item.id === 'property' ? openGoogleEarth() : scrollToSection(item.id)}
                     className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
                     data-testid={`mobile-nav-${item.id}`}
                   >
@@ -89,7 +96,7 @@ export default function Navigation() {
                   </button>
                 ))}
                 <Button
-                  onClick={() => scrollToSection("property")}
+                  onClick={openGoogleEarth}
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full"
                   data-testid="mobile-nav-virtual-tour"
