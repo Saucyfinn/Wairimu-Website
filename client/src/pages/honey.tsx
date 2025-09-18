@@ -13,16 +13,16 @@ import honeyJarsImage2 from "@assets/stock_images/honey_jars_productio_08c8d0e1.
 export default function Honey() {
   useEffect(() => {
     // Set unique page title and meta description for SEO
-    document.title = "Kaikoura Manuka Honey Production | Premium New Zealand Honey | Wairimu Station";
+    document.title = "Kaikoura Native Bush Honey Production | Premium New Zealand Honey | Wairimu Station";
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover Kaikoura\'s premium Manuka honey production. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.');
+      metaDescription.setAttribute('content', 'Discover Kaikoura\'s premium Native Bush honey production. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.');
     } else {
       const newMetaElement = document.createElement('meta') as HTMLMetaElement;
       newMetaElement.name = 'description';
-      newMetaElement.content = 'Discover Kaikoura\'s premium Manuka honey production. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.';
+      newMetaElement.content = 'Discover Kaikoura\'s premium Native Bush honey production. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.';
       document.head.appendChild(newMetaElement);
     }
     
@@ -184,7 +184,7 @@ export default function Honey() {
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6" data-testid="honey-hero-title">
-            Kaikoura Manuka Honey
+            Kaikoura Native Bush Honey
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" data-testid="honey-hero-description">
             Premium New Zealand honey from pristine coastal forests, where native Manuka flowers create liquid gold
