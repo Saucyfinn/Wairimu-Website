@@ -8,6 +8,9 @@ import Home from "@/pages/home";
 import Tourism from "@/pages/tourism";
 import Visa from "@/pages/visa";
 import Honey from "@/pages/honey";
+import CarbonCredits from "@/pages/carbon-credits";
+import EcoLodge from "@/pages/eco-lodge";
+import Grazing from "@/pages/grazing";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -21,6 +24,9 @@ function App() {
           <Route path="/tourism" component={Tourism} />
           <Route path="/visa" component={Visa} />
           <Route path="/honey" component={Honey} />
+          <Route path="/income/carbon-credits" component={CarbonCredits} />
+          <Route path="/income/eco-lodge" component={EcoLodge} />
+          <Route path="/income/grazing" component={Grazing} />
           <Route component={NotFound} />
         </Switch>
       </TooltipProvider>
