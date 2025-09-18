@@ -1,4 +1,5 @@
 import HeroSection from "@/components/hero-section";
+import InvestmentHighlights from "@/components/investment-highlights";
 import PropertyShowcase from "@/components/property-showcase";
 import LocationSection from "@/components/location-section";
 import ETSSection from "@/components/ets-section";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <InvestmentHighlights />
       <PropertyShowcase />
       <LocationSection />
       <ETSSection />
