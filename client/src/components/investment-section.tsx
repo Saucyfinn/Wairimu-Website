@@ -1,4 +1,4 @@
-import { FileText, Leaf, Map, Gavel, Download, CheckCircle } from "lucide-react";
+import { FileText, Leaf, Map, Gavel, Download, CheckCircle, Flag } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import type { Property } from "@shared/schema";
@@ -160,6 +160,32 @@ export default function InvestmentSection() {
                 })}
               </div>
             </div>
+
+            {/* Golden Visa Information */}
+            <Card className="bg-accent/5 border-accent/20">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <Flag className="text-accent mr-3 h-6 w-6" />
+                  <h4 className="font-semibold text-foreground">New Zealand Active Investor Plus Visa</h4>
+                </div>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  New Zealand's golden visa program offers investment-based residency through the Active Investor Plus Visa. Two pathways available:
+                </p>
+                <div className="space-y-3 mb-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-foreground font-medium">Growth Category:</span>
+                    <span className="text-muted-foreground">NZD $5M minimum (3 years)</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-foreground font-medium">Balanced Category:</span>
+                    <span className="text-muted-foreground">NZD $10M minimum (5 years)</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  Property investments like Wairimu Station may qualify under approved investment categories. Includes family members and provides path to permanent residency.
+                </p>
+              </CardContent>
+            </Card>
 
           </div>
         </div>
