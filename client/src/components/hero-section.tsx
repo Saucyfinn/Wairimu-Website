@@ -29,9 +29,6 @@ export default function HeroSection() {
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
           Premium Forest Investment in Canterbury's Heart
         </p>
-        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-white/80 max-w-2xl mx-auto leading-relaxed">
-          Pristine native forest generating sustainable carbon credit income in one of New Zealand's most beautiful regions
-        </p>
       </div>
 
       {/* Scroll Indicator */}
