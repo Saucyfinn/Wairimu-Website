@@ -1,4 +1,4 @@
-import { FileText, Leaf, Map, Gavel, Download, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import type { Property } from "@shared/schema";
@@ -19,36 +19,6 @@ export default function InvestmentSection() {
     { label: "Data Source", value: "Forest X Valuation Report, April 2021" }
   ];
 
-  const documents = [
-    {
-      icon: FileText,
-      title: "Forest X Valuation Report",
-      description: "Independent forest valuation and investment analysis (April 2021)",
-      color: "bg-primary/10",
-      iconColor: "text-primary"
-    },
-    {
-      icon: Leaf,
-      title: "ETS & Carbon Documentation", 
-      description: "Carbon stock assessment, ETS registration, and sequestration projections",
-      color: "bg-accent/10",
-      iconColor: "text-accent"
-    },
-    {
-      icon: Map,
-      title: "Forest Management Plan",
-      description: "Silvicultural prescriptions, harvest scheduling, and operational maps",
-      color: "bg-primary/10",
-      iconColor: "text-primary"
-    },
-    {
-      icon: Gavel,
-      title: "Legal & Compliance",
-      description: "Title deeds, Resource Management Act compliance, and forestry permits",
-      color: "bg-accent/10",
-      iconColor: "text-accent"
-    }
-  ];
 
   const highlights = [
     "485 hectares of Pinus radiata plantation forest area",
@@ -59,26 +29,6 @@ export default function InvestmentSection() {
     "Professional forest management and operational planning"
   ];
 
-  const handleDownload = (documentType: string) => {
-    const documentMap: Record<string, string> = {
-      "Forest X Valuation Report": "/documents/forest-x-valuation-report.pdf",
-      "ETS & Carbon Documentation": "/documents/ets-documentation.txt",
-      "Forest Management Plan": "/documents/survey-maps.txt",
-      "Legal & Compliance": "/documents/legal-documents.txt"
-    };
-    
-    const filePath = documentMap[documentType];
-    if (filePath) {
-      const link = document.createElement('a');
-      link.href = filePath;
-      link.download = documentType === "Forest X Valuation Report" 
-        ? "forest-x-valuation-report.pdf" 
-        : `${documentType.toLowerCase().replace(/\s+/g, '-')}.txt`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
 
   return (
     <section id="investment" className="py-20 bg-background scroll-mt-20">
@@ -92,7 +42,7 @@ export default function InvestmentSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="max-w-4xl mx-auto">
           {/* Property Specifications */}
           <div className="space-y-8">
             <div>
@@ -157,44 +107,6 @@ export default function InvestmentSection() {
             </Card>
           </div>
 
-          {/* Download Documents */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">
-                Download Documents
-              </h3>
-              
-              <div className="space-y-4">
-                {documents.map((doc, index) => {
-                  const IconComponent = doc.icon;
-                  return (
-                    <Card 
-                      key={doc.title}
-                      className="hover:shadow-lg transition-shadow cursor-pointer"
-                      onClick={() => handleDownload(doc.title)}
-                    >
-                      <CardContent className="p-6">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-4">
-                            <div className={`${doc.color} p-3 rounded-lg`}>
-                              <IconComponent className={`${doc.iconColor} text-xl`} />
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-foreground">{doc.title}</h4>
-                              <p className="text-sm text-muted-foreground">{doc.description}</p>
-                            </div>
-                          </div>
-                          <Download className="text-muted-foreground" data-testid={`download-${doc.title.toLowerCase().replace(/ /g, '-')}`} />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-
-
-          </div>
         </div>
       </div>
     </section>
