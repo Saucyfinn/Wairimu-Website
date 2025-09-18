@@ -120,7 +120,7 @@ export default function PropertyShowcase() {
           <div className="max-w-4xl mx-auto">
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl bg-muted">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/b7ypIkAsYLY?modestbranding=1&rel=0"
+                src="https://www.youtube-nocookie.com/embed/DAd1staY8wQ?modestbranding=1&rel=0"
                 title="Wairimu Station Property Overview"
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -159,7 +159,7 @@ export default function PropertyShowcase() {
         <YouTubeModal 
           isOpen={isVideoModalOpen}
           onClose={() => setIsVideoModalOpen(false)}
-          videoId="b7ypIkAsYLY"
+          videoId="DAd1staY8wQ"
           title="Wairimu Station Property Overview"
         />
       </div>
