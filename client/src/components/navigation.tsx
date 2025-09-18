@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Mountain, Menu, X, MapPin } from "lucide-react";
+import { Mountain, Menu, X, MapPin, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "wouter";
@@ -73,6 +73,10 @@ export default function Navigation() {
               <MapPin className="h-4 w-4" />
               <span>Tourism</span>
             </Link>
+            <Link href="/visa" className="text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-1" data-testid="nav-visa">
+              <FileText className="h-4 w-4" />
+              <span>Golden Visa</span>
+            </Link>
             <Button
               onClick={openPropertyVideo}
               variant="outline"
@@ -112,6 +116,10 @@ export default function Navigation() {
                 <Link href="/tourism" className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-2 w-full" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
                   <MapPin className="h-5 w-5" />
                   <span>Tourism</span>
+                </Link>
+                <Link href="/visa" className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-2 w-full" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
+                  <FileText className="h-5 w-5" />
+                  <span>Golden Visa</span>
                 </Link>
                 <Button
                   onClick={openPropertyVideo}
