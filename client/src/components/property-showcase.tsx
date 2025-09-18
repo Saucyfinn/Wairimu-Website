@@ -7,7 +7,6 @@ import type { Property } from "@shared/schema";
 import YouTubeModal from "./youtube-modal";
 
 export default function PropertyShowcase() {
-  const [selectedImage, setSelectedImage] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const openPropertyVideo = () => {
@@ -18,24 +17,6 @@ export default function PropertyShowcase() {
     queryKey: ["/api/property"],
   });
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=675",
-      alt: "Native New Zealand forest landscape"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1562832135-14a35d25edef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      alt: "Forest canopy aerial view"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      alt: "Mountain forest trail"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      alt: "Forest clearing with native plants"
-    }
-  ];
 
   return (
     <section id="property" className="py-20 bg-card">
@@ -83,30 +64,19 @@ export default function PropertyShowcase() {
             </Button>
           </div>
           
-          <div className="space-y-3 sm:space-y-4 order-first lg:order-last">
-            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src={images[selectedImage].src}
-                alt={images[selectedImage].alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                data-testid="main-property-image"
-              />
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
-              {images.slice(1).map((image, index) => (
-                <button
-                  key={index + 1}
-                  onClick={() => setSelectedImage(index + 1)}
-                  className="aspect-video rounded-lg overflow-hidden hover:scale-105 transition-transform duration-500 touch-target min-h-[44px]"
-                  data-testid={`gallery-image-${index + 1}`}
-                >
-                  <img 
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
+          <div className="order-first lg:order-last">
+            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/b7ypIkAsYLY"
+                title="Wairimu Station Property Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+                data-testid="property-video-embed"
+              ></iframe>
             </div>
           </div>
         </div>
