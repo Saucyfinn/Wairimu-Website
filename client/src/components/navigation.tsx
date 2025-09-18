@@ -11,7 +11,6 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isIncomeCollapsed, setIsIncomeCollapsed] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -50,11 +49,12 @@ export default function Navigation() {
     { label: "Investment", id: "investment" },
   ];
 
-  const incomeOpportunities = [
-    { label: "Manuka Honey", href: "/honey", icon: Flower2, testId: "link-income-honey" },
-    { label: "Carbon Credits", href: "/income/carbon-credits", icon: DollarSign, testId: "link-income-carbon" },
-    { label: "Eco Lodge Concept", href: "/income/eco-lodge", icon: Building, testId: "link-income-eco-lodge" },
-    { label: "Grazing", href: "/income/grazing", icon: Wheat, testId: "link-income-grazing" },
+  const investmentItems = [
+    { label: "NZ Investor", href: "/investment/nz-investor", icon: FileText, testId: "link-investment-nz-investor" },
+    { label: "Manuka Honey", href: "/honey", icon: Flower2, testId: "link-investment-honey" },
+    { label: "Carbon Credits", href: "/income/carbon-credits", icon: DollarSign, testId: "link-investment-carbon" },
+    { label: "Eco Lodge Concept", href: "/income/eco-lodge", icon: Building, testId: "link-investment-eco-lodge" },
+    { label: "Grazing", href: "/income/grazing", icon: Wheat, testId: "link-investment-grazing" },
   ];
 
   return (
@@ -83,30 +83,6 @@ export default function Navigation() {
               </button>
             ))}
             
-            {/* Income Opportunities Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-income">
-                  <DollarSign className="h-4 w-4" />
-                  <span>Income Opportunities</span>
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" data-testid="dropdown-income-content">
-                {incomeOpportunities.map((opportunity) => {
-                  const IconComponent = opportunity.icon;
-                  return (
-                    <DropdownMenuItem key={opportunity.href} asChild>
-                      <Link href={opportunity.href} className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid={opportunity.testId}>
-                        <IconComponent className="h-4 w-4" />
-                        <span>{opportunity.label}</span>
-                      </Link>
-                    </DropdownMenuItem>
-                  );
-                })}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
             {/* Investment Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -117,12 +93,17 @@ export default function Navigation() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" data-testid="dropdown-investment-content">
-                <DropdownMenuItem asChild>
-                  <Link href="/investment/nz-investor" className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid="link-investment-nz-investor">
-                    <FileText className="h-4 w-4" />
-                    <span>NZ Investor</span>
-                  </Link>
-                </DropdownMenuItem>
+                {investmentItems.map((item) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link href={item.href} className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid={item.testId}>
+                        <IconComponent className="h-4 w-4" />
+                        <span>{item.label}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -176,34 +157,6 @@ export default function Navigation() {
                   </button>
                 ))}
                 
-                {/* Income Opportunities Collapsible */}
-                <Collapsible open={isIncomeCollapsed} onOpenChange={setIsIncomeCollapsed}>
-                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-income-trigger">
-                    <div className="flex items-center space-x-2">
-                      <DollarSign className="h-5 w-5" />
-                      <span>Income Opportunities</span>
-                    </div>
-                    <ChevronDown className={`h-4 w-4 transform transition-transform ${isIncomeCollapsed ? "rotate-180" : ""}`} />
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="space-y-1 ml-4">
-                    {incomeOpportunities.map((opportunity) => {
-                      const IconComponent = opportunity.icon;
-                      return (
-                        <Link 
-                          key={opportunity.href} 
-                          href={opportunity.href} 
-                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
-                          data-testid={opportunity.testId}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <IconComponent className="h-4 w-4" />
-                          <span>{opportunity.label}</span>
-                        </Link>
-                      );
-                    })}
-                  </CollapsibleContent>
-                </Collapsible>
-
                 {/* Investment Collapsible */}
                 <Collapsible>
                   <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-investment-trigger">
@@ -214,15 +167,21 @@ export default function Navigation() {
                     <ChevronDown className="h-4 w-4" />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="space-y-1 ml-4">
-                    <Link 
-                      href="/investment/nz-investor" 
-                      className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
-                      data-testid="mobile-link-investment-nz-investor"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <FileText className="h-4 w-4" />
-                      <span>NZ Investor</span>
-                    </Link>
+                    {investmentItems.map((item) => {
+                      const IconComponent = item.icon;
+                      return (
+                        <Link 
+                          key={item.href} 
+                          href={item.href} 
+                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          data-testid={item.testId}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <IconComponent className="h-4 w-4" />
+                          <span>{item.label}</span>
+                        </Link>
+                      );
+                    })}
                   </CollapsibleContent>
                 </Collapsible>
 
