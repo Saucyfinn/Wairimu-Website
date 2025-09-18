@@ -63,17 +63,17 @@ export default function Navigation() {
               <button
                 key={item.id}
                 onClick={() => navigateToSection(item.id)}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm"
                 data-testid={`nav-${item.id}`}
               >
                 {item.label}
               </button>
             ))}
-            <Link href="/tourism" className="text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-1" data-testid="nav-tourism">
+            <Link href="/tourism" className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1" data-testid="nav-tourism">
               <MapPin className="h-4 w-4" />
               <span>Tourism</span>
             </Link>
-            <Link href="/visa" className="text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-1" data-testid="nav-visa">
+            <Link href="/visa" className="px-4 py-2 text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1" data-testid="nav-visa">
               <FileText className="h-4 w-4" />
               <span>Golden Visa</span>
             </Link>
@@ -107,17 +107,17 @@ export default function Navigation() {
                   <button
                     key={item.id}
                     onClick={() => navigateToSection(item.id)}
-                    className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm"
                     data-testid={`mobile-nav-${item.id}`}
                   >
                     {item.label}
                   </button>
                 ))}
-                <Link href="/tourism" className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-2 w-full" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
+                <Link href="/tourism" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
                   <MapPin className="h-5 w-5" />
                   <span>Tourism</span>
                 </Link>
-                <Link href="/visa" className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-2 w-full" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
+                <Link href="/visa" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
                   <FileText className="h-5 w-5" />
                   <span>Golden Visa</span>
                 </Link>
