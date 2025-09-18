@@ -45,7 +45,7 @@ export default function Navigation() {
   const investmentItems = [
     { label: "Investment Opportunity", action: () => navigateToSection("investment"), icon: TrendingUp, testId: "link-investment-opportunity", isAction: true },
     { label: "NZ Investor", href: "/investment/nz-investor", icon: FileText, testId: "link-investment-nz-investor" },
-    { label: "Manuka Honey", href: "/honey", icon: Flower2, testId: "link-investment-honey" },
+    { label: "Honey", href: "/honey", icon: Flower2, testId: "link-investment-honey" },
     { label: "Carbon Credits", href: "/income/carbon-credits", icon: DollarSign, testId: "link-investment-carbon" },
     { label: "Forestry", href: "/forestry", icon: Trees, testId: "link-investment-forestry" },
     { label: "Eco Lodge Concept", href: "/income/eco-lodge", icon: Building, testId: "link-investment-eco-lodge" },
