@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Camera, Maximize2, AlertCircle } from "lucide-react";
 
-// Placeholder video URL - replace with public video URL
-// Note: SharePoint URLs won't work here - needs a publicly accessible video URL
-const propertyVideoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+// Wairimu Station video from Dropbox
+// Note: Dropbox folder links need to be converted to direct download links for embedding
+const propertyVideoUrl = "https://www.dropbox.com/scl/fo/l69x1qjhznmmeiv6muaqb/AJvvFHYcdfEPHt82M2uDWog/Wairimu%20Station%20Final%20Master.mp4?rlkey=88mmp1ujmh10mdnhkltfisqxb&dl=1";
 
 export default function VirtualTour() {
   const [isFullscreen, setIsFullscreen] = useState(false);
