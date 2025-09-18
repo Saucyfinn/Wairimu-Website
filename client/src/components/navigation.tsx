@@ -40,8 +40,12 @@ export default function Navigation() {
   };
 
   const homeNavItems = [
-    { label: "Property", id: "property" },
-    { label: "Location", id: "location" },
+    // Property and Location moved to propertyItems dropdown
+  ];
+
+  const propertyItems = [
+    { label: "Property Overview", action: () => navigateToSection("property"), icon: Home, testId: "link-property-overview", isAction: true },
+    { label: "Location", action: () => navigateToSection("location"), icon: MapPin, testId: "link-property-location", isAction: true },
   ];
 
   const investmentItems = [
@@ -68,16 +72,30 @@ export default function Navigation() {
               <Home className="h-4 w-4" />
               <span>Home</span>
             </Link>
-            {homeNavItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => navigateToSection(item.id)}
-                className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm touch-target"
-                data-testid={`nav-${item.id}`}
-              >
-                {item.label}
-              </button>
-            ))}
+            
+            {/* Property Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-property">
+                  <Home className="h-4 w-4" />
+                  <span>Property</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" data-testid="dropdown-property-content">
+                {propertyItems.map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <DropdownMenuItem key={`action-${index}`} asChild={!item.isAction}>
+                      <button onClick={item.action} className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid={item.testId}>
+                        <IconComponent className="h-4 w-4" />
+                        <span>{item.label}</span>
+                      </button>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             {/* Investment Dropdown */}
             <DropdownMenu>
@@ -149,16 +167,33 @@ export default function Navigation() {
                   <Home className="h-5 w-5" />
                   <span>Home</span>
                 </Link>
-                {homeNavItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => navigateToSection(item.id)}
-                    className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm touch-target"
-                    data-testid={`mobile-nav-${item.id}`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
+                
+                {/* Property Collapsible */}
+                <Collapsible>
+                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-property-trigger">
+                    <div className="flex items-center space-x-2">
+                      <Home className="h-5 w-5" />
+                      <span>Property</span>
+                    </div>
+                    <ChevronDown className="h-4 w-4" />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="space-y-1 ml-4">
+                    {propertyItems.map((item, index) => {
+                      const IconComponent = item.icon;
+                      return (
+                        <button 
+                          key={`action-${index}`}
+                          onClick={item.action}
+                          className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                          data-testid={item.testId}
+                        >
+                          <IconComponent className="h-4 w-4" />
+                          <span>{item.label}</span>
+                        </button>
+                      );
+                    })}
+                  </CollapsibleContent>
+                </Collapsible>
                 
                 {/* Investment Collapsible */}
                 <Collapsible>
