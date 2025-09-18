@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { Mountain, Menu, X } from "lucide-react";
+import { Mountain, Menu, X, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Link, useLocation } from "wouter";
 import { GOOGLE_EARTH_CONFIG } from "@shared/config";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +19,15 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const navigateToSection = (sectionId: string) => {
+    // Check if we're on the tourism page
+    if (location.includes('/tourism')) {
+      // Navigate to home page with section hash
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
+    // If on home page, scroll directly to section
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -52,13 +62,17 @@ export default function Navigation() {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => item.id === 'property' ? openGoogleEarth() : scrollToSection(item.id)}
+                onClick={() => item.id === 'property' ? openGoogleEarth() : navigateToSection(item.id)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 data-testid={`nav-${item.id}`}
               >
                 {item.label}
               </button>
             ))}
+            <Link href="/tourism" className="text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-1" data-testid="nav-tourism">
+              <MapPin className="h-4 w-4" />
+              <span>Tourism</span>
+            </Link>
             <Button
               onClick={openGoogleEarth}
               variant="outline"
@@ -68,7 +82,7 @@ export default function Navigation() {
               Virtual Tour
             </Button>
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => navigateToSection("contact")}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               data-testid="nav-contact"
             >
@@ -88,13 +102,17 @@ export default function Navigation() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => item.id === 'property' ? openGoogleEarth() : scrollToSection(item.id)}
+                    onClick={() => item.id === 'property' ? openGoogleEarth() : navigateToSection(item.id)}
                     className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
                     data-testid={`mobile-nav-${item.id}`}
                   >
                     {item.label}
                   </button>
                 ))}
+                <Link href="/tourism" className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors flex items-center space-x-2 w-full" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
+                  <MapPin className="h-5 w-5" />
+                  <span>Tourism</span>
+                </Link>
                 <Button
                   onClick={openGoogleEarth}
                   variant="outline"
@@ -104,7 +122,7 @@ export default function Navigation() {
                   Virtual Tour
                 </Button>
                 <Button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => navigateToSection("contact")}
                   className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
                   data-testid="mobile-nav-contact"
                 >
