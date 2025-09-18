@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertInquirySchema } from "@shared/schema";
 import { z } from "zod";
+import { sendEmail, formatInquiryEmail } from "./sendgrid";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -11,9 +12,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertInquirySchema.parse(req.body);
       const inquiry = await storage.createInquiry(validatedData);
       
-      // In a real application, you would send an email here
-      // For now, we'll just log the inquiry
-      console.log("New inquiry received:", inquiry);
+      // Send email notification using SendGrid
+      const emailFormat = formatInquiryEmail(validatedData);
+      const emailResult = await sendEmail({
+        to: "andy.nurse@nurseproperty.co.nz",
+        from: "noreply@wairimustation.co.nz", // You may need to verify this domain in SendGrid
+        bcc: "brendon@mondial.co.nz",
+        subject: emailFormat.subject,
+        html: emailFormat.html,
+        text: emailFormat.text
+      });
+      
+      if (!emailResult.success) {
+        console.error("Failed to send email notification:", emailResult.error);
+        // Continue with success response even if email fails
+      } else {
+        console.log("Email notification sent successfully to Andy Nurse");
+      }
       
       res.json({ 
         success: true, 

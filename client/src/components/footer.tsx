@@ -67,21 +67,30 @@ export default function Footer() {
           <div className="text-center sm:text-left col-span-1 sm:col-span-2 md:col-span-1">
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
             <div className="space-y-2 text-sm sm:text-base text-background/80">
-              <p data-testid="footer-agent-name" className="font-medium">Andy Nurse</p>
+              <p data-testid="footer-agent-name" className="font-medium">Andy Nurse (Sales Agent)</p>
               <p data-testid="footer-company" className="text-xs sm:text-sm">Nurse Property</p>
               <a 
-                href="tel:+6433195555" 
+                href="tel:+6421437143" 
                 className="block hover:text-background transition-colors min-h-[44px] py-2 touch-target"
                 data-testid="footer-phone"
               >
-                +64 3 319 5555
+                +64 21 437 143
               </a>
               <a 
-                href="mailto:andy@nurseproperty.co.nz" 
+                href="mailto:andy.nurse@nurseproperty.co.nz" 
                 className="block hover:text-background transition-colors min-h-[44px] py-2 touch-target break-all"
                 data-testid="footer-email"
               >
-                andy@nurseproperty.co.nz
+                andy.nurse@nurseproperty.co.nz
+              </a>
+              <a 
+                href="https://www.nurseproperty.co.nz" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block hover:text-background transition-colors min-h-[44px] py-2 touch-target"
+                data-testid="footer-website"
+              >
+                www.nurseproperty.co.nz
               </a>
             </div>
           </div>

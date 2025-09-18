@@ -83,7 +83,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       label: "Call Andy Now",
-      action: () => window.open("tel:+6433195555"),
+      action: () => window.open("tel:+6421437143"),
       variant: "default" as const,
       bgColor: "bg-accent",
       testId: "call-andy"
@@ -242,7 +242,7 @@ export default function ContactSection() {
                 <div>
                   <div>
                     <h4 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-2">
-                      Andy Nurse
+                      Andy Nurse (Sales Agent)
                     </h4>
                     <p className="text-accent font-medium mb-3 sm:mb-4 text-sm sm:text-base">
                       Licensed Sales Consultant - Rural & Lifestyle
@@ -256,24 +256,32 @@ export default function ContactSection() {
                     
                     <div className="space-y-3">
                       <a 
-                        href="tel:+6433195555" 
+                        href="tel:+6421437143" 
                         className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors min-h-[44px] touch-target"
                         data-testid="agent-phone"
                       >
                         <Phone className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
-                        <span className="text-sm sm:text-base">+64 3 319 5555</span>
+                        <span className="text-sm sm:text-base">+64 21 437 143</span>
                       </a>
                       <a 
-                        href="mailto:andy@nurseproperty.co.nz" 
+                        href="mailto:andy.nurse@nurseproperty.co.nz" 
                         className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors min-h-[44px] touch-target"
                         data-testid="agent-email"
                       >
                         <Mail className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
-                        <span className="text-sm sm:text-base break-all">andy@nurseproperty.co.nz</span>
+                        <span className="text-sm sm:text-base break-all">andy.nurse@nurseproperty.co.nz</span>
                       </a>
                       <div className="flex items-center space-x-3 min-h-[44px]">
                         <MapPin className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
-                        <span className="text-foreground text-sm sm:text-base" data-testid="agent-location">Kaikoura, Canterbury</span>
+                        <a 
+                          href="https://www.nurseproperty.co.nz" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-foreground hover:text-primary transition-colors text-sm sm:text-base"
+                          data-testid="agent-website"
+                        >
+                          www.nurseproperty.co.nz
+                        </a>
                       </div>
                     </div>
                   </div>
