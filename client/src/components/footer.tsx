@@ -23,12 +23,6 @@ export default function Footer() {
       { label: "ETS Income", id: "ets" },
       { label: "Investment Details", id: "investment" }
     ],
-    resources: [
-      { label: "Download Prospectus", href: "#" },
-      { label: "ETS Documentation", href: "#" },
-      { label: "Survey Maps", href: "#" },
-      { label: "Legal Documents", href: "#" }
-    ],
     legal: [
       { label: "Privacy Policy", href: "#" },
       { label: "Terms of Service", href: "#" },
@@ -39,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -64,24 +58,6 @@ export default function Footer() {
                   >
                     {item.label}
                   </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Resources */}
-          <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2 text-sm text-background/80">
-              {footerSections.resources.map((item, index) => (
-                <li key={index}>
-                  <a 
-                    href={item.href} 
-                    className="hover:text-background transition-colors"
-                    data-testid={`footer-resource-${index}`}
-                  >
-                    {item.label}
-                  </a>
                 </li>
               ))}
             </ul>
