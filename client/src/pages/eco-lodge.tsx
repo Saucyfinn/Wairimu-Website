@@ -222,14 +222,6 @@ export default function EcoLodge() {
     }
   ];
 
-  const feasibilityHighlights = [
-    "Resource consent pre-application feedback indicates strong viability",
-    "Existing infrastructure reduces development costs significantly",
-    "Tourism operator partnerships already identified for management",
-    "Environmental impact assessment shows minimal ecological disruption",
-    "Market research confirms unmet demand for luxury eco-accommodation",
-    "Revenue projections indicate 3-5 year payback period at 65% occupancy"
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -260,16 +252,6 @@ export default function EcoLodge() {
             >
               <Building className="mr-2 h-5 w-5" />
               View Concept
-            </Button>
-            <Button 
-              onClick={() => navigateToSection("feasibility")}
-              size="lg"
-              variant="outline"
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20"
-              data-testid="hero-feasibility-button"
-            >
-              <Star className="mr-2 h-5 w-5" />
-              Feasibility Study
             </Button>
           </div>
         </div>
@@ -539,30 +521,6 @@ export default function EcoLodge() {
         </div>
       </section>
 
-      {/* Feasibility Section */}
-      <section id="feasibility" className="py-20 bg-primary/5 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Project Feasibility & Viability
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive feasibility analysis demonstrates strong potential for successful eco-lodge development
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {feasibilityHighlights.map((highlight, index) => (
-              <Card key={index} className="p-6 text-center">
-                <Star className="text-primary text-2xl mb-4 mx-auto" />
-                <p className="text-foreground font-medium" data-testid={`feasibility-highlight-${index}`}>
-                  {highlight}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background scroll-mt-20">
