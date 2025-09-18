@@ -26,9 +26,6 @@ export default function HeroSection() {
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
           Wairimu Station
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Premium Forest Investment in Canterbury's Heart
-        </p>
       </div>
 
       {/* Scroll Indicator */}
