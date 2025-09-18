@@ -193,7 +193,7 @@ export default function Honey() {
             <Button 
               onClick={() => navigateToSection("benefits")}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="floating-green-btn"
               data-testid="hero-benefits-button"
             >
               <Heart className="mr-2 h-5 w-5" />
@@ -590,7 +590,7 @@ export default function Honey() {
                 window.location.href = "/#investment";
               }}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="floating-green-btn"
               data-testid="honey-investment-button"
             >
               <Droplets className="mr-2 h-5 w-5" />

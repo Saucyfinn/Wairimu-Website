@@ -1,11 +1,27 @@
 import { useEffect } from "react";
-import { Building, Leaf, Mountain, Star, Users, Wifi, Car, TreePine, Sunset, Camera, MapPin, Phone, Mail } from "lucide-react";
+import { 
+  Building, 
+  Leaf, 
+  Mountain, 
+  Star, 
+  Users, 
+  Wifi, 
+  Car, 
+  TreePine, 
+  Sunset, 
+  Camera, 
+  MapPin, 
+  Phone, 
+  Mail, 
+  FileText 
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import conceptImage1 from "@assets/w1_1758155810309.jpg";
 import conceptImage2 from "@assets/w2_1758155810310.jpg";
 import conceptImage3 from "@assets/w3_1758152454450.jpg";
+import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
 
 export default function EcoLodge() {
   useEffect(() => {
@@ -239,7 +255,7 @@ export default function EcoLodge() {
             <Button 
               onClick={() => navigateToSection("concept-overview")}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="floating-green-btn"
               data-testid="hero-concept-button"
             >
               <Building className="mr-2 h-5 w-5" />
@@ -266,9 +282,58 @@ export default function EcoLodge() {
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
               Luxury Eco-Lodge Concept
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               A boutique eco-lodge offering guests an immersive nature experience while generating sustainable revenue for Wairimu Station
             </p>
+            
+            {/* Professional Concept Design Reference */}
+            <div className="bg-primary/5 rounded-xl p-8 max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div className="flex-shrink-0">
+                  <div className="p-4 bg-primary/10 rounded-full">
+                    <Building className="h-8 w-8 text-primary" />
+                  </div>
+                </div>
+                <div className="text-center md:text-left flex-grow">
+                  <h3 className="text-xl font-bold text-foreground mb-2">Professional Concept Design Available</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Detailed architectural concept design featuring building platform at 520m above sea level with comprehensive site planning, floor plans, and sun study analysis.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-4">
+                    <div className="bg-white/50 rounded-lg p-3">
+                      <div className="font-medium text-foreground">North Views</div>
+                      <div className="text-xs text-muted-foreground">Mountain panorama</div>
+                    </div>
+                    <div className="bg-white/50 rounded-lg p-3">
+                      <div className="font-medium text-foreground">South Views</div>
+                      <div className="text-xs text-muted-foreground">Coastal outlook</div>
+                    </div>
+                    <div className="bg-white/50 rounded-lg p-3">
+                      <div className="font-medium text-foreground">East Views</div>
+                      <div className="text-xs text-muted-foreground">Sunrise aspects</div>
+                    </div>
+                    <div className="bg-white/50 rounded-lg p-3">
+                      <div className="font-medium text-foreground">West Views</div>
+                      <div className="text-xs text-muted-foreground">Sunset vistas</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <Button 
+                    size="lg"
+                    className="floating-green-btn shadow-lg hover:shadow-xl transition-all"
+                    data-testid="download-concept-design"
+                    onClick={() => window.open(conceptPdf, '_blank')}
+                  >
+                    <FileText className="mr-2 h-5 w-5" />
+                    Download Concept Design
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-6 text-sm text-muted-foreground">
+                <strong>Reference:</strong> Concept Design Kaikoura_1758166391369.pdf - Professional architectural concept including site plan, floor plan details, and comprehensive sun study information.
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -529,7 +594,7 @@ export default function EcoLodge() {
 
           <Button 
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className="floating-green-btn"
             data-testid="contact-eco-lodge-button"
           >
             Request Development Information

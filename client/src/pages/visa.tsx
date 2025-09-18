@@ -510,7 +510,7 @@ export default function Visa() {
               <Button
                 onClick={() => navigateToSection("investment")}
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="floating-green-btn"
                 data-testid="wairimu-investment-button"
               >
                 <TrendingUp className="mr-2 h-5 w-5" />

@@ -11,6 +11,7 @@ import Honey from "@/pages/honey";
 import CarbonCredits from "@/pages/carbon-credits";
 import EcoLodge from "@/pages/eco-lodge";
 import Grazing from "@/pages/grazing";
+import RecreationalActivities from "@/pages/recreational-activities";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/tourism" component={Tourism} />
-          <Route path="/visa" component={Visa} />
+          <Route path="/investment/nz-investor" component={Visa} />
+          <Route path="/recreational-activities" component={RecreationalActivities} />
           <Route path="/honey" component={Honey} />
           <Route path="/income/carbon-credits" component={CarbonCredits} />
           <Route path="/income/eco-lodge" component={EcoLodge} />

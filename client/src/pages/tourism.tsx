@@ -242,7 +242,7 @@ export default function Tourism() {
             <Button 
               onClick={() => navigateToSection("kaikoura")}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="floating-green-btn"
               data-testid="hero-kaikoura-button"
             >
               <Waves className="mr-2 h-5 w-5" />
@@ -565,7 +565,7 @@ export default function Tourism() {
           <Button 
             onClick={() => navigateToSection("contact")}
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className="floating-green-btn"
             data-testid="tourism-contact-button"
           >
             Explore Investment Opportunities

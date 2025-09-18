@@ -187,7 +187,7 @@ export default function CarbonCredits() {
             <Button 
               onClick={() => navigateToSection("ets-overview")}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="floating-green-btn"
               data-testid="hero-ets-button"
             >
               <Target className="mr-2 h-5 w-5" />
@@ -493,7 +493,7 @@ export default function CarbonCredits() {
 
           <Button 
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className="floating-green-btn"
             data-testid="contact-carbon-button"
           >
             Request Carbon Credit Information

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Mountain, Menu, X, MapPin, FileText, Flower2, ChevronDown, Home, DollarSign, Building, Wheat } from "lucide-react";
+import { Mountain, Menu, X, MapPin, FileText, Flower2, ChevronDown, Home, DollarSign, Building, Wheat, TrendingUp, TreePine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -107,25 +107,44 @@ export default function Navigation() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Investment Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="dropdown-investment">
+                  <TrendingUp className="h-4 w-4" />
+                  <span>Investment</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" data-testid="dropdown-investment-content">
+                <DropdownMenuItem asChild>
+                  <Link href="/investment/nz-investor" className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid="link-investment-nz-investor">
+                    <FileText className="h-4 w-4" />
+                    <span>NZ Investor</span>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link href="/recreational-activities" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-recreational-activities">
+              <TreePine className="h-4 w-4" />
+              <span>Recreational Activities</span>
+            </Link>
             <Link href="/tourism" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-tourism">
               <MapPin className="h-4 w-4" />
               <span>Tourism</span>
             </Link>
-            <Link href="/visa" className="px-4 py-3 min-h-[44px] text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md transition-all duration-200 hover:shadow-sm flex items-center space-x-1 touch-target" data-testid="nav-visa">
-              <FileText className="h-4 w-4" />
-              <span>NZ Investor Visa</span>
-            </Link>
             <Button
               onClick={openPropertyVideo}
               variant="outline"
-              className="min-h-[44px] border-primary text-primary hover:bg-primary hover:text-primary-foreground touch-target"
+              className="min-h-[44px] floating-green-btn touch-target"
               data-testid="nav-virtual-tour"
             >
               Watch Property Video
             </Button>
             <Button
               onClick={() => navigateToSection("contact")}
-              className="min-h-[44px] bg-primary text-primary-foreground hover:bg-primary/90 touch-target"
+              className="min-h-[44px] floating-green-btn touch-target"
               data-testid="nav-contact"
             >
               Contact
@@ -185,25 +204,46 @@ export default function Navigation() {
                   </CollapsibleContent>
                 </Collapsible>
 
+                {/* Investment Collapsible */}
+                <Collapsible>
+                  <CollapsibleTrigger className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center justify-between w-full touch-target" data-testid="mobile-nav-investment-trigger">
+                    <div className="flex items-center space-x-2">
+                      <TrendingUp className="h-5 w-5" />
+                      <span>Investment</span>
+                    </div>
+                    <ChevronDown className="h-4 w-4" />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="space-y-1 ml-4">
+                    <Link 
+                      href="/investment/nz-investor" 
+                      className="text-left text-base text-foreground font-medium hover:bg-primary/10 hover:text-primary rounded-md px-4 py-3 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" 
+                      data-testid="mobile-link-investment-nz-investor"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <FileText className="h-4 w-4" />
+                      <span>NZ Investor</span>
+                    </Link>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                <Link href="/recreational-activities" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-recreational-activities" onClick={() => setIsOpen(false)}>
+                  <TreePine className="h-5 w-5" />
+                  <span>Recreational Activities</span>
+                </Link>
                 <Link href="/tourism" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-tourism" onClick={() => setIsOpen(false)}>
                   <MapPin className="h-5 w-5" />
                   <span>Tourism</span>
                 </Link>
-                <Link href="/visa" className="text-left text-lg text-foreground font-semibold hover:bg-primary/10 hover:text-primary rounded-md px-4 py-4 min-h-[44px] transition-all duration-200 hover:shadow-sm flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-visa" onClick={() => setIsOpen(false)}>
-                  <FileText className="h-5 w-5" />
-                  <span>NZ Investor Visa</span>
-                </Link>
                 <Button
                   onClick={openPropertyVideo}
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full min-h-[44px] mt-4 touch-target"
+                  className="floating-green-btn w-full min-h-[44px] mt-4 touch-target"
                   data-testid="mobile-nav-virtual-tour"
                 >
                   Watch Property Video
                 </Button>
                 <Button
                   onClick={() => navigateToSection("contact")}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 w-full min-h-[44px] touch-target"
+                  className="floating-green-btn w-full min-h-[44px] touch-target"
                   data-testid="mobile-nav-contact"
                 >
                   Contact

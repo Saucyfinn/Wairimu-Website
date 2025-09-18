@@ -243,7 +243,7 @@ export default function Grazing() {
             <Button 
               onClick={() => navigateToSection("land-breakdown")}
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="floating-green-btn"
               data-testid="hero-land-button"
             >
               <Wheat className="mr-2 h-5 w-5" />
@@ -613,7 +613,7 @@ export default function Grazing() {
 
           <Button 
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            className="floating-green-btn"
             data-testid="contact-grazing-button"
           >
             Request Pastoral Information
