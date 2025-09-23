@@ -15,7 +15,6 @@ export default function InvestmentSection() {
     { label: "Location", value: property?.location || "Kaikoura, Canterbury" },
     { label: "Access", value: "All-weather forestry roads" },
     { label: "Zoning", value: property?.zoning || "Rural (Forestry permitted)" },
-    { label: "Data Source", value: "Forest X Valuation Report, April 2021" }
   ];
 
 
@@ -28,7 +27,7 @@ export default function InvestmentSection() {
             Investment Opportunity
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional forest investment opportunity. All financial data requires verification from the complete Forest X Valuation Report (April 2021).
+            Professional forest investment opportunity with comprehensive property specifications and investment considerations.
           </p>
         </div>
 
@@ -58,8 +57,7 @@ export default function InvestmentSection() {
                 <h4 className="font-semibold text-foreground mb-4">Investment Analysis</h4>
                 <div className="space-y-4">
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    <strong>Source:</strong> Forest X Valuation Report, April 2021<br/>
-                    <strong>Data Limitations:</strong> Financial projections and valuations require verification from the complete report. 
+                    <strong>Data Limitations:</strong> Financial projections and valuations require verification through professional assessment. 
                     Market conditions, regulatory changes, and operational factors may significantly impact actual returns.
                   </p>
                   <div className="bg-background/50 p-4 rounded-lg">
@@ -75,7 +73,7 @@ export default function InvestmentSection() {
                   <p className="text-xs text-muted-foreground">
                     <strong>Disclaimer:</strong> This information is for preliminary assessment only. 
                     Professional financial and forestry advice should be obtained before making investment decisions.
-                    All financial data must be verified from the complete Forest X Valuation Report.
+                    All financial data must be verified through professional forestry and financial assessment.
                   </p>
                 </div>
               </CardContent>
