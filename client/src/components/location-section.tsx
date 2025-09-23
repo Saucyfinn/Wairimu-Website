@@ -58,7 +58,7 @@ export default function LocationSection() {
                 Kaikōura is a coastal town on the South Island of New Zealand known for its dramatic landscape, abundant marine life, and significant Māori and whaling history. Positioned between the Seaward Kaikōura Range mountains and the Pacific Ocean, it offers unparalleled natural beauty.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With its strategic Canterbury location near established forestry operations, Wairimu Station is positioned perfectly to take advantage of everything Kaikoura has to offer, from world-class whale watching to mountain adventures.
+                With its strategic location, Wairimu Station is positioned perfectly to take advantage of everything Kaikoura has to offer, from world-class whale watching to mountain adventures.
               </p>
             </div>
 
