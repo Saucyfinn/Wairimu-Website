@@ -346,6 +346,24 @@ export default function Tourism() {
             </p>
           </div>
 
+          {/* Kaikoura Video */}
+          <div className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-xl overflow-hidden shadow-2xl bg-muted">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/81-jn_LJM5g?modestbranding=1&rel=0&autoplay=0&playsinline=1"
+                  title="Kaikoura Marine Adventures"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                  data-testid="kaikoura-video-embed"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {kaikouraActivities.map((activity, index) => {
               const IconComponent = activity.icon;
