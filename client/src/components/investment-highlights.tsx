@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function InvestmentHighlights() {
   const highlights = [
-    "640 hectares of regenerating native bush",
+    "637 hectares of regenerating native bush",
     "200 hectares of indigenous bush (included in Carbon Credit scheme)",
     "Established Carbon credit income from Post-1989 forest carbon sequestration",
     "All weather access",

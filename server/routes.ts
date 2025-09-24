@@ -78,7 +78,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/property", async (req, res) => {
     res.json({
       name: "Wairimu Station",
-      area: 640,
+      area: 637,
       etsCredits: 215.5,
       yearEstablished: 1887,
       annualIncome: 185000,
