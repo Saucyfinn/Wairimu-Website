@@ -166,11 +166,6 @@ export default function CarbonCredits() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Badge variant="outline" className="text-primary border-primary">
-                    ETS registered since 2019
-                  </Badge>
-                </div>
-                <div className="flex items-center space-x-3">
                   <Badge variant="outline" className="text-accent border-accent">
                     Government verified credits
                   </Badge>
