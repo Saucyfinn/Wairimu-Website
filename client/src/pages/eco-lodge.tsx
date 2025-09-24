@@ -24,6 +24,17 @@ import conceptImage3 from "@assets/w3_1758152454450.jpg";
 import architecturalConceptsGrid from "@assets/architectural_concepts_grid.png";
 import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
 
+// Eco-lodge architectural visualization imports
+import exteriorView1 from "@assets/Screenshot 2025-09-24 at 6.42.49 PM_1758699554835.png";
+import exteriorView2 from "@assets/Screenshot 2025-09-24 at 7.39.50 PM_1758699601136.png";
+import exteriorView3 from "@assets/Screenshot 2025-09-24 at 7.40.41 PM_1758699654349.png";
+import exteriorView4 from "@assets/Screenshot 2025-09-24 at 7.42.08 PM_1758699738667.png";
+import exteriorView5 from "@assets/Screenshot 2025-09-24 at 7.42.48 PM_1758699778247.png";
+import interiorView1 from "@assets/Screenshot 2025-09-24 at 7.41.31 PM_1758699701558.png";
+import interiorView2 from "@assets/Screenshot 2025-09-24 at 7.43.33 PM_1758699823079.png";
+import interiorView3 from "@assets/Screenshot 2025-09-24 at 7.44.30 PM_1758699880234.png";
+import floorPlan from "@assets/Screenshot 2025-09-24 at 7.47.56 PM_1758700085134.png";
+
 export default function EcoLodge() {
   useEffect(() => {
     // Set unique page title and meta description for SEO
@@ -127,7 +138,31 @@ export default function EcoLodge() {
             
           </div>
 
-          {/* 3D Architectural Visualizations */}
+          {/* Architectural Concepts Grid */}
+          <div className="mb-16">
+            <figure className="rounded-xl overflow-hidden shadow-lg bg-card dark:bg-card">
+              <img 
+                src={architecturalConceptsGrid}
+                alt="Architectural concepts grid showing multiple design variations for the eco-lodge development at Wairimu Station" 
+                className="w-full h-auto object-contain aspect-video"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
+                data-testid="architectural-concepts-grid"
+              />
+              <figcaption className="sr-only">
+                Professional architectural concept design demonstrating possible design approach and site integration
+              </figcaption>
+            </figure>
+            <div className="mt-4 text-center">
+              <p className="text-sm text-muted-foreground">
+                Professional architectural concept design demonstrating possible design approach and site integration
+              </p>
+            </div>
+          </div>
+
+          {/* 3D Architectural Renderings Gallery */}
           <div className="mb-16">
             <div className="text-center mb-12">
               <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
@@ -138,18 +173,102 @@ export default function EcoLodge() {
               </p>
             </div>
             
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="/attached_assets/Screenshot 2025-09-24 at 8.00.07 PM_1758700816302.png"
-                alt="Complete architectural visualization collection showing exterior views, interior views, and floor plan of the eco-lodge development" 
-                className="w-full h-auto object-contain"
-                data-testid="eco-lodge-visualizations"
-              />
+            {/* Exterior Views */}
+            <div className="mb-12">
+              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Exterior Views</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={exteriorView1}
+                    alt="Front exterior view of the eco-lodge showing modern timber cladding and expansive glass walls with mountain backdrop" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-exterior-1"
+                  />
+                </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={exteriorView2}
+                    alt="Side angle view demonstrating the eco-lodge's integration with the natural landscape and sustainable materials" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-exterior-2"
+                  />
+                </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={exteriorView3}
+                    alt="Deck and terrace area with spectacular ocean and mountain views showcasing outdoor living spaces" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-exterior-3"
+                  />
+                </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={exteriorView4}
+                    alt="Evening view of the eco-lodge highlighting sustainable design elements and guest accommodation areas" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-exterior-4"
+                  />
+                </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={exteriorView5}
+                    alt="Outdoor courtyard and deck area with pergola showing premium outdoor amenities and entertainment spaces" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-exterior-5"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Interior Views */}
+            <div className="mb-12">
+              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Interior Views</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={interiorView1}
+                    alt="Interior bathroom and hallway area featuring modern fixtures with panoramic mountain and forest views" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-interior-1"
+                  />
+                </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={interiorView2}
+                    alt="Open-plan dining and kitchen area with premium appliances and floor-to-ceiling windows" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-interior-2"
+                  />
+                </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={interiorView3}
+                    alt="Luxury living area with panoramic windows showcasing breathtaking views of Kaikoura's mountain ranges" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-interior-3"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Floor Plan */}
+            <div className="mt-12">
+              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Floor Plan</h4>
+              <div className="flex justify-center">
+                <div className="max-w-4xl w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src={floorPlan}
+                    alt="Detailed architectural floor plan showing room layouts, spatial organization, and design flow of the eco-lodge" 
+                    className="w-full h-full object-contain bg-card hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-floor-plan"
+                  />
+                </div>
+              </div>
             </div>
             
             <div className="mt-8 text-center">
               <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
-                These professional 3D architectural visualizations demonstrate the thoughtful integration of luxury accommodation with sustainable design principles, 
+                These professional 3D architectural visualizations and floor plan demonstrate the thoughtful integration of luxury accommodation with sustainable design principles, 
                 showcasing how the eco-lodge will blend seamlessly into Kaikoura's pristine natural environment while providing guests with exceptional comfort and spectacular views.
               </p>
             </div>
