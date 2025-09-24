@@ -383,13 +383,6 @@ export default function CarbonCredits() {
             </Card>
           </div>
 
-          <Button 
-            size="lg"
-            className="floating-green-btn"
-            data-testid="contact-carbon-button"
-          >
-            Request Carbon Credit Information
-          </Button>
         </div>
       </section>
     </div>
