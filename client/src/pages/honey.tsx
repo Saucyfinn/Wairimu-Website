@@ -183,23 +183,6 @@ Native bush honey is derived from the nectar of New Zealand's diverse native flo
                 This extraordinary honey contains unique compounds like methylglyoxal (MGO) that give it powerful therapeutic properties 
                 not found in regular honey.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Badge variant="outline" className="text-primary border-primary">
-                    MPI-compliant multifloral native bush honey
-                  </Badge>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Badge variant="outline" className="text-accent border-accent">
-                    MGO content verification
-                  </Badge>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Badge variant="outline" className="text-primary border-primary">
-                    Sustainable wild-harvested nectar
-                  </Badge>
-                </div>
-              </div>
             </div>
           </div>
         </div>
