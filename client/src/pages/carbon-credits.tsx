@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Leaf, TreePine, Target, ShieldCheck, DollarSign, FileCheck, Calculator, Globe, TrendingUp, MapPin, Phone, Mail } from "lucide-react";
+import { Leaf, TreePine, Target, ShieldCheck, DollarSign, FileCheck, Globe, TrendingUp, MapPin, Phone, Mail } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,16 +10,16 @@ import forestImage3 from "@assets/w3_1758152454450.jpg";
 export default function CarbonCredits() {
   useEffect(() => {
     // Set unique page title and meta description for SEO
-    document.title = "Carbon Credits & ETS Income - Wairimu Station | Kaikoura Forest Carbon Sequestration";
+    document.title = "Carbon Credits & ETS - Wairimu Station | Kaikoura Forest Carbon Sequestration";
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover Wairimu Station\'s established carbon credit income through the ETS scheme. 215.5 hectares of forest generating verified carbon credits with proven revenue stream.');
+      metaDescription.setAttribute('content', 'Discover Wairimu Station\'s established carbon credit through the ETS scheme. 215.5 hectares of forest generating verified carbon credits.');
     } else {
       const newMetaElement = document.createElement('meta') as HTMLMetaElement;
       newMetaElement.name = 'description';
-      newMetaElement.content = 'Discover Wairimu Station\'s established carbon credit income through the ETS scheme. 215.5 hectares of forest generating verified carbon credits with proven revenue stream.';
+      newMetaElement.content = 'Discover Wairimu Station\'s established carbon credit through the ETS scheme. 215.5 hectares of forest generating verified carbon credits.';
       document.head.appendChild(newMetaElement);
     }
     
@@ -49,9 +49,9 @@ export default function CarbonCredits() {
   const etsAdvantages = [
     {
       icon: DollarSign,
-      title: "Established Income Stream",
+      title: "Established Carbon Credits",
       description: "Generating verified carbon credits under New Zealand's ETS since registration",
-      benefit: "Proven revenue track record"
+      benefit: "Proven track record"
     },
     {
       icon: TrendingUp,
@@ -109,29 +109,6 @@ export default function CarbonCredits() {
     }
   ];
 
-  const revenueProjections = [
-    {
-      period: "2025-2030",
-      pineForest: "150-200 tonnes CO2/year",
-      nativeBush: "600-1,200 tonnes CO2/year",
-      projectedRevenue: "$51,000-90,000 annually",
-      notes: "Conservative estimates based on current growth rates"
-    },
-    {
-      period: "2030-2040",
-      pineForest: "120-180 tonnes CO2/year",
-      nativeBush: "600-1,200 tonnes CO2/year",
-      projectedRevenue: "$49,000-103,500 annually",
-      notes: "Mature pine forest, continued native forest growth"
-    },
-    {
-      period: "2040-2050",
-      pineForest: "Variable (harvest/replant)",
-      nativeBush: "600-1,200 tonnes CO2/year",
-      projectedRevenue: "$41,000-90,000 annually",
-      notes: "Native forest continues, pine forest rotation cycle"
-    }
-  ];
 
   const managementPractices = [
     {
@@ -174,7 +151,7 @@ export default function CarbonCredits() {
             Carbon Credits at Wairimu Station
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" data-testid="carbon-hero-description">
-            Established carbon credit income through New Zealand's ETS scheme, with 215.5 hectares of registered forest generating verified revenue
+            Established carbon credit through New Zealand's ETS scheme, with 215.5 hectares of registered forest generating verified carbon credits
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
@@ -186,16 +163,6 @@ export default function CarbonCredits() {
               <Target className="mr-2 h-5 w-5" />
               ETS Overview
             </Button>
-            <Button 
-              onClick={() => navigateToSection("revenue-projections")}
-              size="lg"
-              variant="outline"
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20"
-              data-testid="hero-revenue-button"
-            >
-              <Calculator className="mr-2 h-5 w-5" />
-              Revenue Projections
-            </Button>
           </div>
         </div>
       </section>
@@ -205,10 +172,10 @@ export default function CarbonCredits() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Proven Carbon Credit Income
+              Proven Carbon Credit Generation
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Wairimu Station's established carbon credit portfolio provides immediate and long-term revenue through verified forest carbon sequestration
+              Wairimu Station's established carbon credit portfolio provides verified forest carbon sequestration under the ETS scheme
             </p>
           </div>
 
@@ -239,7 +206,7 @@ export default function CarbonCredits() {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 The New Zealand ETS is the government's main tool for reducing greenhouse gas emissions. 
                 Wairimu Station's 215.5 hectares of registered forest land generates New Zealand Units (NZUs) 
-                through verified carbon sequestration, providing established income with strong growth potential.
+                through verified carbon sequestration, with established credits and strong growth potential.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -254,7 +221,7 @@ export default function CarbonCredits() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Badge variant="outline" className="text-primary border-primary">
-                    Immediate tradeable income
+                    Immediate tradeable credits
                   </Badge>
                 </div>
               </div>
@@ -280,7 +247,7 @@ export default function CarbonCredits() {
               Forest Composition & Carbon Potential
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Two distinct forest types provide diversified carbon sequestration with different growth patterns and revenue timelines
+              Two distinct forest types provide diversified carbon sequestration with different growth patterns and carbon credit timelines
             </p>
           </div>
 
@@ -361,45 +328,6 @@ export default function CarbonCredits() {
         </div>
       </section>
 
-      {/* Revenue Projections Section */}
-      <section id="revenue-projections" className="py-20 bg-background scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Long-term Revenue Projections
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conservative projections based on current growth rates and carbon market trends
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {revenueProjections.map((projection, index) => (
-              <Card key={projection.period} className="p-6">
-                <div className="grid lg:grid-cols-5 gap-6 items-center">
-                  <div className="lg:col-span-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2" data-testid={`projection-period-${index}`}>
-                      {projection.period}
-                    </h3>
-                    <div className="text-2xl font-bold text-primary">{projection.projectedRevenue}</div>
-                  </div>
-                  <div className="lg:col-span-2 space-y-2">
-                    <div className="text-sm text-muted-foreground">Pine Forest</div>
-                    <div className="font-medium">{projection.pineForest}</div>
-                  </div>
-                  <div className="lg:col-span-1 space-y-2">
-                    <div className="text-sm text-muted-foreground">Native Bush</div>
-                    <div className="font-medium">{projection.nativeBush}</div>
-                  </div>
-                  <div className="lg:col-span-1">
-                    <Badge variant="outline" className="text-xs">{projection.notes}</Badge>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Management Practices Section */}
       <section className="py-20 bg-card">
@@ -463,7 +391,7 @@ export default function CarbonCredits() {
             Carbon Credits Investment Inquiry
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
-            Contact us for detailed carbon credit projections, ETS documentation, and investment opportunities
+            Contact us for detailed carbon credit information, ETS documentation, and investment opportunities
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
