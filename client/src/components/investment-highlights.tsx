@@ -7,7 +7,8 @@ export default function InvestmentHighlights() {
     "200 hectares of indigenous bush (included in Carbon Credit scheme)",
     "Established Carbon credit income from Post-1989 forest carbon sequestration",
     "All weather access",
-    "Strategic Canterbury location near established forestry operations"
+    "Strategic location",
+    "640 hectares of regenerating native bush"
   ];
 
   return (
