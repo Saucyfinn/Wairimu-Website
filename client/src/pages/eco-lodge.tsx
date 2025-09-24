@@ -399,24 +399,6 @@ export default function EcoLodge() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="aspect-video rounded-xl overflow-hidden">
-              <img 
-                src={conceptImage2}
-                alt="Conceptual view of eco-lodge placement within Wairimu Station's natural landscape" 
-                className="w-full h-full object-cover"
-                data-testid="concept-landscape-image"
-              />
-            </div>
-            <div className="aspect-video rounded-xl overflow-hidden">
-              <img 
-                src={conceptImage3}
-                alt="Scenic coastal and mountain views available to future eco-lodge guests" 
-                className="w-full h-full object-cover"
-                data-testid="concept-views-image"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
