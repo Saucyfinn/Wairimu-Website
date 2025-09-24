@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef, useCallback, useReducer } from "react";
 import { 
   Building, 
   Leaf, 
@@ -24,17 +24,141 @@ import conceptImage3 from "@assets/w3_1758152454450.jpg";
 import architecturalConceptsGrid from "@assets/architectural_concepts_grid.png";
 import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
 
-// WORKAROUND: Using the known working image path until file serving issue is resolved
-// Your JPEG images are ready, but need to be served with simple filenames (no spaces)
-const exteriorView1 = "/test-image.png";
-const exteriorView2 = "/test-image.png";  
-const exteriorView3 = "/test-image.png";
-const exteriorView4 = "/test-image.png";
-const exteriorView5 = "/test-image.png";
-const interiorView1 = "/test-image.png";
-const interiorView2 = "/test-image.png";
-const interiorView3 = "/test-image.png";
-const floorPlan = "/test-image.png";
+// Slideshow images for the eco-lodge development
+const slideshowImages = [
+  "/slide-1.jpg",
+  "/slide-2.jpg",
+  "/slide-3.jpg",
+  "/slide-4.jpg",
+  "/slide-5.jpg",
+  "/slide-6.jpg",
+  "/slide-7.jpg",
+  "/slide-8.jpg",
+  "/slide-9.jpg"
+];
+
+// Slideshow state and reducer for atomic updates
+interface SlideshowState {
+  currentSlide: number;
+  isPlaying: boolean;
+}
+
+type SlideshowAction = 
+  | { type: 'SET_SLIDE'; slide: number }
+  | { type: 'NEXT_SLIDE' }
+  | { type: 'PLAY' }
+  | { type: 'PAUSE' };
+
+function slideshowReducer(state: SlideshowState, action: SlideshowAction): SlideshowState {
+  switch (action.type) {
+    case 'SET_SLIDE':
+      return { ...state, currentSlide: action.slide, isPlaying: true };
+    case 'NEXT_SLIDE':
+      return { ...state, currentSlide: (state.currentSlide + 1) % slideshowImages.length };
+    case 'PLAY':
+      return { ...state, isPlaying: true };
+    case 'PAUSE':
+      return { ...state, isPlaying: false };
+    default:
+      return state;
+  }
+}
+
+// Slideshow Component
+function EcoLodgeSlideshow() {
+  const [state, dispatch] = useReducer(slideshowReducer, { currentSlide: 0, isPlaying: true });
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  
+  // Start/restart auto-advance timer
+  const startTimer = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    
+    intervalRef.current = setInterval(() => {
+      dispatch({ type: 'NEXT_SLIDE' });
+    }, 4000);
+  }, []);
+  
+  // Initialize and manage timer
+  useEffect(() => {
+    if (state.isPlaying) {
+      startTimer();
+    }
+    
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [state.isPlaying, startTimer]); // Removed state.currentSlide to prevent multiple timers
+  
+  // Manual navigation handler - prevents race conditions
+  const handleSlideClick = useCallback((index: number) => {
+    // Immediately clear timer to prevent race conditions
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    
+    // Update slide state
+    dispatch({ type: 'SET_SLIDE', slide: index });
+    
+    // Restart timer after state update
+    startTimer();
+  }, [startTimer]);
+  
+  return (
+    <div className="mb-16">
+      <div className="text-center mb-12">
+        <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
+          Development Showcase
+        </h3>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Explore the eco-lodge development through this visual presentation showcasing the design concepts and natural integration.
+        </p>
+      </div>
+      
+      <div className="relative max-w-4xl mx-auto">
+        {/* Slideshow Container */}
+        <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-card">
+          {/* Only render the current slide - eliminates multiple visible images */}
+          <img 
+            key={state.currentSlide} // Force re-render for smooth transitions
+            src={slideshowImages[state.currentSlide]}
+            alt={`Eco-lodge development showcase - slide ${state.currentSlide + 1}`}
+            className="w-full h-full object-cover animate-fadeIn"
+            data-testid={`slideshow-image-${state.currentSlide + 1}`}
+          />
+          
+          {/* Slide Indicators */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {slideshowImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleSlideClick(index)}
+                aria-pressed={index === state.currentSlide}
+                aria-label={`Go to slide ${index + 1} of ${slideshowImages.length}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === state.currentSlide 
+                    ? 'bg-white shadow-lg' 
+                    : 'bg-white/50 hover:bg-white/70'
+                }`}
+                data-testid={`slideshow-indicator-${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Slide Counter */}
+        <div className="mt-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            {state.currentSlide + 1} of {slideshowImages.length}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function EcoLodge() {
   useEffect(() => {
@@ -163,122 +287,11 @@ export default function EcoLodge() {
             </div>
           </div>
 
-          {/* 3D Architectural Renderings Gallery */}
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
-                3D Architectural Visualizations
-              </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Professional 3D renderings showcasing the eco-lodge design from multiple perspectives, highlighting the seamless integration with Kaikoura's stunning natural landscape.
-              </p>
-            </div>
-            
-            {/* Exterior Views */}
-            <div className="mb-12">
-              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Exterior Views</h4>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={exteriorView1}
-                    alt="Front exterior view of the eco-lodge showing modern timber cladding and expansive glass walls with mountain backdrop" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-exterior-1"
-                  />
-                </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={exteriorView2}
-                    alt="Side angle view demonstrating the eco-lodge's integration with the natural landscape and sustainable materials" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-exterior-2"
-                  />
-                </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={exteriorView3}
-                    alt="Deck and terrace area with spectacular ocean and mountain views showcasing outdoor living spaces" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-exterior-3"
-                  />
-                </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={exteriorView4}
-                    alt="Evening view of the eco-lodge highlighting sustainable design elements and guest accommodation areas" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-exterior-4"
-                  />
-                </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={exteriorView5}
-                    alt="Outdoor courtyard and deck area with pergola showing premium outdoor amenities and entertainment spaces" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-exterior-5"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Interior Views */}
-            <div className="mb-12">
-              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Interior Views</h4>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={interiorView1}
-                    alt="Interior bathroom and hallway area featuring modern fixtures with panoramic mountain and forest views" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-interior-1"
-                  />
-                </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={interiorView2}
-                    alt="Open-plan dining and kitchen area with premium appliances and floor-to-ceiling windows" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-interior-2"
-                  />
-                </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={interiorView3}
-                    alt="Luxury living area with panoramic windows showcasing breathtaking views of Kaikoura's mountain ranges" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-interior-3"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Floor Plan */}
-            <div className="mt-12">
-              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Floor Plan</h4>
-              <div className="flex justify-center">
-                <div className="max-w-4xl w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <img 
-                    src={floorPlan}
-                    alt="Detailed architectural floor plan showing room layouts, spatial organization, and design flow of the eco-lodge" 
-                    className="w-full h-full object-contain bg-card hover:scale-105 transition-transform duration-500"
-                    data-testid="eco-lodge-floor-plan"
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-8 text-center">
-              <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
-                These professional 3D architectural visualizations and floor plan demonstrate the thoughtful integration of luxury accommodation with sustainable design principles, 
-                showcasing how the eco-lodge will blend seamlessly into Kaikoura's pristine natural environment while providing guests with exceptional comfort and spectacular views.
-              </p>
-            </div>
-          </div>
+          {/* Development Slideshow */}
+          <EcoLodgeSlideshow />
 
         </div>
       </section>
-
-
 
     </div>
   );
