@@ -62,17 +62,17 @@ export default function InvestmentSection() {
                   <div className="bg-background/50 p-4 rounded-lg">
                     <h5 className="font-medium text-foreground mb-2">Key Investment Considerations:</h5>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Forest valuations subject to market volatility</li>
+                      <li>• Land valuations subject to market volatility</li>
                       <li>• ETS carbon credit prices fluctuate with regulatory changes</li>
-                      <li>• Harvest timing and yields dependent on growth conditions</li>
-                      <li>• Long-term investment (20+ year rotation cycle)</li>
-                      <li>• Professional forestry advice required for due diligence</li>
+                      <li>• Carbon sequestration rates dependent on environmental conditions</li>
+                      <li>• Long-term investment with environmental considerations</li>
+                      <li>• Professional land management advice required for due diligence</li>
                     </ul>
                   </div>
                   <p className="text-xs text-muted-foreground">
                     <strong>Disclaimer:</strong> This information is for preliminary assessment only. 
-                    Professional financial and forestry advice should be obtained before making investment decisions.
-                    All financial data must be verified through professional forestry and financial assessment.
+                    Professional financial and land management advice should be obtained before making investment decisions.
+                    All financial data must be verified through professional assessment.
                   </p>
                 </div>
               </CardContent>

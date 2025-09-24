@@ -23,7 +23,7 @@ export default function Visa() {
     
     // Cleanup on unmount
     return () => {
-      document.title = "Wairimu Station - Premium Forest Property Investment | Kaikoura, New Zealand";
+      document.title = "Wairimu Station - Premium Property Investment | Kaikoura, New Zealand";
     };
   }, []);
 
@@ -522,7 +522,7 @@ export default function Visa() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-green-600 text-lg" />
-                  <span className="text-green-700 dark:text-green-400">Sustainable forestry with ETS income potential</span>
+                  <span className="text-green-700 dark:text-green-400">Sustainable land management with ETS income potential</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-green-600 text-lg" />
@@ -547,9 +547,9 @@ export default function Visa() {
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Sustainable forest investment opportunity in New Zealand suitable for Active Investor Plus Visa" 
+                alt="Sustainable land management investment opportunity in New Zealand suitable for Active Investor Plus Visa" 
                 className="w-full h-full object-cover"
-                data-testid="wairimu-forest-image"
+                data-testid="wairimu-land-image"
               />
             </div>
           </div>

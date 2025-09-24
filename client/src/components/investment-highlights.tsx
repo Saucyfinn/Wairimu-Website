@@ -18,7 +18,7 @@ export default function InvestmentHighlights() {
             Investment Highlights
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
-            Key features that make Wairimu Station an exceptional forestry investment opportunity
+            Key features that make Wairimu Station an exceptional investment opportunity
           </p>
         </div>
 
