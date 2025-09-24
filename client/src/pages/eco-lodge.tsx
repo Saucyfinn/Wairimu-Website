@@ -364,86 +364,8 @@ export default function EcoLodge() {
               A boutique eco-lodge offering guests an immersive nature experience while generating sustainable revenue for Wairimu Station
             </p>
             
-            {/* Professional Concept Design Reference */}
-            <div className="bg-primary/5 rounded-xl p-8 max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-                <div className="flex-shrink-0">
-                  <div className="p-4 bg-primary/10 rounded-full">
-                    <Building className="h-8 w-8 text-primary" />
-                  </div>
-                </div>
-                <div className="text-center md:text-left flex-grow">
-                  <h3 className="text-xl font-bold text-foreground mb-2">Professional Concept Design Available</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Detailed architectural concept design featuring building platform at 520m above sea level with comprehensive site planning, floor plans, and sun study analysis.
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-4">
-                    <div className="bg-white/50 rounded-lg p-3">
-                      <div className="font-medium text-foreground">North Views</div>
-                      <div className="text-xs text-muted-foreground">Mountain panorama</div>
-                    </div>
-                    <div className="bg-white/50 rounded-lg p-3">
-                      <div className="font-medium text-foreground">South Views</div>
-                      <div className="text-xs text-muted-foreground">Coastal outlook</div>
-                    </div>
-                    <div className="bg-white/50 rounded-lg p-3">
-                      <div className="font-medium text-foreground">East Views</div>
-                      <div className="text-xs text-muted-foreground">Sunrise aspects</div>
-                    </div>
-                    <div className="bg-white/50 rounded-lg p-3">
-                      <div className="font-medium text-foreground">West Views</div>
-                      <div className="text-xs text-muted-foreground">Sunset vistas</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <Button 
-                    size="lg"
-                    className="floating-green-btn shadow-lg hover:shadow-xl transition-all"
-                    data-testid="download-concept-design"
-                    asChild
-                  >
-                    <a 
-                      href={conceptPdf} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      download
-                    >
-                      <FileText className="mr-2 h-5 w-5" />
-                      Download Concept Design
-                    </a>
-                  </Button>
-                </div>
-              </div>
-              <div className="mt-6 text-sm text-muted-foreground">
-                <strong>Reference:</strong> Concept Design Kaikoura_1758166391369.pdf - Professional architectural concept including site plan, floor plan details, and comprehensive sun study information.
-              </div>
-            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {conceptFeatures.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <Card key={feature.title} className="hover:shadow-lg transition-shadow h-full">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <IconComponent className="text-primary text-2xl mr-4" />
-                      <h4 className="font-semibold text-foreground text-lg" data-testid={`concept-feature-title-${index}`}>
-                        {feature.title}
-                      </h4>
-                    </div>
-                    <p className="text-muted-foreground mb-4" data-testid={`concept-feature-description-${index}`}>
-                      {feature.description}
-                    </p>
-                    <Badge variant="secondary" className="text-xs">
-                      {feature.capacity}
-                    </Badge>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
 
           {/* Architectural Concepts Grid */}
           <div className="mb-16">
