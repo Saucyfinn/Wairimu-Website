@@ -275,14 +275,6 @@ export default function EcoLodge() {
 
           {/* Architectural Concepts Grid */}
           <div className="mb-16">
-            <div className="text-center mb-8">
-              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
-                Architectural Design Variations
-              </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore multiple design concepts and layout options for the eco-lodge development, showcasing versatile approaches to integrate luxury accommodation with the natural environment.
-              </p>
-            </div>
             <figure className="rounded-xl overflow-hidden shadow-lg bg-card dark:bg-card">
               <img 
                 src={architecturalConceptsGrid}
