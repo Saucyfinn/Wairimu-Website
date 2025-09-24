@@ -3,7 +3,7 @@ import { Flower2, Droplets, Heart, Shield, Star, TreePine, MapPin, Phone, Mail, 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import manukaFlowersImage from "@assets/stock_images/manuka_flowers_honey_57a5a89b.jpg";
+import manukaFlowersImage from "@assets/stock_images/manuka_flowers_honey_859306ad.jpg";
 import beehivesImage1 from "@assets/stock_images/beehives_honey_bee_f_e4c67446.jpg";
 import beehivesImage2 from "@assets/stock_images/beehives_honey_bee_f_a6c82ccb.jpg";
 import honeyJarsImage1 from "@assets/stock_images/honey_jars_productio_2f10a520.jpg";
@@ -171,43 +171,47 @@ export default function Honey() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div 
-          className="absolute inset-0 parallax-bg"
-          style={{
-            backgroundImage: `url(${manukaFlowersImage})`
-          }}
-        >
-          <div className="absolute inset-0 hero-gradient"></div>
-        </div>
-        
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6" data-testid="honey-hero-title">
-            Kaikoura Native Bush Honey
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" data-testid="honey-hero-description">
-            Premium New Zealand honey from pristine coastal forests, where native Manuka flowers create liquid gold
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              onClick={() => navigateToSection("benefits")}
-              size="lg"
-              className="floating-green-btn"
-              data-testid="hero-benefits-button"
-            >
-              <Heart className="mr-2 h-5 w-5" />
-              Health Benefits
-            </Button>
-            <Button 
-              onClick={() => navigateToSection("production")}
-              size="lg"
-              variant="outline"
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20"
-              data-testid="hero-production-button"
-            >
-              <Beaker className="mr-2 h-5 w-5" />
-              Production Process
-            </Button>
+      <section className="py-20 bg-background pt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6" data-testid="honey-hero-title">
+                Kaikoura Native Bush Honey
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed" data-testid="honey-hero-description">
+                Premium New Zealand honey from pristine coastal forests, where native Manuka flowers create liquid gold
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  onClick={() => navigateToSection("benefits")}
+                  size="lg"
+                  className="floating-green-btn"
+                  data-testid="hero-benefits-button"
+                >
+                  <Heart className="mr-2 h-5 w-5" />
+                  Health Benefits
+                </Button>
+                <Button 
+                  onClick={() => navigateToSection("production")}
+                  size="lg"
+                  variant="outline"
+                  data-testid="hero-production-button"
+                >
+                  <Beaker className="mr-2 h-5 w-5" />
+                  Production Process
+                </Button>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src={manukaFlowersImage}
+                  alt="Manuka flowers with bees collecting nectar for premium New Zealand honey production" 
+                  className="w-full h-full object-cover"
+                  data-testid="manuka-flowers-bees-image"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
