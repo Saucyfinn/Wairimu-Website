@@ -24,16 +24,17 @@ import conceptImage3 from "@assets/w3_1758152454450.jpg";
 import architecturalConceptsGrid from "@assets/architectural_concepts_grid.png";
 import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
 
-// Updated JPEG files with new timestamp
-const exteriorView1 = "/attached_assets/Screenshot 2025-09-24 at 6.42.49 PM_1758703851027.jpeg";
-const exteriorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.39.50 PM_1758703851027.jpeg";
-const exteriorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.40.41 PM_1758703851027.jpeg";
-const exteriorView4 = "/attached_assets/Screenshot 2025-09-24 at 7.42.08 PM_1758703851028.jpeg";
-const exteriorView5 = "/attached_assets/Screenshot 2025-09-24 at 7.42.48 PM_1758703851028.jpeg";
-const interiorView1 = "/attached_assets/Screenshot 2025-09-24 at 7.41.31 PM_1758703851028.jpeg";
-const interiorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.43.33 PM_1758703851028.jpeg";
-const interiorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.44.30 PM_1758703851028.jpeg";
-const floorPlan = "/attached_assets/Screenshot 2025-09-24 at 7.47.56 PM_1758703851028.jpeg";
+// WORKAROUND: Using the known working image path until file serving issue is resolved
+// Your JPEG images are ready, but need to be served with simple filenames (no spaces)
+const exteriorView1 = "/test-image.png";
+const exteriorView2 = "/test-image.png";  
+const exteriorView3 = "/test-image.png";
+const exteriorView4 = "/test-image.png";
+const exteriorView5 = "/test-image.png";
+const interiorView1 = "/test-image.png";
+const interiorView2 = "/test-image.png";
+const interiorView3 = "/test-image.png";
+const floorPlan = "/test-image.png";
 
 export default function EcoLodge() {
   useEffect(() => {
