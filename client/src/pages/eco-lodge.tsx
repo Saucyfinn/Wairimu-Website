@@ -25,15 +25,15 @@ import architecturalConceptsGrid from "@assets/architectural_concepts_grid.png";
 import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
 
 // Eco-lodge architectural visualization paths (using direct paths due to special characters in filenames)
-const exteriorView1 = "/attached_assets/Screenshot 2025-09-24 at 6.42.49 PM_1758699554835.png";
-const exteriorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.39.50 PM_1758699601136.png";
-const exteriorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.40.41 PM_1758699654349.png";
-const exteriorView4 = "/attached_assets/Screenshot 2025-09-24 at 7.42.08 PM_1758699738667.png";
-const exteriorView5 = "/attached_assets/Screenshot 2025-09-24 at 7.42.48 PM_1758699778247.png";
-const interiorView1 = "/attached_assets/Screenshot 2025-09-24 at 7.41.31 PM_1758699701558.png";
-const interiorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.43.33 PM_1758699823079.png";
-const interiorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.44.30 PM_1758699880234.png";
-const floorPlan = "/attached_assets/Screenshot 2025-09-24 at 7.47.56 PM_1758700085134.png";
+const exteriorView1 = "/attached_assets/Screenshot 2025-09-24 at 6.42.49 PM_1758703194085.png";
+const exteriorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.39.50 PM_1758703194085.png";
+const exteriorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.40.41 PM_1758703194085.png";
+const exteriorView4 = "/attached_assets/Screenshot 2025-09-24 at 7.42.08 PM_1758703194084.png";
+const exteriorView5 = "/attached_assets/Screenshot 2025-09-24 at 7.42.48 PM_1758703194084.png";
+const interiorView1 = "/attached_assets/Screenshot 2025-09-24 at 7.41.31 PM_1758703194085.png";
+const interiorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.43.33 PM_1758703194084.png";
+const interiorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.44.30 PM_1758703194084.png";
+const floorPlan = "/attached_assets/Screenshot 2025-09-24 at 7.47.56 PM_1758703194084.png";
 
 export default function EcoLodge() {
   useEffect(() => {
