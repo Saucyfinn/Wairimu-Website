@@ -21,7 +21,9 @@ import { Badge } from "@/components/ui/badge";
 import conceptImage1 from "@assets/w1_1758155810309.jpg";
 import conceptImage2 from "@assets/w2_1758155810310.jpg";
 import conceptImage3 from "@assets/w3_1758152454450.jpg";
+import architecturalConceptsGrid from "@assets/architectural_concepts_grid.png";
 import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
+import VirtualTour360 from "@/components/360-virtual-tour";
 
 export default function EcoLodge() {
   useEffect(() => {
@@ -168,6 +170,100 @@ export default function EcoLodge() {
     }
   ];
 
+  // Virtual tour scenes data - using placeholder panoramic images
+  // Note: Replace with actual 360° panoramic images when available
+  const virtualTourScenes = [
+    {
+      id: "lodge-overview",
+      name: "Lodge Overview",
+      description: "Panoramic view of the proposed eco-lodge site with mountain and coastal views",
+      imageUrl: conceptImage1, // Placeholder - replace with 360° panoramic image
+      hotspots: [
+        {
+          id: "mountain-view",
+          position: { theta: 45, phi: 0 },
+          title: "Mountain Views",
+          description: "Spectacular Kaikoura mountain range backdrop for the eco-lodge",
+          type: "info" as const
+        },
+        {
+          id: "coastal-access",
+          position: { theta: -45, phi: -10 },
+          title: "Coastal Access",
+          description: "Private beach access and marine wildlife viewing area",
+          type: "info" as const
+        },
+        {
+          id: "lodge-site",
+          position: { theta: 0, phi: 15 },
+          title: "Lodge Building Site",
+          description: "Proposed location for the main lodge building at 520m elevation",
+          targetScene: "building-platform",
+          type: "navigation" as const
+        }
+      ]
+    },
+    {
+      id: "building-platform",
+      name: "Building Platform",
+      description: "Detailed view of the proposed building platform and cabin locations",
+      imageUrl: conceptImage2, // Placeholder - replace with 360° panoramic image
+      hotspots: [
+        {
+          id: "cabin-locations",
+          position: { theta: 90, phi: 0 },
+          title: "Cabin Locations",
+          description: "Proposed eco-cabin sites distributed across the natural landscape",
+          type: "info" as const
+        },
+        {
+          id: "sustainability-features",
+          position: { theta: -90, phi: 10 },
+          title: "Sustainability Features",
+          description: "Solar panel locations, rainwater collection, and waste management areas",
+          type: "info" as const
+        },
+        {
+          id: "return-overview",
+          position: { theta: 180, phi: 0 },
+          title: "Return to Overview",
+          description: "Navigate back to the main property overview",
+          targetScene: "lodge-overview",
+          type: "navigation" as const
+        }
+      ]
+    },
+    {
+      id: "natural-environment",
+      name: "Natural Environment",
+      description: "Experience the pristine native forest and natural setting",
+      imageUrl: conceptImage3, // Placeholder - replace with 360° panoramic image
+      hotspots: [
+        {
+          id: "native-forest",
+          position: { theta: 0, phi: 20 },
+          title: "Native Bush",
+          description: "Regenerating native forest that will be preserved and integrated with lodge design",
+          type: "info" as const
+        },
+        {
+          id: "wildlife-habitat",
+          position: { theta: 120, phi: -15 },
+          title: "Wildlife Habitat",
+          description: "Natural habitat areas for native birds and wildlife viewing",
+          type: "info" as const
+        },
+        {
+          id: "walking-trails",
+          position: { theta: -60, phi: 5 },
+          title: "Nature Trails",
+          description: "Proposed walking trails through the property for guest activities",
+          type: "info" as const
+        }
+      ]
+    }
+  ];
+
   const developmentPhases = [
     {
       phase: 1,
@@ -305,10 +401,17 @@ export default function EcoLodge() {
                     size="lg"
                     className="floating-green-btn shadow-lg hover:shadow-xl transition-all"
                     data-testid="download-concept-design"
-                    onClick={() => window.open(conceptPdf, '_blank')}
+                    asChild
                   >
-                    <FileText className="mr-2 h-5 w-5" />
-                    Download Concept Design
+                    <a 
+                      href={conceptPdf} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      download
+                    >
+                      <FileText className="mr-2 h-5 w-5" />
+                      Download Concept Design
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -342,6 +445,38 @@ export default function EcoLodge() {
             })}
           </div>
 
+          {/* Architectural Concepts Grid */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
+                Architectural Design Variations
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Explore multiple design concepts and layout options for the eco-lodge development, showcasing versatile approaches to integrate luxury accommodation with the natural environment.
+              </p>
+            </div>
+            <figure className="rounded-xl overflow-hidden shadow-lg bg-card dark:bg-card">
+              <img 
+                src={architecturalConceptsGrid}
+                alt="Architectural concepts grid showing multiple design variations for the eco-lodge development at Wairimu Station" 
+                className="w-full h-auto object-contain aspect-video"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
+                data-testid="architectural-concepts-grid"
+              />
+              <figcaption className="sr-only">
+                Professional architectural concepts demonstrating various design approaches and site integration options
+              </figcaption>
+            </figure>
+            <div className="mt-4 text-center">
+              <p className="text-sm text-muted-foreground">
+                Professional architectural concepts demonstrating various design approaches and site integration options
+              </p>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="aspect-video rounded-xl overflow-hidden">
               <img 
@@ -359,6 +494,33 @@ export default function EcoLodge() {
                 data-testid="concept-views-image"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 360° Virtual Tour Section */}
+      <section id="virtual-tour" className="py-20 bg-muted/30 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+              360° Virtual Property Tour
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Explore the proposed eco-lodge site through an immersive 360° virtual tour. Navigate between different viewpoints and discover key features of this exceptional development opportunity.
+            </p>
+          </div>
+          
+          <VirtualTour360 
+            scenes={virtualTourScenes}
+            initialScene="lodge-overview"
+            className="max-w-6xl mx-auto"
+          />
+          
+          <div className="mt-8 text-center">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              <strong>Note:</strong> This virtual tour uses placeholder images to demonstrate the 360° functionality. 
+              Professional 360° panoramic photography will be available to showcase the actual property views and proposed development areas.
+            </p>
           </div>
         </div>
       </section>
