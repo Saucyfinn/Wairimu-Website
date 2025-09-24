@@ -1,27 +1,25 @@
 import { useEffect } from "react";
-import { Flower2, Droplets, Heart, Shield, Star, TreePine, MapPin, Phone, Mail, Award, Beaker, Clock } from "lucide-react";
+import { Flower2, Droplets, Heart, Shield, Star, TreePine, MapPin, Phone, Mail, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import manukaFlowersImage from "@assets/stock_images/manuka_flowers_honey_859306ad.jpg";
-import beehivesImage1 from "@assets/stock_images/beehives_honey_bee_f_e4c67446.jpg";
 import beehivesImage2 from "@assets/stock_images/beehives_honey_bee_f_a6c82ccb.jpg";
-import honeyJarsImage1 from "@assets/stock_images/honey_jars_productio_2f10a520.jpg";
 import honeyJarsImage2 from "@assets/stock_images/honey_jars_productio_08c8d0e1.jpg";
 
 export default function Honey() {
   useEffect(() => {
     // Set unique page title and meta description for SEO
-    document.title = "Kaikoura Native Bush Honey Production | Premium New Zealand Honey | Wairimu Station";
+    document.title = "Kaikoura Native Bush Honey | Premium New Zealand Honey | Wairimu Station";
     
     // Update or create meta description
     let metaDescription = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover Kaikoura\'s premium Native Bush honey production. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.');
+      metaDescription.setAttribute('content', 'Discover Kaikoura\'s premium Native Bush honey. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.');
     } else {
       const newMetaElement = document.createElement('meta') as HTMLMetaElement;
       newMetaElement.name = 'description';
-      newMetaElement.content = 'Discover Kaikoura\'s premium Native Bush honey production. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.';
+      newMetaElement.content = 'Discover Kaikoura\'s premium Native Bush honey. Learn about sustainable beekeeping, health benefits, and the unique environment that creates world-class New Zealand honey.';
       document.head.appendChild(newMetaElement);
     }
     
@@ -92,38 +90,6 @@ export default function Honey() {
     }
   ];
 
-  const productionSteps = [
-    {
-      step: 1,
-      title: "Manuka Forest Management",
-      description: "Sustainable management of native Manuka forests in pristine Kaikoura environment",
-      season: "Year-round forest care"
-    },
-    {
-      step: 2,
-      title: "Hive Placement",
-      description: "Strategic placement of beehives near Manuka trees during flowering season",
-      season: "Spring preparation (September-November)"
-    },
-    {
-      step: 3,
-      title: "Honey Collection",
-      description: "Careful harvesting when Manuka nectar concentration is optimal",
-      season: "Summer harvest (December-February)"
-    },
-    {
-      step: 4,
-      title: "Testing & Grading",
-      description: "Rigorous laboratory testing for UMF levels and purity standards",
-      season: "Post-harvest processing"
-    },
-    {
-      step: 5,
-      title: "Processing & Packaging",
-      description: "Minimal processing to preserve natural properties and beneficial compounds",
-      season: "Year-round operations"
-    }
-  ];
 
   const kaikouraAdvantages = [
     {
@@ -135,7 +101,7 @@ export default function Honey() {
     {
       icon: MapPin,
       title: "Ideal Climate",
-      description: "Temperate maritime climate perfect for Manuka flower production",
+      description: "Temperate maritime climate perfect for Manuka flower growth",
       highlight: "Extended flowering season"
     },
     {
@@ -163,7 +129,7 @@ export default function Honey() {
 
   const honeyStats = [
     { label: "UMF Rating", value: "5+ to 20+", description: "Therapeutic activity levels", icon: Star },
-    { label: "Annual Production", value: "150+ tons", description: "Kaikoura region output", icon: Droplets },
+    { label: "Annual Harvest", value: "150+ tons", description: "Kaikoura region output", icon: Droplets },
     { label: "Active Beekeepers", value: "25+", description: "Licensed local operators", icon: MapPin },
     { label: "Manuka Forest", value: "2,000 ha", description: "Native flowering area", icon: TreePine }
   ];
@@ -191,22 +157,13 @@ export default function Honey() {
                   <Heart className="mr-2 h-5 w-5" />
                   Health Benefits
                 </Button>
-                <Button 
-                  onClick={() => navigateToSection("production")}
-                  size="lg"
-                  variant="outline"
-                  data-testid="hero-production-button"
-                >
-                  <Beaker className="mr-2 h-5 w-5" />
-                  Production Process
-                </Button>
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src={manukaFlowersImage}
-                  alt="Manuka flowers with bees collecting nectar for premium New Zealand honey production" 
+                  alt="Manuka flowers with bees collecting nectar for premium New Zealand honey" 
                   className="w-full h-full object-cover"
                   data-testid="manuka-flowers-bees-image"
                 />
@@ -345,66 +302,6 @@ export default function Honey() {
         </div>
       </section>
 
-      {/* Production Process Section */}
-      <section id="production" className="py-20 bg-card scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Sustainable Production Process
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From forest to jar: our commitment to sustainable beekeeping and premium quality honey production
-            </p>
-          </div>
-
-          <div className="space-y-8 mb-12">
-            {productionSteps.map((step, index) => (
-              <Card key={step.step} className="p-6">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
-                      {step.step}
-                    </div>
-                  </div>
-                  <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-foreground" data-testid={`production-step-title-${index}`}>
-                        {step.title}
-                      </h3>
-                      <Badge variant="outline" className="text-accent border-accent mt-2 md:mt-0">
-                        <Clock className="w-3 h-3 mr-1" />
-                        {step.season}
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground" data-testid={`production-step-description-${index}`}>
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="aspect-video rounded-xl overflow-hidden">
-              <img 
-                src={beehivesImage1}
-                alt="Professional beehives positioned in Kaikoura's pristine environment for sustainable Manuka honey production" 
-                className="w-full h-full object-cover"
-                data-testid="production-beehives-image"
-              />
-            </div>
-            <div className="aspect-video rounded-xl overflow-hidden">
-              <img 
-                src={honeyJarsImage1}
-                alt="Premium Manuka honey jars showcasing the final product of sustainable beekeeping practices" 
-                className="w-full h-full object-cover"
-                data-testid="production-honey-jars-image"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Kaikoura Advantages Section */}
       <section className="py-20 bg-background">
@@ -446,7 +343,7 @@ export default function Honey() {
             <div className="aspect-video rounded-xl overflow-hidden">
               <img 
                 src={beehivesImage2}
-                alt="Beehives nestled in Kaikoura's coastal forest environment showing ideal conditions for honey production" 
+                alt="Beehives nestled in Kaikoura's coastal forest environment showing ideal conditions for honey making" 
                 className="w-full h-full object-cover"
                 data-testid="kaikoura-environment-image"
               />
@@ -454,7 +351,7 @@ export default function Honey() {
             <div className="aspect-video rounded-xl overflow-hidden">
               <img 
                 src={honeyJarsImage2}
-                alt="Artisanal honey production showcasing the quality and care that goes into every jar of Kaikoura honey" 
+                alt="Artisanal honey showcasing the quality and care that goes into every jar of Kaikoura honey" 
                 className="w-full h-full object-cover"
                 data-testid="kaikoura-honey-quality-image"
               />
@@ -529,7 +426,7 @@ export default function Honey() {
               Connect with Kaikoura Honey Producers
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Learn more about our sustainable honey production, wholesale opportunities, 
+              Learn more about our sustainable honey, wholesale opportunities, 
               or investment in local beekeeping operations
             </p>
           </div>
@@ -538,7 +435,7 @@ export default function Honey() {
             <Card className="text-center p-8">
               <Phone className="text-primary text-3xl mb-4 mx-auto" />
               <h3 className="font-semibold text-foreground mb-2">Phone Inquiry</h3>
-              <p className="text-muted-foreground mb-4">Speak directly with our honey production team</p>
+              <p className="text-muted-foreground mb-4">Speak directly with our honey team</p>
               <Button variant="outline" className="w-full" data-testid="contact-phone-button">
                 Call +64 3 319 5641
               </Button>
@@ -576,7 +473,7 @@ export default function Honey() {
               Investment Opportunities
             </h3>
             <p className="text-muted-foreground mb-6">
-              Interested in investing in sustainable honey production and beekeeping operations? 
+              Interested in investing in sustainable honey and beekeeping operations? 
               Kaikoura's growing honey industry offers compelling opportunities for environmentally conscious investors.
             </p>
             <Button
