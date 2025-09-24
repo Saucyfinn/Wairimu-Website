@@ -393,10 +393,25 @@ export default function EcoLodge() {
                 </div>
               </div>
             </div>
+
+            {/* Floor Plan */}
+            <div className="mt-12">
+              <h4 className="font-semibold text-xl text-foreground mb-6 text-center">Floor Plan</h4>
+              <div className="flex justify-center">
+                <div className="max-w-4xl w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <img 
+                    src="/attached_assets/Screenshot 2025-09-24 at 7.47.56 PM_1758700085134.png"
+                    alt="Detailed architectural floor plan showing room layouts, spatial organization, and design flow of the eco-lodge" 
+                    className="w-full h-full object-contain bg-card hover:scale-105 transition-transform duration-500"
+                    data-testid="eco-lodge-floor-plan"
+                  />
+                </div>
+              </div>
+            </div>
             
             <div className="mt-8 text-center">
               <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
-                These professional 3D architectural visualizations demonstrate the thoughtful integration of luxury accommodation with sustainable design principles, 
+                These professional 3D architectural visualizations and floor plan demonstrate the thoughtful integration of luxury accommodation with sustainable design principles, 
                 showcasing how the eco-lodge will blend seamlessly into Kaikoura's pristine natural environment while providing guests with exceptional comfort and spectacular views.
               </p>
             </div>
