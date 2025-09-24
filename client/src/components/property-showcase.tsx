@@ -100,13 +100,13 @@ export default function PropertyShowcase() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 bg-muted p-6 sm:p-8 rounded-xl">
           <div className="text-center py-2">
             <div className="text-3xl sm:text-4xl font-bold text-primary mb-1 sm:mb-2 animate-counter" data-testid="stat-area">
-              {property?.area?.toLocaleString() || "604"}
+              {property?.area ? `${Math.floor(property.area).toLocaleString()} Hectares` : "640 Hectares"}
             </div>
             <div className="text-muted-foreground text-sm sm:text-base">Property size</div>
           </div>
           <div className="text-center py-2">
             <div className="text-3xl sm:text-4xl font-bold text-accent mb-1 sm:mb-2 animate-counter" data-testid="stat-credits">
-              {property?.etsCredits?.toLocaleString() || "215"}
+              {property?.etsCredits ? `${Math.floor(property.etsCredits).toLocaleString()} hectares` : "215 hectares"}
             </div>
             <div className="text-muted-foreground text-sm sm:text-base">Carbon credit area</div>
           </div>
