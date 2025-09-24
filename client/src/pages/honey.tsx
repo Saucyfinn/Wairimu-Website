@@ -118,14 +118,6 @@ export default function Honey() {
     }
   ];
 
-  const qualityStandards = [
-    "MGO (Methylglyoxal) content testing",
-    "New Zealand Ministry for Primary Industries compliance",
-    "Multifloral native bush honey verification",
-    "Heavy metal and pesticide testing",
-    "Moisture content and HMF level monitoring",
-    "DNA authentication for source verification"
-  ];
 
 
   return (
@@ -336,63 +328,6 @@ Native bush honey is derived from the nectar of New Zealand's diverse native flo
         </div>
       </section>
 
-      {/* Quality Standards Section */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="font-serif text-4xl font-bold text-foreground mb-6">
-                Quality Assurance & Standards
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Every jar of Kaikoura native bush honey meets the highest international standards for purity, 
-                potency, and authenticity through rigorous testing and certification processes.
-              </p>
-              <ul className="space-y-4">
-                {qualityStandards.map((standard, index) => (
-                  <li key={index} className="flex items-start space-x-3" data-testid={`quality-standard-${index}`}>
-                    <Award className="text-primary text-lg mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{standard}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="p-6">
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-                  Industry Certifications
-                </h3>
-                <div className="space-y-3">
-                  <Badge variant="outline" className="text-primary border-primary block w-fit">
-                    Member of NZ Beekeepers Inc
-                  </Badge>
-                  <Badge variant="outline" className="text-accent border-accent block w-fit">
-                    MPI Export Certified
-                  </Badge>
-                  <Badge variant="outline" className="text-primary border-primary block w-fit">
-                    ISO 17025 Laboratory Tested
-                  </Badge>
-                  <Badge variant="outline" className="text-accent border-accent block w-fit">
-                    Organic & Sustainable Practices
-                  </Badge>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-                  Testing Parameters
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  Every batch undergoes comprehensive laboratory analysis including MGO content, 
-                  DHA levels, HMF testing, moisture content, and DNA authentication to ensure 
-                  genuine native bush honey from verified New Zealand sources.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background scroll-mt-20">
