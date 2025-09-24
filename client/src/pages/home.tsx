@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <InvestmentHighlights />
       <PropertyShowcase />
+      <InvestmentHighlights />
       <LocationSection />
       <ETSSection />
       <InvestmentSection />
