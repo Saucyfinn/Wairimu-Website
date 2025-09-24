@@ -127,12 +127,6 @@ export default function Honey() {
     "DNA authentication for source verification"
   ];
 
-  const honeyStats = [
-    { label: "MGO Rating", value: "100+ to 550+", description: "Therapeutic activity levels", icon: Star },
-    { label: "Annual Harvest", value: "150+ tons", description: "Kaikoura region output", icon: Droplets },
-    { label: "Active Beekeepers", value: "25+", description: "Licensed local operators", icon: MapPin },
-    { label: "Native Bush Forest", value: "2,000 ha", description: "Native flowering area", icon: TreePine }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -186,24 +180,6 @@ export default function Honey() {
             </p>
           </div>
 
-          {/* Honey Statistics */}
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            {honeyStats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <Card key={stat.label} className="text-center">
-                  <CardContent className="p-6">
-                    <IconComponent className="text-primary text-3xl mb-4 mx-auto" />
-                    <div className="text-3xl font-bold text-foreground mb-2" data-testid={`honey-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {stat.value}
-                    </div>
-                    <div className="font-medium text-foreground mb-1">{stat.label}</div>
-                    <div className="text-sm text-muted-foreground">{stat.description}</div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
