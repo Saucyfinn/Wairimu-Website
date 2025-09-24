@@ -3,7 +3,7 @@ import { Flower2, Droplets, Heart, Shield, Star, TreePine, MapPin, Phone, Mail, 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import manukaFlowersImage from "@assets/stock_images/manuka_flowers_honey_859306ad.jpg";
+import manukaFlowersImage from "@assets/stock_images/manuka_flowers_bees.png";
 import beehivesImage2 from "@assets/stock_images/beehives_honey_bee_f_a6c82ccb.jpg";
 import honeyJarsImage2 from "@assets/stock_images/honey_jars_productio_08c8d0e1.jpg";
 
