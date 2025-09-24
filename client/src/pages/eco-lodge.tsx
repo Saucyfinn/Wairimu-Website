@@ -24,16 +24,16 @@ import conceptImage3 from "@assets/w3_1758152454450.jpg";
 import architecturalConceptsGrid from "@assets/architectural_concepts_grid.png";
 import conceptPdf from "@assets/Concept Design Kaikoura_1758166391369.pdf";
 
-// Test with public directory paths - these should work with Vite
-const exteriorView1 = "/eco-lodge-exterior-1.png";
-const exteriorView2 = "/eco-lodge-exterior-2.png";  
-const exteriorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.40.41 PM_1758703194085.png";
-const exteriorView4 = "/attached_assets/Screenshot 2025-09-24 at 7.42.08 PM_1758703194084.png";
-const exteriorView5 = "/attached_assets/Screenshot 2025-09-24 at 7.42.48 PM_1758703194084.png";
-const interiorView1 = "/attached_assets/Screenshot 2025-09-24 at 7.41.31 PM_1758703194085.png";
-const interiorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.43.33 PM_1758703194084.png";
-const interiorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.44.30 PM_1758703194084.png";
-const floorPlan = "/eco-lodge-floor-plan.png";
+// Updated JPEG files with new timestamp
+const exteriorView1 = "/attached_assets/Screenshot 2025-09-24 at 6.42.49 PM_1758703851027.jpeg";
+const exteriorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.39.50 PM_1758703851027.jpeg";
+const exteriorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.40.41 PM_1758703851027.jpeg";
+const exteriorView4 = "/attached_assets/Screenshot 2025-09-24 at 7.42.08 PM_1758703851028.jpeg";
+const exteriorView5 = "/attached_assets/Screenshot 2025-09-24 at 7.42.48 PM_1758703851028.jpeg";
+const interiorView1 = "/attached_assets/Screenshot 2025-09-24 at 7.41.31 PM_1758703851028.jpeg";
+const interiorView2 = "/attached_assets/Screenshot 2025-09-24 at 7.43.33 PM_1758703851028.jpeg";
+const interiorView3 = "/attached_assets/Screenshot 2025-09-24 at 7.44.30 PM_1758703851028.jpeg";
+const floorPlan = "/attached_assets/Screenshot 2025-09-24 at 7.47.56 PM_1758703851028.jpeg";
 
 export default function EcoLodge() {
   useEffect(() => {
