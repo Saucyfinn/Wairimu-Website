@@ -45,7 +45,7 @@ export default function Visa() {
       duration: "3 Years",
       presence: "21 Days Annually",
       description: "For high-growth investments focused on emerging sectors and innovation",
-      color: "text-primary border-primary",
+      color: "text-green-800 dark:text-green-300 border-green-800 dark:border-green-300",
       benefits: [
         "Minimum 3-year investment period",
         "Focused on growth investments",
@@ -65,7 +65,7 @@ export default function Visa() {
       duration: "5 Years",
       presence: "105 Days (reducible)",
       description: "For diversified investments across multiple asset classes and sectors",
-      color: "text-accent border-accent",
+      color: "text-green-800 dark:text-green-300 border-green-800 dark:border-green-300",
       benefits: [
         "Minimum 5-year investment period",
         "Flexible investment portfolio",
@@ -104,19 +104,19 @@ export default function Visa() {
       icon: Globe,
       title: "Path to Citizenship",
       description: "Permanent residency leads to citizenship eligibility",
-      color: "text-primary"
+      color: "text-green-800 dark:text-green-300"
     },
     {
       icon: Users,
       title: "Family Inclusion",
       description: "Include spouse/partner and dependent children",
-      color: "text-primary"
+      color: "text-green-800 dark:text-green-300"
     },
     {
       icon: TrendingUp,
       title: "Investment Flexibility",
       description: "Multiple qualifying investment options available",
-      color: "text-primary"
+      color: "text-green-800 dark:text-green-300"
     }
   ];
 
@@ -201,11 +201,11 @@ export default function Visa() {
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
         
-        <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6" data-testid="visa-hero-title">
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
+          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-green-800 dark:text-green-300" data-testid="visa-hero-title">
             New Zealand Active Investor Plus Visa
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" data-testid="visa-hero-description">
+          <p className="text-xl md:text-2xl text-green-700 dark:text-green-400 mb-8 leading-relaxed" data-testid="visa-hero-description">
             Active Investor Plus Visa Program - Your pathway to New Zealand permanent residency through strategic investment
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -213,7 +213,7 @@ export default function Visa() {
               onClick={() => navigateToSection("benefits")}
               size="lg"
               variant="outline"
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+              className="bg-green-800/20 border-green-700/50 text-green-800 dark:text-green-300 hover:bg-green-800/30"
               data-testid="hero-benefits-button"
             >
               <Globe className="mr-2 h-5 w-5" />
@@ -227,10 +227,10 @@ export default function Visa() {
       <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-800 dark:text-green-300 mb-6">
               Active Investor Plus Visa Overview
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-xl text-green-700 dark:text-green-400 max-w-4xl mx-auto">
               New Zealand's premier investment immigration program offers a direct pathway to permanent residency 
               for high-net-worth individuals committed to significant investment in the country's economy
             </p>
@@ -243,12 +243,12 @@ export default function Visa() {
               return (
                 <Card key={stat.label} className="text-center">
                   <CardContent className="p-6">
-                    <IconComponent className="text-primary text-3xl mb-4 mx-auto" />
-                    <div className="text-3xl font-bold text-foreground mb-2" data-testid={`program-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <IconComponent className="text-green-800 dark:text-green-300 text-3xl mb-4 mx-auto" />
+                    <div className="text-3xl font-bold text-green-800 dark:text-green-300 mb-2" data-testid={`program-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
                       {stat.value}
                     </div>
-                    <div className="font-medium text-foreground mb-1">{stat.label}</div>
-                    <div className="text-sm text-muted-foreground">{stat.description}</div>
+                    <div className="font-medium text-green-800 dark:text-green-300 mb-1">{stat.label}</div>
+                    <div className="text-sm text-green-700 dark:text-green-400">{stat.description}</div>
                   </CardContent>
                 </Card>
               );
@@ -257,7 +257,7 @@ export default function Visa() {
 
           <Alert className="mb-8">
             <AlertTriangle className="h-4 w-4" />
-            <AlertDescription>
+            <AlertDescription className="text-green-700 dark:text-green-400">
               The Active Investor Plus Visa replaced the Investor Plus Visa in 2022, introducing enhanced requirements 
               and streamlined benefits. Recent 2025 policy updates have eliminated English language, age, and business 
               experience requirements.
@@ -270,10 +270,10 @@ export default function Visa() {
       <section id="categories" className="py-20 bg-background scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-800 dark:text-green-300 mb-6">
               Investment Categories
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-green-700 dark:text-green-400 max-w-3xl mx-auto">
               Choose between two investment pathways based on your investment strategy and presence preferences
             </p>
           </div>
@@ -282,51 +282,51 @@ export default function Visa() {
             {investmentCategories.map((category, index) => (
               <Card key={category.name} className="hover:shadow-lg transition-shadow h-full">
                 <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl font-serif mb-2">{category.name}</CardTitle>
+                  <CardTitle className="text-2xl font-serif mb-2 text-green-800 dark:text-green-300">{category.name}</CardTitle>
                   <div className="space-y-2">
                     <Badge variant="outline" className={`text-lg px-4 py-2 ${category.color}`}>
                       {category.amount}
                     </Badge>
-                    <p className="text-muted-foreground">{category.description}</p>
+                    <p className="text-green-700 dark:text-green-400">{category.description}</p>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
-                      <Clock className="text-primary text-xl mb-2 mx-auto" />
-                      <div className="text-sm text-muted-foreground">Duration</div>
-                      <div className="font-semibold" data-testid={`category-duration-${index}`}>
+                      <Clock className="text-green-800 dark:text-green-300 text-xl mb-2 mx-auto" />
+                      <div className="text-sm text-green-700 dark:text-green-400">Duration</div>
+                      <div className="font-semibold text-green-800 dark:text-green-300" data-testid={`category-duration-${index}`}>
                         {category.duration}
                       </div>
                     </div>
                     <div>
-                      <MapPin className="text-primary text-xl mb-2 mx-auto" />
-                      <div className="text-sm text-muted-foreground">Presence</div>
-                      <div className="font-semibold" data-testid={`category-presence-${index}`}>
+                      <MapPin className="text-green-800 dark:text-green-300 text-xl mb-2 mx-auto" />
+                      <div className="text-sm text-green-700 dark:text-green-400">Presence</div>
+                      <div className="font-semibold text-green-800 dark:text-green-300" data-testid={`category-presence-${index}`}>
                         {category.presence}
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Key Benefits</h4>
+                    <h4 className="font-semibold text-green-800 dark:text-green-300 mb-3">Key Benefits</h4>
                     <ul className="space-y-2">
                       {category.benefits.map((benefit, benefitIndex) => (
                         <li key={benefitIndex} className="flex items-start space-x-2" data-testid={`category-benefit-${index}-${benefitIndex}`}>
                           <CheckCircle className="text-green-600 text-sm mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{benefit}</span>
+                          <span className="text-sm text-green-700 dark:text-green-400">{benefit}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Eligibility Requirements</h4>
+                    <h4 className="font-semibold text-green-800 dark:text-green-300 mb-3">Eligibility Requirements</h4>
                     <ul className="space-y-2">
                       {category.eligibility.map((requirement, reqIndex) => (
                         <li key={reqIndex} className="flex items-start space-x-2" data-testid={`category-requirement-${index}-${reqIndex}`}>
-                          <Shield className="text-primary text-sm mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{requirement}</span>
+                          <Shield className="text-green-800 dark:text-green-300 text-sm mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-green-700 dark:text-green-400">{requirement}</span>
                         </li>
                       ))}
                     </ul>
@@ -342,10 +342,10 @@ export default function Visa() {
       <section id="benefits" className="py-20 bg-card scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-800 dark:text-green-300 mb-6">
               Program Benefits & Advantages
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-green-700 dark:text-green-400 max-w-3xl mx-auto">
               Recent policy updates have streamlined requirements while maintaining program integrity
             </p>
           </div>
@@ -357,10 +357,10 @@ export default function Visa() {
                 <Card key={benefit.title} className="hover:shadow-lg transition-shadow h-full">
                   <CardContent className="p-6 text-center">
                     <IconComponent className={`${benefit.color} text-3xl mb-4 mx-auto`} />
-                    <h4 className="font-semibold text-foreground mb-3" data-testid={`benefit-title-${index}`}>
+                    <h4 className="font-semibold text-green-800 dark:text-green-300 mb-3" data-testid={`benefit-title-${index}`}>
                       {benefit.title}
                     </h4>
-                    <p className="text-muted-foreground" data-testid={`benefit-description-${index}`}>
+                    <p className="text-green-700 dark:text-green-400" data-testid={`benefit-description-${index}`}>
                       {benefit.description}
                     </p>
                   </CardContent>
@@ -370,24 +370,24 @@ export default function Visa() {
           </div>
 
           <div className="bg-primary/5 rounded-2xl p-8">
-            <h3 className="font-serif text-2xl font-semibold text-foreground mb-6 text-center">
+            <h3 className="font-serif text-2xl font-semibold text-green-800 dark:text-green-300 mb-6 text-center">
               2025 Policy Updates - Simplified Requirements
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <CheckCircle className="text-green-600 text-2xl mb-3 mx-auto" />
-                <h4 className="font-semibold text-foreground mb-2">English Language</h4>
-                <p className="text-sm text-muted-foreground">No longer required for any applicants</p>
+                <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">English Language</h4>
+                <p className="text-sm text-green-700 dark:text-green-400">No longer required for any applicants</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="text-green-600 text-2xl mb-3 mx-auto" />
-                <h4 className="font-semibold text-foreground mb-2">Age Restrictions</h4>
-                <p className="text-sm text-muted-foreground">Removed maximum age limits</p>
+                <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">Age Restrictions</h4>
+                <p className="text-sm text-green-700 dark:text-green-400">Removed maximum age limits</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="text-green-600 text-2xl mb-3 mx-auto" />
-                <h4 className="font-semibold text-foreground mb-2">Business Experience</h4>
-                <p className="text-sm text-muted-foreground">No prior management experience required</p>
+                <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">Business Experience</h4>
+                <p className="text-sm text-green-700 dark:text-green-400">No prior management experience required</p>
               </div>
             </div>
           </div>
@@ -399,33 +399,33 @@ export default function Visa() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="font-serif text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-serif text-4xl font-bold text-green-800 dark:text-green-300 mb-6">
                 Qualifying Investment Options
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-green-700 dark:text-green-400 mb-8">
                 Your investment must be maintained in approved asset classes throughout the investment period
               </p>
               <ul className="space-y-4">
                 {investmentOptions.map((option, index) => (
                   <li key={index} className="flex items-start space-x-3" data-testid={`investment-option-${index}`}>
-                    <CheckCircle className="text-primary text-lg mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{option}</span>
+                    <CheckCircle className="text-green-800 dark:text-green-300 text-lg mt-0.5 flex-shrink-0" />
+                    <span className="text-green-700 dark:text-green-400">{option}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">
+              <h3 className="font-serif text-2xl font-semibold text-green-800 dark:text-green-300 mb-6">
                 Tax Advantages
               </h3>
               <div className="space-y-4">
                 {taxAdvantages.map((advantage, index) => (
                   <Card key={advantage.title} className="p-4">
-                    <h4 className="font-semibold text-foreground mb-2" data-testid={`tax-advantage-title-${index}`}>
+                    <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2" data-testid={`tax-advantage-title-${index}`}>
                       {advantage.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground" data-testid={`tax-advantage-description-${index}`}>
+                    <p className="text-sm text-green-700 dark:text-green-400" data-testid={`tax-advantage-description-${index}`}>
                       {advantage.description}
                     </p>
                   </Card>
@@ -440,10 +440,10 @@ export default function Visa() {
       <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-800 dark:text-green-300 mb-6">
               Application Process
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-green-700 dark:text-green-400 max-w-3xl mx-auto">
               A streamlined 5-step process from initial expression of interest to investment transfer
             </p>
           </div>
@@ -453,20 +453,20 @@ export default function Visa() {
               <Card key={step.step} className="p-6">
                 <div className="flex items-start space-x-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
+                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center text-green-800 dark:text-green-300 font-bold text-lg">
                       {step.step}
                     </div>
                   </div>
                   <div className="flex-grow">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-foreground" data-testid={`process-step-title-${index}`}>
+                      <h3 className="text-xl font-semibold text-green-800 dark:text-green-300" data-testid={`process-step-title-${index}`}>
                         {step.title}
                       </h3>
-                      <Badge variant="outline" className="text-primary border-primary mt-2 md:mt-0">
+                      <Badge variant="outline" className="text-green-800 dark:text-green-300 border-green-800 dark:border-green-300 mt-2 md:mt-0">
                         {step.timeframe}
                       </Badge>
                     </div>
-                    <p className="text-muted-foreground" data-testid={`process-step-description-${index}`}>
+                    <p className="text-green-700 dark:text-green-400" data-testid={`process-step-description-${index}`}>
                       {step.description}
                     </p>
                   </div>
@@ -482,35 +482,35 @@ export default function Visa() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-serif text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-serif text-4xl font-bold text-green-800 dark:text-green-300 mb-6">
                 Wairimu Station Investment Opportunity
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg text-green-700 dark:text-green-400 mb-6">
                 Our premium forest property investment presents an excellent opportunity for Active Investor Plus Visa applicants 
                 seeking qualifying New Zealand investments with strong environmental and economic returns.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-green-600 text-lg" />
-                  <span className="text-muted-foreground">Qualifying direct business investment</span>
+                  <span className="text-green-700 dark:text-green-400">Qualifying direct business investment</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-green-600 text-lg" />
-                  <span className="text-muted-foreground">Sustainable forestry with ETS income potential</span>
+                  <span className="text-green-700 dark:text-green-400">Sustainable forestry with ETS income potential</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-green-600 text-lg" />
-                  <span className="text-muted-foreground">Strategic location near premium tourism destinations</span>
+                  <span className="text-green-700 dark:text-green-400">Strategic location near premium tourism destinations</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-green-600 text-lg" />
-                  <span className="text-muted-foreground">Professional investment management available</span>
+                  <span className="text-green-700 dark:text-green-400">Professional investment management available</span>
                 </div>
               </div>
               <Button
                 onClick={() => navigateToSection("investment")}
                 size="lg"
-                className="floating-green-btn"
+                className="floating-green-btn text-green-800 dark:text-green-300"
                 data-testid="wairimu-investment-button"
               >
                 <TrendingUp className="mr-2 h-5 w-5" />
@@ -535,11 +535,11 @@ export default function Visa() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Alert>
             <AlertTriangle className="h-4 w-4" />
-            <AlertDescription className="space-y-4">
+            <AlertDescription className="space-y-4 text-green-700 dark:text-green-400">
               <div>
                 <strong>Important Legal Disclaimers:</strong>
               </div>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-sm text-green-700 dark:text-green-400">
                 <li>• This information is for general guidance only and does not constitute immigration or investment advice</li>
                 <li>• Immigration regulations and requirements are subject to change by the New Zealand government</li>
                 <li>• Professional immigration advice should be sought before making any application or investment decisions</li>
@@ -555,10 +555,10 @@ export default function Visa() {
       {/* Contact CTA */}
       <section className="py-20 bg-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-4xl font-bold text-primary-foreground mb-6">
+          <h2 className="font-serif text-4xl font-bold text-green-800 dark:text-green-300 mb-6">
             Start Your New Zealand Journey
           </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8">
+          <p className="text-xl text-green-700 dark:text-green-400 mb-8">
             Connect with our investment specialists to explore how Wairimu Station can support your 
             Active Investor Plus Visa application
           </p>
@@ -566,7 +566,7 @@ export default function Visa() {
             onClick={() => navigateToSection("contact")}
             size="lg"
             variant="secondary"
-            className="bg-white text-primary hover:bg-white/90"
+            className="bg-white text-green-800 hover:bg-white/90"
             data-testid="contact-specialist-button"
           >
             <Users className="mr-2 h-5 w-5" />
