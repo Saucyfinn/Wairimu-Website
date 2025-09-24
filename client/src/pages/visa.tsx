@@ -273,9 +273,35 @@ export default function Visa() {
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-green-800 dark:text-green-300 mb-6">
               Investment Categories
             </h2>
-            <p className="text-xl text-green-700 dark:text-green-400 max-w-3xl mx-auto">
+            <p className="text-xl text-green-700 dark:text-green-400 max-w-3xl mx-auto mb-8">
               Choose between two investment pathways based on your investment strategy and presence preferences
             </p>
+            
+            {/* Government Application Button */}
+            <div className="text-center mb-8">
+              <h3 className="font-serif text-2xl font-semibold text-green-800 dark:text-green-300 mb-4">
+                Ready to Start Your Application?
+              </h3>
+              <p className="text-lg text-green-700 dark:text-green-400 mb-6 max-w-2xl mx-auto">
+                Begin your Active Investor Plus Visa application through the official New Zealand Immigration website
+              </p>
+              <Button 
+                asChild
+                size="lg"
+                className="bg-green-800 hover:bg-green-900 text-white font-semibold px-8 py-4"
+                data-testid="government-application-button"
+              >
+                <a 
+                  href="https://www.immigration.govt.nz/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2"
+                >
+                  <Globe className="h-5 w-5" />
+                  <span>Start Official Application</span>
+                </a>
+              </Button>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -473,32 +499,6 @@ export default function Visa() {
                 </div>
               </Card>
             ))}
-          </div>
-
-          {/* Government Application Button */}
-          <div className="text-center">
-            <h3 className="font-serif text-2xl font-semibold text-green-800 dark:text-green-300 mb-4">
-              Ready to Start Your Application?
-            </h3>
-            <p className="text-lg text-green-700 dark:text-green-400 mb-6 max-w-2xl mx-auto">
-              Begin your Active Investor Plus Visa application through the official New Zealand Immigration website
-            </p>
-            <Button 
-              asChild
-              size="lg"
-              className="bg-green-800 hover:bg-green-900 text-white font-semibold px-8 py-4"
-              data-testid="government-application-button"
-            >
-              <a 
-                href="https://www.immigration.govt.nz/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2"
-              >
-                <Globe className="h-5 w-5" />
-                <span>Start Official Application</span>
-              </a>
-            </Button>
           </div>
         </div>
       </section>
