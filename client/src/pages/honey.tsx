@@ -3,7 +3,7 @@ import { Flower2, Droplets, Heart, Shield, Star, TreePine, MapPin, Phone, Mail, 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import manukaFlowersImage from "@assets/stock_images/manuka_flowers_bees.png";
+import nativeBushFlowersImage from "@assets/stock_images/manuka_flowers_bees.png";
 import beehivesImage2 from "@assets/stock_images/beehives_honey_bee_f_a6c82ccb.jpg";
 import honeyJarsImage2 from "@assets/stock_images/honey_jars_productio_08c8d0e1.jpg";
 
@@ -36,27 +36,27 @@ export default function Honey() {
     }
   };
 
-  const manukaGrades = [
+  const nativeBushGrades = [
     {
-      grade: "UMF 5+",
+      grade: "MGO 100+",
       description: "Mild therapeutic activity, everyday consumption",
       uses: "Daily wellness, culinary use",
       color: "text-green-600 border-green-600"
     },
     {
-      grade: "UMF 10+",
+      grade: "MGO 250+",
       description: "Moderate therapeutic activity",
       uses: "Immune support, wound care",
       color: "text-yellow-600 border-yellow-600"
     },
     {
-      grade: "UMF 15+",
+      grade: "MGO 400+",
       description: "High therapeutic activity",
       uses: "Digestive health, skin conditions",
       color: "text-orange-600 border-orange-600"
     },
     {
-      grade: "UMF 20+",
+      grade: "MGO 550+",
       description: "Superior therapeutic activity",
       uses: "Medical grade applications",
       color: "text-red-600 border-red-600"
@@ -95,13 +95,13 @@ export default function Honey() {
     {
       icon: TreePine,
       title: "Pristine Environment",
-      description: "Pollution-free coastal environment with abundant native Manuka forests",
+      description: "Pollution-free coastal environment with abundant native bush forests",
       highlight: "No industrial contamination"
     },
     {
       icon: MapPin,
       title: "Ideal Climate",
-      description: "Temperate maritime climate perfect for Manuka flower growth",
+      description: "Temperate maritime climate perfect for native bush flower growth",
       highlight: "Extended flowering season"
     },
     {
@@ -119,19 +119,19 @@ export default function Honey() {
   ];
 
   const qualityStandards = [
-    "UMF (Unique Manuka Factor) certified testing",
+    "MGO (Methylglyoxal) content testing",
     "New Zealand Ministry for Primary Industries compliance",
-    "Monofloral Manuka honey verification",
+    "Multifloral native bush honey verification",
     "Heavy metal and pesticide testing",
     "Moisture content and HMF level monitoring",
     "DNA authentication for source verification"
   ];
 
   const honeyStats = [
-    { label: "UMF Rating", value: "5+ to 20+", description: "Therapeutic activity levels", icon: Star },
+    { label: "MGO Rating", value: "100+ to 550+", description: "Therapeutic activity levels", icon: Star },
     { label: "Annual Harvest", value: "150+ tons", description: "Kaikoura region output", icon: Droplets },
     { label: "Active Beekeepers", value: "25+", description: "Licensed local operators", icon: MapPin },
-    { label: "Manuka Forest", value: "2,000 ha", description: "Native flowering area", icon: TreePine }
+    { label: "Native Bush Forest", value: "2,000 ha", description: "Native flowering area", icon: TreePine }
   ];
 
   return (
@@ -162,10 +162,10 @@ export default function Honey() {
             <div className="order-1 lg:order-2">
               <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src={manukaFlowersImage}
-                  alt="Manuka flowers with bees collecting nectar for premium New Zealand honey" 
+                  src={nativeBushFlowersImage}
+                  alt="Native bush flowers with bees collecting nectar for premium New Zealand honey" 
                   className="w-full h-full object-cover"
-                  data-testid="manuka-flowers-bees-image"
+                  data-testid="native-bush-flowers-bees-image"
                 />
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function Honey() {
               Kaikoura's Liquid Gold
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Nestled between mountains and sea, Kaikoura's unique environment produces some of the world's finest Manuka honey, 
+              Nestled between mountains and sea, Kaikoura's unique environment produces some of the world's finest native bush honey, 
               treasured for its exceptional therapeutic properties and distinctive flavor
             </p>
           </div>
@@ -208,22 +208,22 @@ export default function Honey() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               <h3 className="font-serif text-3xl font-semibold text-foreground">
-                What Makes Manuka Honey Special?
+                What Makes Native Bush Honey Special?
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Manuka honey is derived exclusively from the nectar of New Zealand's native Manuka tree (Leptospermum scoparium). 
+Native bush honey is derived from the nectar of New Zealand's diverse native flowering trees and shrubs, creating a complex multifloral honey with unique therapeutic properties. 
                 This extraordinary honey contains unique compounds like methylglyoxal (MGO) that give it powerful therapeutic properties 
                 not found in regular honey.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Badge variant="outline" className="text-primary border-primary">
-                    Monofloral Manuka honey certification
+                    MPI-compliant multifloral native bush honey
                   </Badge>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Badge variant="outline" className="text-accent border-accent">
-                    UMF grading system verification
+                    MGO content verification
                   </Badge>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -245,7 +245,7 @@ export default function Honey() {
               Therapeutic Health Benefits
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Scientifically proven health benefits that have made Manuka honey a trusted natural remedy worldwide
+              Scientifically proven health benefits that have made native bush honey a trusted natural remedy worldwide
             </p>
           </div>
 
@@ -276,13 +276,13 @@ export default function Honey() {
           {/* UMF Grading System */}
           <div className="bg-primary/5 rounded-2xl p-8">
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-6 text-center">
-              UMF Grading System
+              MGO Grading System
             </h3>
             <p className="text-center text-muted-foreground mb-8">
-              The Unique Manuka Factor (UMF) rating system measures the therapeutic potency of Manuka honey
+              The MGO (Methylglyoxal) rating system measures the therapeutic potency of native bush honey
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {manukaGrades.map((grade, index) => (
+              {nativeBushGrades.map((grade, index) => (
                 <Card key={grade.grade} className="text-center">
                   <CardContent className="p-6">
                     <Badge variant="outline" className={`text-lg px-4 py-2 mb-4 ${grade.color}`}>
@@ -311,7 +311,7 @@ export default function Honey() {
               Kaikoura's Natural Advantages
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Why Kaikoura's unique environment produces exceptional Manuka honey
+              Why Kaikoura's unique environment produces exceptional native bush honey
             </p>
           </div>
 
@@ -369,7 +369,7 @@ export default function Honey() {
                 Quality Assurance & Standards
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Every jar of Kaikoura Manuka honey meets the highest international standards for purity, 
+                Every jar of Kaikoura native bush honey meets the highest international standards for purity, 
                 potency, and authenticity through rigorous testing and certification processes.
               </p>
               <ul className="space-y-4">
@@ -389,7 +389,7 @@ export default function Honey() {
                 </h3>
                 <div className="space-y-3">
                   <Badge variant="outline" className="text-primary border-primary block w-fit">
-                    UMF Honey Association Licensed
+                    Member of NZ Beekeepers Inc
                   </Badge>
                   <Badge variant="outline" className="text-accent border-accent block w-fit">
                     MPI Export Certified
@@ -410,7 +410,7 @@ export default function Honey() {
                 <p className="text-muted-foreground text-sm">
                   Every batch undergoes comprehensive laboratory analysis including MGO content, 
                   DHA levels, HMF testing, moisture content, and DNA authentication to ensure 
-                  genuine Manuka honey from verified sources.
+                  genuine native bush honey from verified New Zealand sources.
                 </p>
               </Card>
             </div>
