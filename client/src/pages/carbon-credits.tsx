@@ -329,35 +329,6 @@ export default function CarbonCredits() {
       </section>
 
 
-      {/* Management Practices Section */}
-      <section className="py-20 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Professional Forest Management
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ongoing management practices ensure optimal carbon sequestration and ETS compliance
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {managementPractices.map((practice, index) => (
-              <Card key={practice.practice} className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3" data-testid={`management-practice-${index}`}>
-                  {practice.practice}
-                </h3>
-                <p className="text-muted-foreground mb-4" data-testid={`management-description-${index}`}>
-                  {practice.description}
-                </p>
-                <Badge variant="outline" className="text-accent border-accent">
-                  {practice.frequency}
-                </Badge>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Compliance Section */}
       <section className="py-20 bg-primary/5">
