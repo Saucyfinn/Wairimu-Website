@@ -295,12 +295,12 @@ export default function EcoLodge() {
                 data-testid="architectural-concepts-grid"
               />
               <figcaption className="sr-only">
-                Professional architectural concepts demonstrating various design approaches and site integration options
+                Professional architectural concept design demonstrating possible design approach and site integration
               </figcaption>
             </figure>
             <div className="mt-4 text-center">
               <p className="text-sm text-muted-foreground">
-                Professional architectural concepts demonstrating various design approaches and site integration options
+                Professional architectural concept design demonstrating possible design approach and site integration
               </p>
             </div>
           </div>
