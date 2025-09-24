@@ -145,7 +145,7 @@ export default function Honey() {
                 Kaikoura Native Bush Honey
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed" data-testid="honey-hero-description">
-                Premium New Zealand honey from pristine coastal forests, where native Manuka flowers create liquid gold
+                Premium New Zealand honey from pristine coastal forests, where native bush flowers create liquid gold
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button 
