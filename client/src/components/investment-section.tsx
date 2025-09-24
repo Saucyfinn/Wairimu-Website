@@ -48,33 +48,6 @@ export default function InvestmentSection() {
               </div>
             </div>
 
-            {/* Investment Analysis Disclaimer */}
-            <Card className="bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800/30">
-              <CardContent className="p-6">
-                <h4 className="font-semibold text-foreground mb-4">Investment Analysis</h4>
-                <div className="space-y-4">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    <strong>Data Limitations:</strong> Financial projections and valuations require verification through professional assessment. 
-                    Market conditions, regulatory changes, and operational factors may significantly impact actual returns.
-                  </p>
-                  <div className="bg-background/50 p-4 rounded-lg">
-                    <h5 className="font-medium text-foreground mb-2">Key Investment Considerations:</h5>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Land valuations subject to market volatility</li>
-                      <li>• ETS carbon credit prices fluctuate with regulatory changes</li>
-                      <li>• Carbon sequestration rates dependent on environmental conditions</li>
-                      <li>• Long-term investment with environmental considerations</li>
-                      <li>• Professional land management advice required for due diligence</li>
-                    </ul>
-                  </div>
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Disclaimer:</strong> This information is for preliminary assessment only. 
-                    Professional financial and land management advice should be obtained before making investment decisions.
-                    All financial data must be verified through professional assessment.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
         </div>
