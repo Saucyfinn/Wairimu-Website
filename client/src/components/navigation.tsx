@@ -48,7 +48,6 @@ export default function Navigation() {
     { label: "Honey", href: "/honey", icon: Flower2, testId: "link-investment-honey" },
     { label: "Carbon Credits", href: "/income/carbon-credits", icon: DollarSign, testId: "link-investment-carbon" },
     { label: "Eco Lodge Concept", href: "/income/eco-lodge", icon: Building, testId: "link-investment-eco-lodge" },
-    { label: "Grazing", href: "/income/grazing", icon: Wheat, testId: "link-investment-grazing" },
   ];
 
   const tourismItems = [
