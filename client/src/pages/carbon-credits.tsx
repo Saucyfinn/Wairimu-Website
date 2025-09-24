@@ -39,7 +39,7 @@ export default function CarbonCredits() {
   const forestComposition = [
     {
       type: "Indigenous Bush",
-      area: "200 hectares",
+      area: "215 hectares of forest",
       description: "Native New Zealand forest providing long-term carbon storage",
       ageRange: "Mixed ages",
       carbonRate: "3-6 tonnes CO2/ha/year"
