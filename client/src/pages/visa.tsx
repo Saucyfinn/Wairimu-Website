@@ -490,7 +490,7 @@ export default function Visa() {
               data-testid="government-application-button"
             >
               <a 
-                href="https://www.immigration.govt.nz/new-zealand-visas/apply-for-a-visa/about-visa/active-investor-plus-resident-visa" 
+                href="https://www.immigration.govt.nz/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2"
