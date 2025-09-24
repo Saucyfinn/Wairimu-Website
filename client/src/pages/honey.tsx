@@ -3,7 +3,7 @@ import { Flower2, Droplets, Heart, Shield, Star, TreePine, MapPin, Phone, Mail, 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import manukaFlowersImage1 from "@assets/stock_images/manuka_flowers_honey_859306ad.jpg";
+import manukaBushImage from "@assets/stock_images/manuka_bush_tree_flo_4116159f.jpg";
 import beehivesImage1 from "@assets/stock_images/beehives_honey_bee_f_e4c67446.jpg";
 import beehivesImage2 from "@assets/stock_images/beehives_honey_bee_f_a6c82ccb.jpg";
 import honeyJarsImage1 from "@assets/stock_images/honey_jars_productio_2f10a520.jpg";
@@ -175,7 +175,7 @@ export default function Honey() {
         <div 
           className="absolute inset-0 parallax-bg"
           style={{
-            backgroundImage: `url(${manukaFlowersImage1})`
+            backgroundImage: `url(${manukaBushImage})`
           }}
         >
           <div className="absolute inset-0 hero-gradient"></div>
