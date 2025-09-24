@@ -38,13 +38,6 @@ export default function Forestry() {
 
   const forestComposition = [
     {
-      type: "Radiata Pine Plantation",
-      area: "150 hectares",
-      description: "Commercial grade pine forest with excellent growth rates and timber quality",
-      ageRange: "5-25 years",
-      harvestProjection: "2030-2045"
-    },
-    {
       type: "Native Forest Reserve",
       area: "300 hectares",
       description: "Protected indigenous forest providing biodiversity conservation and carbon storage",

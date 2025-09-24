@@ -38,13 +38,6 @@ export default function CarbonCredits() {
 
   const forestComposition = [
     {
-      type: "Pinus Radiata Plantation",
-      area: "15.5 hectares",
-      description: "Commercially managed pine forest with high carbon sequestration rates",
-      ageRange: "15-25 years",
-      carbonRate: "8-12 tonnes CO2/ha/year"
-    },
-    {
       type: "Indigenous Bush",
       area: "200 hectares",
       description: "Native New Zealand forest providing long-term carbon storage",

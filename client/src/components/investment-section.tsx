@@ -9,7 +9,6 @@ export default function InvestmentSection() {
 
   const specifications = [
     { label: "Total Area", value: `${property?.area?.toLocaleString() || "640"} hectares` },
-    { label: "Planted Forest Area", value: "15.5 hectares (Pinus radiata)" },
     { label: "Indigenous Bush", value: "200 hectares (included in Carbon Credit scheme)" },
     { label: "ETS Registration", value: `${property?.etsCredits?.toLocaleString() || "215.5"} hectares (Post-1989 forest)` },
     { label: "Location", value: property?.location || "Kaikoura, Canterbury" },
