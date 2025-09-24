@@ -82,32 +82,6 @@ export default function CarbonCredits() {
     "International carbon accounting standards compliance"
   ];
 
-  const carbonStats = [
-    { 
-      label: "Total Forest Area", 
-      value: "215.5 ha", 
-      description: "Registered in ETS scheme", 
-      icon: TreePine 
-    },
-    { 
-      label: "Annual Sequestration", 
-      value: "1,200+ tonnes", 
-      description: "CO2 equivalent per year", 
-      icon: Leaf 
-    },
-    { 
-      label: "Cumulative Credits", 
-      value: "8,500+ tonnes", 
-      description: "Since ETS registration", 
-      icon: Target 
-    },
-    { 
-      label: "Current Market Value", 
-      value: "$68-75/tonne", 
-      description: "NZU market price range", 
-      icon: TrendingUp 
-    }
-  ];
 
 
   const managementPractices = [
@@ -179,24 +153,6 @@ export default function CarbonCredits() {
             </p>
           </div>
 
-          {/* Carbon Statistics */}
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            {carbonStats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <Card key={stat.label} className="text-center">
-                  <CardContent className="p-6">
-                    <IconComponent className="text-primary text-3xl mb-4 mx-auto" />
-                    <div className="text-3xl font-bold text-foreground mb-2" data-testid={`carbon-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {stat.value}
-                    </div>
-                    <div className="font-medium text-foreground mb-1">{stat.label}</div>
-                    <div className="text-sm text-muted-foreground">{stat.description}</div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
