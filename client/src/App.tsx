@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Navigation from "@/components/navigation";
 import Home from "@/pages/home";
 import Tourism from "@/pages/tourism";
-import Visa from "@/pages/visa";
 import Honey from "@/pages/honey";
 import CarbonCredits from "@/pages/carbon-credits";
 import EcoLodge from "@/pages/eco-lodge";
@@ -22,7 +21,6 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/tourism" component={Tourism} />
-          <Route path="/investment/nz-investor" component={Visa} />
           <Route path="/recreational-activities" component={RecreationalActivities} />
           <Route path="/honey" component={Honey} />
           <Route path="/income/carbon-credits" component={CarbonCredits} />
