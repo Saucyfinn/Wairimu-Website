@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -18,7 +17,6 @@ interface ContactFormData {
   phone: string;
   investmentType: string;
   message: string;
-  consent: boolean;
 }
 
 export default function ContactSection() {
@@ -29,8 +27,7 @@ export default function ContactSection() {
     email: "",
     phone: "",
     investmentType: "",
-    message: "",
-    consent: false
+    message: ""
   });
 
   const submitInquiry = useMutation({
@@ -64,14 +61,6 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.consent) {
-      toast({
-        title: "Consent Required",
-        description: "Please consent to being contacted about this investment opportunity.",
-        variant: "destructive",
-      });
-      return;
-    }
     
     // Build email body
     const subject = encodeURIComponent("Wairimu Station Investment Enquiry");
@@ -203,19 +192,6 @@ export default function ContactSection() {
                     className="min-h-[100px] text-base resize-none"
                     data-testid="textarea-message"
                   />
-                </div>
-                
-                <div className="flex items-start space-x-3 py-2">
-                  <Checkbox
-                    id="consent"
-                    checked={formData.consent}
-                    onCheckedChange={(checked) => handleInputChange("consent", checked as boolean)}
-                    className="mt-1 min-h-[20px] min-w-[20px]"
-                    data-testid="checkbox-consent"
-                  />
-                  <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
-                    I consent to being contacted about this property investment opportunity
-                  </Label>
                 </div>
                 
                 <Button 
