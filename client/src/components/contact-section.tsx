@@ -114,7 +114,7 @@ export default function ContactSection() {
             Ready to Enquire
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
-            For more information, property documents, and visits to the property, contact Andy Nurse from NURSE Property
+            To obtain further information on the property, pricing and purchasing process, and to arrange an inspection of the property - which is strictly by appointment - please contact the exclusive listing agent Andy Nurse:
           </p>
         </div>
 
