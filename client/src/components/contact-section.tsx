@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Send } from "lucide-react";
+import { Phone, Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -88,6 +88,14 @@ export default function ContactSection() {
       variant: "default" as const,
       bgColor: "bg-accent",
       testId: "call-andy"
+    },
+    {
+      icon: MessageSquare,
+      label: "Message Andy Now",
+      action: () => window.open("sms:+6421437143"),
+      variant: "default" as const,
+      bgColor: "bg-primary",
+      testId: "message-andy"
     }
   ];
 
