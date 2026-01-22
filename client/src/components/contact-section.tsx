@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Calendar, PhoneCall, Send } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -99,22 +99,6 @@ export default function ContactSection() {
       variant: "default" as const,
       bgColor: "bg-accent",
       testId: "call-andy"
-    },
-    {
-      icon: Calendar,
-      label: "Schedule Property Visit",
-      action: () => alert("This would open a calendar scheduling system."),
-      variant: "default" as const,
-      bgColor: "bg-primary",
-      testId: "schedule-visit"
-    },
-    {
-      icon: PhoneCall,
-      label: "Request Callback",
-      action: () => alert("Callback request submitted. Andy will call you within 2 hours."),
-      variant: "outline" as const,
-      bgColor: "bg-card",
-      testId: "request-callback"
     }
   ];
 
