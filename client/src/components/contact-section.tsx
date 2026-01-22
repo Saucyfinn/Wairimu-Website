@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Calendar, PhoneCall, Send } from "lucide-react";
+import { Phone, Calendar, PhoneCall, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -237,57 +237,14 @@ export default function ContactSection() {
 
           {/* Agent Information */}
           <div className="space-y-6 sm:space-y-8 order-first lg:order-last">
-            <Card className="bg-background">
-              <CardContent className="p-4 sm:p-6 lg:p-8">
-                <div>
-                  <div>
-                    <h4 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-2">
-                      Andy Nurse (Sales Agent)
-                    </h4>
-                    <p className="text-accent font-medium mb-3 sm:mb-4 text-sm sm:text-base">
-                      Licensed Sales Consultant - Rural & Lifestyle
-                    </p>
-                    <p className="text-sm text-primary font-semibold mb-3 sm:mb-4">
-                      NURSE Property
-                    </p>
-                    <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">
-                      Licensed sales consultant specializing in rural and lifestyle properties. Andy brings expertise in sustainable property investments, rural land development, and lifestyle property opportunities throughout New Zealand.
-                    </p>
-                    
-                    <div className="space-y-3">
-                      <a 
-                        href="tel:+6421437143" 
-                        className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors min-h-[44px] touch-target"
-                        data-testid="agent-phone"
-                      >
-                        <Phone className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
-                        <span className="text-sm sm:text-base">+64 21 437 143</span>
-                      </a>
-                      <a 
-                        href="mailto:andy.nurse@nurseproperty.co.nz" 
-                        className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors min-h-[44px] touch-target"
-                        data-testid="agent-email"
-                      >
-                        <Mail className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
-                        <span className="text-sm sm:text-base break-all">andy.nurse@nurseproperty.co.nz</span>
-                      </a>
-                      <div className="flex items-center space-x-3 min-h-[44px]">
-                        <MapPin className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
-                        <a 
-                          href="https://www.nurseproperty.co.nz" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors text-sm sm:text-base"
-                          data-testid="agent-website"
-                        >
-                          www.nurseproperty.co.nz
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/andy-nurse-contact.png" 
+                alt="Andy Nurse - NURSE Property - Licensed Sales Consultant | Rural & Lifestyle - +64 21 437 143 - andy.nurse@nurseproperty.co.nz - @realty Ltd Licensed REAA 2008"
+                className="w-full h-auto"
+                data-testid="agent-contact-image"
+              />
+            </div>
 
             {/* Quick Contact Options */}
             <div className="space-y-3 sm:space-y-4">
