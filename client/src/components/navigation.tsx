@@ -65,12 +65,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <button onClick={() => navigateToSection("property")} className="px-4 py-3 min-h-[44px] nav-floating-btn font-semibold rounded-md flex items-center space-x-1 touch-target" data-testid="nav-home">
-              <Home className="h-4 w-4" />
-              <span>Home</span>
-            </button>
-            
-            {/* Property Dropdown */}
+            {/* Property Dropdown - Acts as Home */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="px-4 py-3 min-h-[44px] nav-floating-btn font-semibold rounded-md flex items-center space-x-1 touch-target" data-testid="dropdown-property">
@@ -80,6 +75,12 @@ export default function Navigation() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" data-testid="dropdown-property-content">
+                <DropdownMenuItem asChild={false}>
+                  <button onClick={() => navigateToSection("property")} className="flex items-center space-x-2 w-full px-4 py-3 min-h-[44px] touch-target" data-testid="link-property-home">
+                    <Home className="h-4 w-4" />
+                    <span>Home</span>
+                  </button>
+                </DropdownMenuItem>
                 {propertyItems.map((item, index) => {
                   const IconComponent = item.icon;
                   return (
@@ -167,12 +168,7 @@ export default function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] px-4">
               <div className="flex flex-col space-y-2 mt-8">
-                <button onClick={() => { navigateToSection("property"); setIsOpen(false); }} className="text-left text-lg nav-floating-btn font-semibold rounded-md px-4 py-4 min-h-[44px] flex items-center space-x-2 w-full touch-target" data-testid="mobile-nav-home">
-                  <Home className="h-5 w-5" />
-                  <span>Home</span>
-                </button>
-                
-                {/* Property Collapsible */}
+                {/* Property Collapsible - Acts as Home */}
                 <Collapsible>
                   <CollapsibleTrigger className="text-left text-lg nav-floating-btn font-semibold rounded-md px-4 py-4 min-h-[44px] flex items-center justify-between w-full touch-target" data-testid="mobile-nav-property-trigger">
                     <div className="flex items-center space-x-2">
@@ -182,6 +178,14 @@ export default function Navigation() {
                     <ChevronDown className="h-4 w-4" />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="space-y-1 ml-4">
+                    <button 
+                      onClick={() => { navigateToSection("property"); setIsOpen(false); }}
+                      className="text-left text-base nav-floating-btn font-medium rounded-md px-4 py-3 min-h-[44px] flex items-center space-x-2 w-full touch-target" 
+                      data-testid="mobile-link-property-home"
+                    >
+                      <Home className="h-4 w-4" />
+                      <span>Home</span>
+                    </button>
                     {propertyItems.map((item, index) => {
                       const IconComponent = item.icon;
                       return (
