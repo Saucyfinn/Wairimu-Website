@@ -72,7 +72,19 @@ export default function ContactSection() {
       });
       return;
     }
-    submitInquiry.mutate(formData);
+    
+    // Build email body
+    const subject = encodeURIComponent("Wairimu Station Investment Enquiry");
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || "Not provided"}\n` +
+      `Investment Interest: ${formData.investmentType || "Not specified"}\n\n` +
+      `Message:\n${formData.message || "No message provided"}`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:andy.nurse@nurseproperty.co.nz?subject=${subject}&body=${body}`;
   };
 
   const handleInputChange = (field: keyof ContactFormData, value: string | boolean) => {
@@ -225,11 +237,10 @@ export default function ContactSection() {
                 <Button 
                   type="submit" 
                   className="w-full min-h-[48px] text-base touch-target" 
-                  disabled={submitInquiry.isPending}
                   data-testid="submit-enquiry"
                 >
                   <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  {submitInquiry.isPending ? "Sending..." : "Send Enquiry"}
+                  Send Enquiry
                 </Button>
               </form>
             </CardContent>
