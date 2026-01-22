@@ -50,7 +50,7 @@ export default function Navigation() {
   ];
 
   const tourismItems = [
-    { label: "Tourism Overview", href: "/tourism", icon: MapPin, testId: "link-tourism-overview" },
+    { label: "Discover Kaikoura", href: "/tourism#discover-kaikoura", icon: MapPin, testId: "link-tourism-overview" },
     { label: "Recreational Activities", href: "/recreational-activities", icon: TreePine, testId: "link-tourism-recreational" },
   ];
 

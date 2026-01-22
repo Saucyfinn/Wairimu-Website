@@ -221,7 +221,7 @@ export default function Tourism() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section id="discover-kaikoura" className="relative h-screen flex items-center justify-center overflow-hidden pt-16 scroll-mt-20">
         <div 
           className="absolute inset-0 parallax-bg"
           style={{
